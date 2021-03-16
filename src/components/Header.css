@@ -1,0 +1,26 @@
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid rgb(102, 151, 2);
+}
+.logo-left{
+    max-width: 130px;
+}
+
+.navigation{
+    display: flex;
+}
+.navigation a{
+    text-decoration: none;
+    color:rgb(102, 151, 2);
+    font-size: 35px;
+}
+.navigation a:hover{
+    color:rgb(40, 58, 4);
+}
+.navigation li{
+    list-style: none;
+    margin-right: 25px;
+}

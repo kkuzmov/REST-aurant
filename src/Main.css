@@ -1,0 +1,20 @@
+@import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+html{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    max-width: 1200px;
+    margin: 0px auto;
+    min-height: 100vh;
+    font-family: 'Indie Flower', serif;
+    color: rgb(167, 20, 20);
+    text-align: center;
+    background: rgb(255,215,0);
+    background: linear-gradient(312deg, rgba(255,215,0,0.7708217075892857) 0%, rgba(255,255,0,0.7624183462447479) 54%, rgba(9,133,0,0.7960317916228992) 100%); 
+}
+body a{
+    text-decoration: none;
+}
