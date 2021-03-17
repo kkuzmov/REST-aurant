@@ -1,0 +1,62 @@
+.welcome{
+    font-size: 80px;
+}
+.lorem-ipsum{
+    font-size: 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.all-rated-restaurants{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    margin-top: 0px;
+}
+.restaurant-card{
+    margin-right: 20px;
+    max-width: 250px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 0px;
+}
+.all-rated-restaurants img{
+    max-width: 240px;
+    max-height: 150px;
+    padding: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+.restaurant-card h4{
+    font-size: 33px;
+    padding: 0px;
+    margin: 20px 0px;
+}
+.restaurant-card p{
+    padding: 0px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.card-left-guest{
+    z-index: 0;
+    position: relative;
+    left: 150px;
+    box-shadow: -9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0)
+}
+.card-middle-guest{
+    z-index: 1;
+    background-color: rgb(101, 151, 2);
+    box-shadow: 5px 5px 15px 6px rgba(0,0,0,0.77);
+}
+.card-right-guest{
+    z-index: 0;
+    position: relative;
+    right: 150px;
+    box-shadow: 9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0);
+}
