@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import HomepageGuest from './components/HomepageGuest/HomepageGuest';
 import HomepageUser from './components/HomepageUser/HomepageUser';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 import { style } from './Main.css';
 
@@ -15,7 +16,7 @@ class Main extends Component{
         return(
             <>
            <Header />
-           <Login />
+           <Register />
            <Footer />
            </>
         )

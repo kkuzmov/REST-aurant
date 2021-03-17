@@ -8,6 +8,8 @@ class Login extends Component{
     }
     render(){
         return (
+            <>
+            <h1 class="login-register-heading">Login</h1>
             <article class="authentication-container">
                 <form action="#" class="authentication-form">
                     <article class="form-input">
@@ -19,6 +21,7 @@ class Login extends Component{
                     <button class="site-button">Login</button>
                 </form>
             </article>
+            </>
         )
     }
 }
