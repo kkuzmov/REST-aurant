@@ -16,7 +16,7 @@ class Main extends Component{
         return(
             <>
            <Header />
-           <Register />
+           <HomepageUser />
            <Footer />
            </>
         )
