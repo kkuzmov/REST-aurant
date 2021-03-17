@@ -9,19 +9,3 @@
     max-width: 130px;
     /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
 }
-
-.navigation{
-    display: flex;
-}
-.navigation a{
-    text-decoration: none;
-    color:rgb(102, 151, 2);
-    font-size: 35px;
-}
-.navigation a:hover{
-    color:rgb(40, 58, 4);
-}
-.navigation li{
-    list-style: none;
-    margin-right: 25px;
-}

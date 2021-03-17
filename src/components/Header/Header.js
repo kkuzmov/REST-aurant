@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import logo from './clipart294515.png'
 import { style } from './Header.css';
+import NavigationUser from './Navigation/NavigationUser';
+import NavigationGuest from './Navigation/NavigationGuest';
  
 class Header extends Component{
     constructor(props){
@@ -11,10 +13,7 @@ class Header extends Component{
             <header class="main-header">
                 <img src={logo} alt="restaurant logo" class="logo-left"/>
                 <nav>
-                    <ul class="navigation">
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                    </ul>
+                   <NavigationUser />
                 </nav>
             </header>
         )
