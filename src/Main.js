@@ -9,6 +9,8 @@ import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
 import Restaurant from './components/Restaurant/Restaurant';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
+import Profile from './components/Profile/Profile';
+
 
 
 import { style } from './Main.css';
@@ -21,7 +23,7 @@ class Main extends Component{
         return(
            <>
             <Header />
-            <RestaurantsWrapper />
+            <Profile />
             <Footer />
            </>
         )
