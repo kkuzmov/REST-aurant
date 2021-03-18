@@ -9,16 +9,16 @@ class Login extends Component{
     render(){
         return (
             <>
-            <h1 class="login-register-heading">Login</h1>
-            <article class="authentication-container">
-                <form action="#" class="authentication-form">
-                    <article class="form-input">
+            <h1 className="login-register-heading">Login</h1>
+            <article className="authentication-container">
+                <form action="#" className="authentication-form">
+                    <article className="form-input">
                         <input type="email" name="email" placeholder="E-mail"/>
                     </article>
-                    <article class="form-input">
+                    <article className="form-input">
                         <input type="password" name="password" placeholder="Password"/>
                     </article>
-                    <button class="site-button">Login</button>
+                    <button className="site-button">Login</button>
                 </form>
             </article>
             </>

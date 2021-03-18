@@ -7,7 +7,7 @@ class NavigationUser extends Component{
     }
     render(){
         return (
-            <ul class="navigation">
+            <ul className="navigation">
                 <li><a href="#">Create-a-rate</a></li>
                 <li><a href="#">Restaurants</a></li>
                 <li><a href="#">Profile</a></li>

@@ -10,8 +10,8 @@ class Header extends Component{
     }
     render(){
         return (
-            <header class="main-header">
-                <img src={logo} alt="restaurant logo" class="logo-left"/>
+            <header className="main-header">
+                <img src={logo} alt="restaurant logo" className="logo-left"/>
                 <nav>
                    <NavigationUser />
                 </nav>

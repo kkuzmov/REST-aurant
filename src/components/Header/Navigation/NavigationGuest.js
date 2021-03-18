@@ -8,7 +8,7 @@ class NavigationGuest extends Component{
     }
     render(){
         return (
-            <ul class="navigation">
+            <ul className="navigation">
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Register</a></li>
             </ul>

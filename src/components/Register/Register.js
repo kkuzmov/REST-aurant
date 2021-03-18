@@ -8,21 +8,21 @@ class Register extends Component{
     }
     render(){
         return (
-            <article class="authentication-container">
-                <form action="#" class="authentication-form">
-                    <article class="form-input">
+            <article className="authentication-container">
+                <form action="#" className="authentication-form">
+                    <article className="form-input">
                         <input type="email" name="email" placeholder="E-mail" />
                     </article>
-                    <article class="form-input">
+                    <article className="form-input">
                         <input type="text" name="username" placeholder="Username" />
                     </article>
-                    <article class="form-input">
+                    <article className="form-input">
                         <input type="password" name="password" placeholder="Password" />
                     </article>
-                    <article class="form-input">
+                    <article className="form-input">
                         <input type="password" name="repeat-password" placeholder="Repeat password" />
                     </article>
-                    <button class="site-button">Sign up</button>
+                    <button className="site-button">Sign up</button>
                 </form>
             </article>
         )

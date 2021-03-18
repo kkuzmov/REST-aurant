@@ -4,7 +4,7 @@ import { style } from './Footer.css';
 class Footer extends Component{
     render(){
         return(
-            <footer class="main-footer">&copy; 2021 by Krum Kuzmov for SoftUni</footer>
+            <footer className="main-footer">&copy; 2021 by Krum Kuzmov for SoftUni</footer>
         )
     }
 }
