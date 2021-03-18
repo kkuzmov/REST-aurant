@@ -7,11 +7,11 @@ class RestaurantHomepage extends Component{
     }
     render(){
         return (
-            <article class="restaurant-card card-user">
+            <article className="restaurant-card card-user">
                 <img src={this.props.imageUrl} alt="simeonovo-restaurant"/>
                 <h4>{this.props.name}</h4>
                 <p>{this.props.description}</p>
-                <button class="site-button">Read more</button>
+                <button className="site-button">Read more</button>
             </article>
         )
     }

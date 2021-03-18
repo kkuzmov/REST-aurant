@@ -7,6 +7,8 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
+import Restaurant from './components/Restaurant/Restaurant';
+
 
 import { style } from './Main.css';
 
@@ -18,7 +20,7 @@ class Main extends Component{
         return(
             <>
            <Header />
-           <HomepageUser />
+           <Restaurant />
            <Footer />
            </>
         )

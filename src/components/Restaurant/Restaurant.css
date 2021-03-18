@@ -1,0 +1,16 @@
+.restaurant{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.5px solid rgba(255,215,0,0.7708217075892857);
+    border-radius: 10px;
+    background-color: rgba(133, 190, 42, 0.623);
+    padding: 15px 20px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    min-height: 110px;
+}
+.restaurant img{
+    max-width: 150px;
+    max-height: 110px;
+}
