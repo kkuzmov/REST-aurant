@@ -8,6 +8,7 @@ import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
 import Restaurant from './components/Restaurant/Restaurant';
+import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 
 
 import { style } from './Main.css';
@@ -18,10 +19,10 @@ import { style } from './Main.css';
 class Main extends Component{
     render(){
         return(
-            <>
-           <Header />
-           <Restaurant />
-           <Footer />
+           <>
+            <Header />
+            <RestaurantsWrapper />
+            <Footer />
            </>
         )
     }
