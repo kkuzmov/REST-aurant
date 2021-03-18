@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { style } from './Restaurant.css';
+import { style } from './RestaurantHomepage.css';
  
-class Restaurant extends Component{
+class RestaurantHomepage extends Component{
     constructor(props){
         super(props)
     }
@@ -17,4 +17,4 @@ class Restaurant extends Component{
     }
 }
 
-export default Restaurant;
+export default RestaurantHomepage;
