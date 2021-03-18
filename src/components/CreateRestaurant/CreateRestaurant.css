@@ -1,0 +1,26 @@
+.create-restaurant-heading{
+    font-size: 50px;
+}
+.create-restaurant-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create-restaurant-form input{
+    border: none;
+    margin: 4px auto;
+    min-height: 30px;
+    min-width: 320px;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+    background-color: rgba(133, 190, 42, 0.623);
+    font-size: 18px;
+}
+.create-restaurant-form input:hover{
+    font-size: 19px;
+}
+.form-input textarea{
+    font-family: 'Indie Flower', serif;
+
+}
