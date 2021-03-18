@@ -1,0 +1,41 @@
+.details-heading{
+    font-size: 50px;
+}
+.restaurant-details-cointainer{
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.restaurant-details-cointainer > img{
+    max-width: 800px;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: 15px;
+}
+.restaurant-details-cointainer h1{
+    font-size: 40px;
+}
+.restaurant-details-cointainer p{
+    font-size: 20px;
+}
+.restaurant-details-name{
+    background-color: rgba(133, 190, 42, 0.623);
+    border-radius: 10px;
+    padding: 5px;
+    max-width: fit-content;
+}
+.rated-by{
+    border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
+    width: 200px;
+    padding: 15px;
+    margin: 10px auto;
+}
+.google-api-sample-pic{
+    max-width: 400px;   
+}
+.details-buttons{
+    display: flex;
+    width: 120px;
+    /* background-color: red; */
+    justify-content: space-between;
+}

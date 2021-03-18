@@ -6,6 +6,7 @@ import HomepageUser from './components/HomepageUser/HomepageUser';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
+import Details from './components/Details/Details';
 
 import { style } from './Main.css';
 
@@ -17,7 +18,7 @@ class Main extends Component{
         return(
             <>
            <Header />
-           <CreateRestaurant />
+           <Details />
            <Footer />
            </>
         )
