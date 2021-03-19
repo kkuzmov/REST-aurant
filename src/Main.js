@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Route, Link, NavLink, Switch, Redirect } from 'react-router-dom';
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomepageGuest from './components/HomepageGuest/HomepageGuest';
