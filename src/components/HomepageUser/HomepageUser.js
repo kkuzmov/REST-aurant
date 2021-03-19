@@ -9,7 +9,7 @@ class Header extends Component{
     }
     render(){
         let db = database;
-        let allRestaurants = db.map(x=> x = <RestaurantHomepage imageUrl={x.imageUrl} name={x.name} description={x.description}/>)
+        let allRestaurants = db.map(x=> x = <RestaurantHomepage imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>)
         return (
         <main>
             <h1 className="top-rated">Welcome, user!</h1>

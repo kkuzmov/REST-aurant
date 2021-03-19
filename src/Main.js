@@ -31,6 +31,7 @@ class Main extends Component{
             <Route path="/create" component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/details/:id" component={Details}/>
             <Route component={ErrorPage}/>
             </Switch>
             <Footer />
