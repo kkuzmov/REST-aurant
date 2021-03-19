@@ -1,15 +1,16 @@
 .navigation{
     display: flex;
 }
-.navigation a{
+.nav-link{
     text-decoration: none;
     color:rgb(102, 151, 2);
     font-size: 35px;
-}
-.navigation a:hover{
-    color:rgb(40, 58, 4);
-}
-.navigation li{
-    list-style: none;
     margin-right: 25px;
 }
+.nav-link:hover{
+    color:rgb(40, 58, 4);
+}
+/* .navigation li{
+    list-style: none;
+    margin-right: 25px;
+} */
