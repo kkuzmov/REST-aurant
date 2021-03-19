@@ -8,12 +8,15 @@ class RestaurantsWrapper extends Component{
     }
     render(){
         return (
+            <>
+            <h1 className="page-heading">All restaurants</h1>
             <article className="all-rated-restaurants">
                 <Restaurant />
                 <Restaurant />
                 <Restaurant />
                 <Restaurant />
             </article>
+            </>
         )
     }
 }

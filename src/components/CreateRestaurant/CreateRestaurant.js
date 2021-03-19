@@ -5,7 +5,7 @@ class CreateRestaurant extends Component{
     render(){
         return(
             <>
-            <h1 className="create-restaurant-heading">Create new restaurant</h1>
+            <h1 className="page-heading">Create new restaurant</h1>
             <article className="authentication-container">
                 <form action="#" className="create-restaurant-form">
                     <article className="form-input">

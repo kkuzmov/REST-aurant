@@ -9,7 +9,7 @@ class Profile extends Component{
     render(){
         return (
             <>
-            <h1 class="user-profile-heading">My profile</h1>
+            <h1 class="page-heading">My profile</h1>
             <article class="user-profile">
                 <article class="user-info">
                     <img src={photo} alt="user-profile-picture" />

@@ -7,7 +7,7 @@ class ErrorPage extends Component{
     }
     render(){
         return(
-            <h1>Nothing here!</h1>
+            <h1 className="page-heading">Nothing here!</h1>
         )
     }
 }
