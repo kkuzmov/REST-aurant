@@ -23,7 +23,7 @@ class Main extends Component{
         return(
            <>
             <Header />
-            <Profile />
+            <HomepageUser />
             <Footer />
            </>
         )

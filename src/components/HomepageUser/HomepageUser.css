@@ -1,3 +1,21 @@
+.all-restaurants-homepage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    margin-top: 0px;
+}
+.all-restaurants-homepage img{
+    max-width: 240px;
+    max-height: 150px;
+    padding: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
 .top-rated{
     font-size: 50px;
 }
