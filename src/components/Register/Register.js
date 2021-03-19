@@ -8,6 +8,8 @@ class Register extends Component{
     }
     render(){
         return (
+            <>
+            <h1 className="login-register-heading">Login</h1>
             <article className="authentication-container">
                 <form action="#" className="authentication-form">
                     <article className="form-input">
@@ -25,6 +27,7 @@ class Register extends Component{
                     <button className="site-button">Sign up</button>
                 </form>
             </article>
+            </>
         )
     }
 }

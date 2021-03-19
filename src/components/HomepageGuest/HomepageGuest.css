@@ -6,7 +6,7 @@
     margin-bottom: 100px;
     margin-top: 50px;
 }
-.all-rated-restaurants{
+.all-restaurants-homepage{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -23,7 +23,7 @@
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 0px;
 }
-.all-rated-restaurants img{
+.all-restaurants-homepage img{
     max-width: 240px;
     max-height: 150px;
     padding: 0px;
