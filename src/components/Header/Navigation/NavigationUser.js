@@ -8,10 +8,10 @@ class NavigationUser extends Component{
     render(){
         return (
             <ul className="navigation">
-                <li><a href="#">Create-a-rate</a></li>
-                <li><a href="#">Restaurants</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/create">Create-a-rate</a></li>
+                <li><a href="/all-restaurants">Restaurants</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         )
     }

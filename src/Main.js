@@ -25,7 +25,11 @@ class Main extends Component{
         return(
            <>
             <Header />
-            <HomepageUser />
+            
+            <Route path="/create" component={CreateRestaurant}/>
+            <Route path="/all-restaurants" component={RestaurantsWrapper}/>
+            <Route path="/profile" component={Profile}/>
+
             <Footer />
            </>
         )
