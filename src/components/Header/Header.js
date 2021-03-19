@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import logo from './clipart294515.png'
+import { Link } from 'react-router-dom';
 import { style } from './Header.css';
 import NavigationUser from './Navigation/NavigationUser';
 import NavigationGuest from './Navigation/NavigationGuest';
@@ -11,7 +12,7 @@ class Header extends Component{
     render(){
         return (
             <header className="main-header">
-                <a href='http://localhost:3000'><img src={logo} alt="restaurant logo" className="logo-left"/></a>
+                <Link to="/" className="nav-link"><a><img src={logo} alt="restaurant logo" className="logo-left"/></a></Link>
                 <nav>
                    <NavigationUser />
                 </nav>
