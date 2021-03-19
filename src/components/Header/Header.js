@@ -11,7 +11,7 @@ class Header extends Component{
     render(){
         return (
             <header className="main-header">
-                <img src={logo} alt="restaurant logo" className="logo-left"/>
+                <a href='http://localhost:3000'><img src={logo} alt="restaurant logo" className="logo-left"/></a>
                 <nav>
                    <NavigationUser />
                 </nav>

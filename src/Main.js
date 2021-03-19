@@ -25,11 +25,12 @@ class Main extends Component{
         return(
            <>
             <Header />
-            
+            <Switch>
+            <Route path="/" exact component={HomepageUser}/>
             <Route path="/create" component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
-
+            </Switch>
             <Footer />
            </>
         )
