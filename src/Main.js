@@ -9,7 +9,6 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
-import Restaurant from './components/Restaurant/Restaurant';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
@@ -27,10 +26,12 @@ class Main extends Component{
            <>
             <Header />
             <Switch>
-            <Route path="/" exact component={HomepageUser}/>
+            <Route path="/" exact component={HomepageGuest}/>
             <Route path="/create" component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
             <Route path="/details/:id" component={Details}/>
             <Route component={ErrorPage}/>
             </Switch>

@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import { style } from './HomepageGuest.css';
 
 
@@ -29,7 +31,7 @@ class HomepageGuest extends Component{
             </article>       
         </article>
         <article className="login-or-signup">
-            <h2><a href="#">Login</a> or <a href="#">create a profile</a> to view all ratings</h2>
+            <h2><Link to="/login">Login</Link> or <Link to="/register">create a profile</Link> to view all ratings</h2>
         </article>
     </main>
         )
