@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import { style } from './RestaurantsWrapper.css';
+import database from '../Database/Database';
+
 import Restaurant from '../Restaurant/Restaurant';
  
 class RestaurantsWrapper extends Component{
@@ -7,14 +9,13 @@ class RestaurantsWrapper extends Component{
         super(props)
     }
     render(){
+        let allRestaurants = database.map(x=> x = <Restaurant {...x}/>)
+
         return (
             <>
             <h1 className="page-heading">All restaurants</h1>
             <article className="all-rated-restaurants">
-                <Restaurant />
-                <Restaurant />
-                <Restaurant />
-                <Restaurant />
+                {allRestaurants}
             </article>
             </>
         )
