@@ -1,5 +1,16 @@
 .details-heading{
-    font-size: 50px;
+    font-size: 60px;
+    background-color: rgba(133, 190, 42, 0.623);
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(104, 6, 6, 0.5);
+    border-radius: 10px;
+    padding: 5px 30px;
+    max-width: fit-content;
+    margin: 20px auto 0px auto;
 }
 .restaurant-details-cointainer{
     margin: 60px auto;
@@ -14,15 +25,14 @@
 }
 .restaurant-details-cointainer h1{
     font-size: 40px;
+    text-shadow: 0px 3px 3px rgba(104, 6, 6, 0.5);
+
 }
 .restaurant-details-cointainer p{
     font-size: 20px;
 }
 .restaurant-details-name{
-    background-color: rgba(133, 190, 42, 0.623);
-    border-radius: 10px;
-    padding: 5px;
-    max-width: fit-content;
+    border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
 }
 .rated-by{
     border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
