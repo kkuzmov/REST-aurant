@@ -18,18 +18,15 @@ class Header extends Component{
             .then(response => this.setState({pets: response}))
     }
     render(){
-        console.log(this.state.pets);
         let allRestaurants = database.map(x=> x = <RestaurantHomepage imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>)
-        let allPets = this.state.pets.map(x => <h1>{x.location}</h1>);
         return (
-        <main>
-            <article>{allPets}</article>
-            <h1 className="top-rated">Welcome, user!</h1>
-            <h1 className="top-rated">Check out our current top rated restaurants: </h1>
-            <article className="all-restaurants-homepage">
-            {allRestaurants}
-            </article>
-        </main>
+            <main>
+                <h1 className="top-rated">Welcome, user!</h1>
+                <h1 className="top-rated">Check out our current top rated restaurants: </h1>
+                <article className="all-restaurants-homepage">
+                {allRestaurants}
+                </article>
+            </main>
         )
     }
 }
