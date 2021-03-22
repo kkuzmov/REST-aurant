@@ -19,8 +19,10 @@ class Header extends Component{
     }
     render(){
         let allRestaurants = database.map(x=> x = <RestaurantHomepage imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>)
+        let allPets = Object.values(this.state.pets).map(x => <p>{x.location}</p>)
         return (
             <main>
+                <article>{allPets}</article>
                 <h1 className="top-rated">Welcome, user!</h1>
                 <h1 className="top-rated">Check out our current top rated restaurants: </h1>
                 <article className="all-restaurants-homepage">
