@@ -6,11 +6,24 @@ import database from '../Database/Database';
 class Header extends Component{
     constructor(props){
         super(props)
+
+        this.state = {
+            pets: []
+        }
+    }
+
+    componentDidMount(){
+        fetch('https://fisher-game.firebaseio.com/catches.json')
+            .then(res => res.json())
+            .then(response => this.setState({pets: response}))
     }
     render(){
+        console.log(this.state.pets);
         let allRestaurants = database.map(x=> x = <RestaurantHomepage imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>)
+        let allPets = this.state.pets.map(x => <h1>{x.location}</h1>);
         return (
         <main>
+            <article>{allPets}</article>
             <h1 className="top-rated">Welcome, user!</h1>
             <h1 className="top-rated">Check out our current top rated restaurants: </h1>
             <article className="all-restaurants-homepage">
