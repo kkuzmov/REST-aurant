@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import RestaurantHomepage from '../RestaurantHomepage/RestaurantHomepage';
 import db from '../../firebase/firebase.config';
+import database from '../Database/Database';
+
 
 class Header extends Component{
     constructor(props){
@@ -15,9 +17,6 @@ class Header extends Component{
         
     }
     render(){
-        let response = db.collection('restaurants');
-        response.get()
-            .then(res => res.docs.forEach(doc => console.log(doc.data())))
 
         return (
             <main>
