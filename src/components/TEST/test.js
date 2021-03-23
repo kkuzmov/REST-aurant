@@ -18,7 +18,7 @@ class Header extends Component{
             .then(res =>{
                 let allFetched = []
                 res.docs.forEach(restaurant => {
-                    allFetched.push({...restaurant.data()})
+                    allFetched.push({...restaurant.data(), id: restaurant.id})
                 })
                 this.setState({'restaurants': allFetched})
             })
@@ -31,7 +31,7 @@ class Header extends Component{
                 <h1 className="top-rated">Welcome, user!</h1>
                 <h1 className="top-rated">Check out our current top rated restaurants: </h1>
                 <article className="all-restaurants-homepage">
-                    {this.state.restaurants.map(x => x = <RestaurantHomepage imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>)}
+                    {this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>)}
                 </article>
             </main>
         )
