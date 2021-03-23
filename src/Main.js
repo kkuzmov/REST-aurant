@@ -12,6 +12,7 @@ import Details from './components/Details/Details';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import test from './components/TEST/test';
 
 
 
@@ -31,6 +32,7 @@ class Main extends Component{
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
+            <Route path="/test" component={test}/>
             <Route path="/register" component={Register}/>
             <Route path="/details/:id" component={Details}/>
             <Route component={ErrorPage}/>
