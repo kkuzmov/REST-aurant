@@ -24,12 +24,13 @@ class Details extends Component{
         this.getOneRestaurant(this.props.match.params.id);
     }
     likeRestaurant(){
-        // this.setState((prevState) => ({ ratedBy: prevState.ratedBy + 1 }));
         console.log(this.state.ratedBy)
         db.collection('restaurants')
             .doc(this.props.match.params.id)
             .update({ratedBy: this.state.ratedBy + 1})
             .then(res => {
+        this.setState((prevState) => ({ ratedBy: prevState.ratedBy + 1 }));
+
                 console.log(res)
             })
     }
