@@ -31,7 +31,6 @@ class HomepageUser extends Component{
         this.getRestaurants();
     }
     render(){
-        console.log(this.state.restaurants)
         let allRestaurants = this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>) || 'Loading...'
         return (
             <main>

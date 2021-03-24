@@ -22,10 +22,15 @@ class Details extends Component{
     componentDidMount(){
         this.getOneRestaurant(this.props.match.params.id);
     }
-    likeRestaurant(){
+    likeRestaurant(id){
         this.setState((prevState) => ({ ratedBy: prevState.ratedBy + 1 }))
+        db.collection('restaurants')
+            .doc(id)
+            .update({ratedBy: this.state.ratedBy})
+            .then(res => console.log(res))
     }
     render(){
+        console.log(this.props.match.params.id)
         return(
             <>
             <h1 className="details-heading">{this.state.name}</h1>
@@ -38,7 +43,7 @@ class Details extends Component{
                 <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                 <article className="details-buttons">
                     <button className="site-button">Save</button>
-                    <button className="site-button" onClick={()=>{this.likeRestaurant()}}>Like</button>
+                    <button className="site-button" onClick={()=>{this.likeRestaurant(this.props.match.params.id)}}>Like</button>
                 </article>
             </article>
             </>
