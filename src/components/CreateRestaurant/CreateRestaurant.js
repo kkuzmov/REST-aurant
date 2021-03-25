@@ -28,7 +28,7 @@ class CreateRestaurant extends Component{
             .then(res => {
                 console.log('created');
                 
-                setTimeout(()=>{ return this.setState({'redirect': true}) }, 3000);
+                setTimeout(()=>{ return this.setState({'redirect': true}) }, 2000);
             });
     }
 

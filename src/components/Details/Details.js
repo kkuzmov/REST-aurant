@@ -13,6 +13,7 @@ class Details extends Component{
         this.state = {}
         this.getOneRestaurant = this.getOneRestaurant.bind(this);
         this.likeRestaurant = this.likeRestaurant.bind(this);
+        this.deleteRestaurant = this.deleteRestaurant.bind(this);
     }
     getOneRestaurant(id){
         db.collection('restaurants')
@@ -24,17 +25,26 @@ class Details extends Component{
         this.getOneRestaurant(this.props.match.params.id);
     }
     likeRestaurant(){
-        console.log(this.state.ratedBy)
         db.collection('restaurants')
             .doc(this.props.match.params.id)
             .update({ratedBy: this.state.ratedBy + 1})
             .then(res => {
-        this.setState((prevState) => ({ ratedBy: prevState.ratedBy + 1 }));
-
+                this.setState((prevState) => ({ ratedBy: prevState.ratedBy + 1 }));
                 console.log(res)
             })
     }
+    deleteRestaurant(){
+        db.collection('restaurants')
+        .doc(this.props.match.params.id)
+        .delete()
+        .then(res => {
+            setTimeout(()=>{ return this.setState({'redirect': true}) }, 2000);
+        });
+    }
     render(){
+        if(this.state.redirect){
+            return <Redirect to="/" /> 
+        }
         return(
             <>
             <h1 className="details-heading">{this.state.name}</h1>
@@ -48,6 +58,7 @@ class Details extends Component{
                 <article className="details-buttons">
                     <button className="site-button">Save</button>
                     <button className="site-button" onClick={this.likeRestaurant}>Like</button>
+                    <button className="site-button"onClick={this.deleteRestaurant}>Delete</button>
                 </article>
             </article>
             </>
