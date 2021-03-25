@@ -3,6 +3,7 @@ import { style } from './Details.css';
 import database from '../Database/Database';
 import { Route, Link, NavLink, Switch, Redirect } from 'react-router-dom';
 import db from '../../firebase/firebase.config';
+import { getOneRestaurant } from '../../services/services.js';
 
 import map from './map.jpeg'
 
@@ -11,18 +12,18 @@ class Details extends Component{
     constructor(props){
         super(props)
         this.state = {}
-        this.getOneRestaurant = this.getOneRestaurant.bind(this);
+        this.getOne = this.getOne.bind(this);
         this.likeRestaurant = this.likeRestaurant.bind(this);
         this.deleteRestaurant = this.deleteRestaurant.bind(this);
     }
-    getOneRestaurant(id){
-        db.collection('restaurants')
-            .doc(id)
-            .get()
-            .then(res => this.setState({...res.data()}))
+    getOne(id){
+        getOneRestaurant(id)
+            .then(res => {
+                this.setState({...res.data()})
+            })
     }
     componentDidMount(){
-        this.getOneRestaurant(this.props.match.params.id);
+        this.getOne(this.props.match.params.id);
     }
     likeRestaurant(){
         db.collection('restaurants')
