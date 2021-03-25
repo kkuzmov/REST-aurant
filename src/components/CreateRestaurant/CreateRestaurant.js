@@ -18,7 +18,7 @@ class CreateRestaurant extends Component{
         event.preventDefault();
         let userInputNewRestaurant = {
             'name': event.target.name.value,
-            'city': event.target.city.value,
+            'location': event.target.location.value,
             'rating': Number(event.target.rating.value),
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
@@ -45,7 +45,7 @@ class CreateRestaurant extends Component{
                         <input type="text" name="name" placeholder="Name" required />
                     </article>
                     <article className="form-input">
-                        <input type="text" name="city" placeholder="City" required />
+                        <input type="text" name="location" placeholder="City" required />
                     </article>
 
                     <article className="form-input">
