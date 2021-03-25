@@ -27,13 +27,14 @@ class CreateRestaurant extends Component{
             .add({...userInputNewRestaurant})
             .then(res => {
                 console.log('created');
-                this.setState({'redirect': true})
+                
+                setTimeout(()=>{ return this.setState({'redirect': true}) }, 3000);
             });
     }
 
     render(){
         if(this.state.redirect){
-           return setTimeout(()=>{<Redirect to="/" />}, 2000);
+            return <Redirect to="/" /> 
         }
         return(
             <>
