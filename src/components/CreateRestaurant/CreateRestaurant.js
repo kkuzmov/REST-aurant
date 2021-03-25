@@ -1,12 +1,15 @@
 import { Component } from "react";
 import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
+import { Redirect } from "react-router";
 
 
 class CreateRestaurant extends Component{
     constructor(props){
         super(props)
-        this.state = {}
+        this.state = {
+            "redirect": false,
+        }
         this.create = this.create.bind(this);
     }
 
@@ -22,10 +25,16 @@ class CreateRestaurant extends Component{
         }
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
-            .then(res => console.log(res));
+            .then(res => {
+                console.log('created');
+                this.setState({'redirect': true})
+            });
     }
 
     render(){
+        if(this.state.redirect){
+           return setTimeout(()=>{<Redirect to="/" />}, 2000);
+        }
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
