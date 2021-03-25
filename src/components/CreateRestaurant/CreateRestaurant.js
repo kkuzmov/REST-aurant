@@ -2,12 +2,30 @@ import { Component } from "react";
 import { style } from './CreateRestaurant.css';
 
 class CreateRestaurant extends Component{
+    constructor(props){
+        super(props)
+        this.state = {}
+        this.create = this.create.bind(this);
+    }
+
+
+    create(event){
+        event.preventDefault();
+        let userInputNewRestaurant = {
+            'name': event.target.name.value,
+            'city': event.target.city.value,
+            'rating': Number(event.target.rating.value),
+            'description': event.target.description.value,
+        }
+        console.log(userInputNewRestaurant);
+    }
+
     render(){
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
             <article className="authentication-container">
-                <form action="#" className="create-restaurant-form">
+                <form className="create-restaurant-form" onSubmit={this.create}>
                     <article className="form-input">
                         <input type="text" name="name" placeholder="Name" required />
                     </article>
