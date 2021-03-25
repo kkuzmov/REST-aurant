@@ -18,6 +18,7 @@ class CreateRestaurant extends Component{
             'city': event.target.city.value,
             'rating': Number(event.target.rating.value),
             'description': event.target.description.value,
+            'imageUrl': event.target.imageUrl.value,
         }
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
@@ -44,7 +45,8 @@ class CreateRestaurant extends Component{
                         <textarea name="description" id="description" cols="39" rows="10" placeholder="Write a review here..."></textarea>
                     </article>
                     <article className="form-input">
-                        <input type="file" id="photo" name="uploaded-picture" />
+                        {/* <input type="file" id="photo" name="uploaded-picture" /> */}
+                        <input type="url" name="imageUrl" placeholder="Place image link here." required></input>
                     </article>
                     <button className="site-button">Create</button>
                 </form>
