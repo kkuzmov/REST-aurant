@@ -1,5 +1,7 @@
 import { Component } from "react";
 import { style } from './CreateRestaurant.css';
+import db from '../../firebase/firebase.config';
+
 
 class CreateRestaurant extends Component{
     constructor(props){
@@ -17,7 +19,9 @@ class CreateRestaurant extends Component{
             'rating': Number(event.target.rating.value),
             'description': event.target.description.value,
         }
-        console.log(userInputNewRestaurant);
+        db.collection('restaurants')
+            .add({...userInputNewRestaurant})
+            .then(res => console.log(res));
     }
 
     render(){
