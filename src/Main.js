@@ -8,6 +8,7 @@ import HomepageUser from './components/HomepageUser/HomepageUser';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
+import CreateRestaurantFUNC from './components/CreateRestaurant/CreateRestaurantFUNC';
 import Details from './components/Details/Details';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import Profile from './components/Profile/Profile';
@@ -18,7 +19,6 @@ import test from './components/TEST/test';
 
 import { style } from './Main.css';
 
-//TESTING WITH ONE LOOK PER TIME - LEAVE ONLY HEADER AND FOOTER AS CONSTANTS!
 
 
 class Main extends Component{
@@ -28,7 +28,7 @@ class Main extends Component{
             <Header />
             <Switch>
             <Route path="/" exact component={HomepageUser}/>
-            <Route path="/create" component={CreateRestaurant}/>
+            <Route path="/create" component={CreateRestaurantFUNC}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
