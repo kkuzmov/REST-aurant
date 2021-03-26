@@ -2,6 +2,7 @@ import { Component } from "react";
 import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
+import Notifications from '../Notifications/Notifications';
 
 
 class CreateRestaurant extends Component{
@@ -9,6 +10,7 @@ class CreateRestaurant extends Component{
         super(props)
         this.state = {
             "redirect": false,
+            "error": true
         }
         this.create = this.create.bind(this);
     }
@@ -36,6 +38,7 @@ class CreateRestaurant extends Component{
         if(this.state.redirect){
             return <Redirect to="/" /> 
         }
+
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>

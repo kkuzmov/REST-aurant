@@ -11,7 +11,7 @@ class Register extends Component{
             <>
             <h1 className="login-register-heading">Register</h1>
             <article className="authentication-container">
-                <form action="#" className="authentication-form">
+                <form className="authentication-form">
                     <article className="form-input">
                         <input type="email" name="email" placeholder="E-mail" />
                     </article>
