@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import { style } from './Navigation.css';
 
 
@@ -9,8 +11,8 @@ class NavigationGuest extends Component{
     render(){
         return (
             <ul className="navigation">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <Link to="/login" className="nav-link">Login</Link>
+                <Link to="/register" className="nav-link">Register</Link>
             </ul>
         )
     }
