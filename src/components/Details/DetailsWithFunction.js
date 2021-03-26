@@ -7,25 +7,47 @@ import map from './map.jpeg'
 import { useEffect, useState } from 'react';
 
 function DetailsWithFunction({match}){
-
+    //set current restaurant
     let [restaurant, setRestaurant] = useState({});
     useEffect(()=>{
         getOneRestaurant(match.params.id)
         .then(res =>{
             let currentRestaurant = {...res.data()};
-            console.log(currentRestaurant);
             setRestaurant(currentRestaurant)
         })
     }, [])
+
+    // add like to likes
+
+    function like(){
+        let incrementedLikes = restaurant.ratedBy + 1;
+        db.collection('restaurants')
+            .doc(match.params.id)
+            .update({ratedBy: incrementedLikes})
+            .then(rest => {
+                console.log(rest)
+                setRestaurant(state => ({...state, ratedBy: incrementedLikes}))
+            })
+    }
     
     
 
     return(
         <>
-        <h1>{restaurant.name}</h1>
-        <h1>{restaurant.description}</h1>
-        <h1>{restaurant.imageUrl}</h1>
-        <h1>{restaurant.location}</h1>
+            <h1 className="details-heading">{restaurant.name}</h1>
+            <article className="restaurant-details-cointainer">
+                <img src={restaurant.imageUrl} alt={restaurant.name} />
+                <h1 className="restaurant-details-name">{restaurant.location}</h1>
+                <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
+                <h3 className="rated-by">Average rating: {restaurant.rating} *</h3>
+                <p className="restaurant-details-description">{restaurant.description}</p>
+                <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
+                <article className="details-buttons">
+                    <button className="site-button">Save</button>
+                    <button className="site-button" onClick={like}>Like</button>
+                    <button className="site-button"onClick={restaurant.deleteRestaurant}>Delete</button>
+                </article>
+            </article>
         </>
     )
 }
