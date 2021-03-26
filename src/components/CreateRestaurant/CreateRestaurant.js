@@ -1,22 +1,13 @@
-import { Component } from "react";
 import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
-import Notifications from '../Notifications/Notifications';
+import { useHistory } from 'react-router-dom';
 
 
-class CreateRestaurant extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            "redirect": false,
-            "error": true
-        }
-        this.create = this.create.bind(this);
-    }
+function CreateRestaurant(){
+    let history = useHistory();
 
-
-    create(event){
+   function create(event){
         event.preventDefault();
         let userInputNewRestaurant = {
             'name': event.target.name.value,
@@ -28,22 +19,15 @@ class CreateRestaurant extends Component{
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
-                console.log('created');
-                
-                setTimeout(()=>{ return this.setState({'redirect': true}) }, 2000);
+                history.push('/') 
             });
     }
-
-    render(){
-        if(this.state.redirect){
-            return <Redirect to="/" /> 
-        }
 
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
             <article className="authentication-container">
-                <form className="create-restaurant-form" onSubmit={this.create}>
+                <form className="create-restaurant-form" onSubmit={create}>
                     <article className="form-input">
                         <input type="text" name="name" placeholder="Name" required />
                     </article>
@@ -66,7 +50,6 @@ class CreateRestaurant extends Component{
             </article>
         </>
         )
-    }
 }
 
 export default CreateRestaurant;
