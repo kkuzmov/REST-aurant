@@ -9,7 +9,7 @@ class Login extends Component{
     render(){
         return (
             <>
-            <h1 className="login-register-heading">Login</h1>
+            <h1 className="page-heading">Login</h1>
             <article className="authentication-container">
                 <form className="authentication-form">
                     <article className="form-input">
