@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
-import DetailsWithFunction from './components/Details/DetailsWithFunction';
+import DetailsWithClass_old from './components/Details/DetailsWithClass_old';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
@@ -32,7 +32,7 @@ class Main extends Component{
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
-            <Route path="/test/:id" component={DetailsWithFunction}/>
+            <Route path="/test/:id" component={DetailsWithClass_old}/>
             <Route path="/register" component={Register}/>
             <Route path="/details/:id" component={Details}/>
             <Route component={ErrorPage}/>
