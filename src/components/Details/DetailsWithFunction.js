@@ -1,5 +1,5 @@
 import { style } from './Details.css';
-import { Route, Link, NavLink, Switch, Redirect } from 'react-router-dom';
+import { Route, Link, NavLink, Switch, Redirect, useHistory } from 'react-router-dom';
 import db from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 
@@ -7,6 +7,8 @@ import map from './map.jpeg'
 import { useEffect, useState } from 'react';
 
 function DetailsWithFunction({match}){
+    let history = useHistory();
+
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
     useEffect(()=>{
@@ -19,15 +21,22 @@ function DetailsWithFunction({match}){
 
     // add like to likes
 
-    function like(){
+    function likeRestaurant(){
         let incrementedLikes = restaurant.ratedBy + 1;
         db.collection('restaurants')
             .doc(match.params.id)
             .update({ratedBy: incrementedLikes})
             .then(rest => {
-                console.log(rest)
                 setRestaurant(state => ({...state, ratedBy: incrementedLikes}))
             })
+    }
+    function deleteRestaurant(){
+        db.collection('restaurants')
+            .doc(match.params.id)
+            .delete()
+            .then(
+                setTimeout(()=> history.push('/'), 1500)
+            )
     }
     
     
@@ -44,8 +53,8 @@ function DetailsWithFunction({match}){
                 <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                 <article className="details-buttons">
                     <button className="site-button">Save</button>
-                    <button className="site-button" onClick={like}>Like</button>
-                    <button className="site-button"onClick={restaurant.deleteRestaurant}>Delete</button>
+                    <button className="site-button" onClick={likeRestaurant}>Like</button>
+                    <button className="site-button"onClick={deleteRestaurant}>Delete</button>
                 </article>
             </article>
         </>
