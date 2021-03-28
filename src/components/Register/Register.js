@@ -3,9 +3,6 @@ import { style } from './Register.css';
 
 
 class Register extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return (
             <>

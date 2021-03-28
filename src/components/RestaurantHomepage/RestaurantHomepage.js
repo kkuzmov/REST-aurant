@@ -3,9 +3,6 @@ import { style } from './RestaurantHomepage.css';
 import { Link } from 'react-router-dom';
  
 class RestaurantHomepage extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         let url = `/details/${this.props.id}`
 

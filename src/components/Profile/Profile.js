@@ -12,7 +12,7 @@ class Profile extends Component{
             <h1 className="page-heading">My profile</h1>
             <article className="user-profile">
                 <article className="user-info">
-                    <img src={photo} alt="user-profile-picture" />
+                    <img src={photo} alt="user-profile" />
                     <h4 className="name">Krum Kuzmov</h4>
                     <p className="email">kkuzmov@yahoo.zom</p>
                 </article>
