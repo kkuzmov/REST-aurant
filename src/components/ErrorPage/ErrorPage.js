@@ -2,9 +2,6 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class ErrorPage extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return(
             <article className="error-container">

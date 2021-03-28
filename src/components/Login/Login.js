@@ -3,9 +3,6 @@ import { style } from './Login.css';
 
 
 class Login extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return (
             <>

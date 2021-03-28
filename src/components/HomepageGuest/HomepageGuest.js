@@ -5,9 +5,6 @@ import { style } from './HomepageGuest.css';
 
 
 class HomepageGuest extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return (
     <main>

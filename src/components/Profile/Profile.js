@@ -3,9 +3,6 @@ import { style } from './Profile.css';
 import photo from './photo.jpg'
  
 class Profile extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return (
             <>

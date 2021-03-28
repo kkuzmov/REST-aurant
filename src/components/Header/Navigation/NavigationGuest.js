@@ -5,9 +5,6 @@ import { style } from './Navigation.css';
 
 
 class NavigationGuest extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return (
             <ul className="navigation">
