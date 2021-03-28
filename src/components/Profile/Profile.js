@@ -9,21 +9,21 @@ class Profile extends Component{
     render(){
         return (
             <>
-            <h1 class="page-heading">My profile</h1>
-            <article class="user-profile">
-                <article class="user-info">
+            <h1 className="page-heading">My profile</h1>
+            <article className="user-profile">
+                <article className="user-info">
                     <img src={photo} alt="user-profile-picture" />
-                    <h4 class="name">Krum Kuzmov</h4>
-                    <p class="email">kkuzmov@yahoo.zom</p>
+                    <h4 className="name">Krum Kuzmov</h4>
+                    <p className="email">kkuzmov@yahoo.zom</p>
                 </article>
-                <article class="user-ratings-and-created">
-                    <article class="created-and-rated">
-                    <h3 class="created-restaurants">11 places created by you</h3>
-                    <button class="site-button">View all created</button>
+                <article className="user-ratings-and-created">
+                    <article className="created-and-rated">
+                    <h3 className="created-restaurants">11 places created by you</h3>
+                    <button className="site-button">View all created</button>
                     </article>
-                    <article class="created-and-rated">
-                    <h3 class="rated-restaurants">11 places rated by you</h3>
-                    <button class="site-button">View all rated</button>
+                    <article className="created-and-rated">
+                    <h3 className="rated-restaurants">11 places rated by you</h3>
+                    <button className="site-button">View all rated</button>
                     </article>
                 </article>
             </article>

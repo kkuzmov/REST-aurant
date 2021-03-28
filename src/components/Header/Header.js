@@ -7,7 +7,7 @@ import NavigationGuest from './Navigation/NavigationGuest';
 function Header(){
         return (
             <header className="main-header">
-                <Link to="/" className="nav-link"><a><img src={logo} alt="restaurant logo" className="logo-left"/></a></Link>
+                <Link to="/" className="nav-link"><img src={logo} alt="restaurant logo" className="logo-left"/></Link>
                 <nav>
                    <NavigationUser />
                 </nav>
