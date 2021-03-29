@@ -2,7 +2,7 @@ import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
 import { useHistory } from 'react-router-dom';
-
+import { NotificationManager } from 'react-notifications';
 
 function CreateRestaurant(){
     let history = useHistory();
@@ -19,6 +19,7 @@ function CreateRestaurant(){
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
+                NotificationManager.info('Info message');
                 history.push('/') 
             });
     }
