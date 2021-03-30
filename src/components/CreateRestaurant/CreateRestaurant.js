@@ -2,7 +2,7 @@ import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
 import { useHistory } from 'react-router-dom';
-import testInput from '../../services/Helpers/helpers';
+import testInput from '../../services/Helpers/createNewRestaurant';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useState } from 'react';
 
@@ -33,12 +33,12 @@ function CreateRestaurant(){
     }
  
     function onBlurHandler(e){
-        // if(e.target.value.length < 10){
-        //     setErrMessage('Name is too short!')
-        //     return false;
-        // }else{
-        //     setErrMessage('')
-        // }
+        if(e.target.value.length < 10){
+            setErrMessage('Name is too short!')
+            return false;
+        }else{
+            setErrMessage('')
+        }
     }
         return(
             <>
