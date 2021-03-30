@@ -16,11 +16,7 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
         }
-       if(validator(userInputNewRestaurant)){
-           console.log('validator works!')
-       }else{
-        console.log('bad input!')
-       }
+       console.log(validator(userInputNewRestaurant));
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
