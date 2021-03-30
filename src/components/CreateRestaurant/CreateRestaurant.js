@@ -2,7 +2,7 @@ import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
 import { useHistory } from 'react-router-dom';
-import validator from '../../validator/validator';
+import testInput from '../../services/Helpers/helpers';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useState } from 'react';
 
@@ -19,23 +19,27 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
         }
-       
-        db.collection('restaurants')
+        if(testInput(userInputNewRestaurant)){
+            let message = testInput(userInputNewRestaurant);
+            setErrMessage(message);
+        }else{
+            db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
                 history.push('/') 
             });
-    }
-
-    function onBlurHandler(e){
-        console.log(e.target.value);
-        if(e.target.value.length < 10){
-            setErrMessage('Name is too short!')
-        }else{
-            setErrMessage('')
         }
+        
     }
-
+ 
+    function onBlurHandler(e){
+        // if(e.target.value.length < 10){
+        //     setErrMessage('Name is too short!')
+        //     return false;
+        // }else{
+        //     setErrMessage('')
+        // }
+    }
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
