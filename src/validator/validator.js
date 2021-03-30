@@ -1,8 +1,7 @@
 function validator(data){
-let isValid = true;
+let isValid = false;
 
 if(data.name.length < 5){
-    // isValid = false;
     return `Name - "${data.name}" - shorter than required!`;
 }else if(data.name.length > 25){
     return `Name - "${data.name}" - longer than required!`;
@@ -18,6 +17,7 @@ if(data.name.length < 5){
     return `Please provide a correct link to photo`;
 }
 else{
+    isValid = true;
     return isValid;
 }
 

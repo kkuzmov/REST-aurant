@@ -3,9 +3,12 @@ import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
 import { useHistory } from 'react-router-dom';
 import validator from '../../validator/validator';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { useState } from 'react';
 
 function CreateRestaurant(){
     let history = useHistory();
+    const [ errMessage, setErrMessage ] = useState('');
 
    function create(event){
         event.preventDefault();
@@ -16,7 +19,7 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
         }
-       console.log(validator(userInputNewRestaurant));
+       
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
@@ -24,13 +27,24 @@ function CreateRestaurant(){
             });
     }
 
+    function onBlurHandler(e){
+        console.log(e.target.value);
+        if(e.target.value.length < 10){
+            setErrMessage('Name is too short!')
+        }else{
+            setErrMessage('')
+        }
+    }
+
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
+            <ErrorMessage>{errMessage}</ErrorMessage>
+
             <article className="authentication-container">
                 <form className="create-restaurant-form" onSubmit={create}>
                     <article className="form-input">
-                        <input type="text" name="name" placeholder="Name" required />
+                        <input type="text" name="name" placeholder="Name" required onBlur={onBlurHandler} />
                     </article>
                     <article className="form-input">
                         <input type="text" name="location" placeholder="City" required />
