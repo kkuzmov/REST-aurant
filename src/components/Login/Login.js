@@ -21,7 +21,6 @@ function Login (){
         }else{
             console.log('logged in user!')
         }
-        
     }
 
     return (
