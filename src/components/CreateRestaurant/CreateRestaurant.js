@@ -2,6 +2,7 @@ import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
 import { Redirect } from "react-router";
 import { useHistory } from 'react-router-dom';
+import validator from '../../validator/validator';
 
 function CreateRestaurant(){
     let history = useHistory();
@@ -15,6 +16,11 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
         }
+       if(validator(userInputNewRestaurant)){
+           console.log('validator works!')
+       }else{
+        console.log('bad input!')
+       }
         db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
