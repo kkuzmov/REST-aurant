@@ -20,14 +20,37 @@ function Register(){
             let message = testRegisterUser(userInputToRegister);
             setErrMessage(message);
         }else{
+            createNotification('success')
             console.log('Registered user!')
         }
     }
     
+    function createNotification(type) {
+        return () => {
+          switch (type) {
+            case 'info':
+              NotificationManager.info('Info message');
+              break;
+            case 'success':
+              NotificationManager.success('Success message', 'Title here');
+              break;
+            case 'warning':
+              NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+              break;
+            case 'error':
+              NotificationManager.error('Error message', 'Click me!', 5000, () => {
+                alert('callback');
+              });
+              break;
+          }
+        }
+    }
+
         return (
             <>
             <h1 className="page-heading">Register</h1>
             <ErrorMessage>{errMessage}</ErrorMessage>
+            <NotificationContainer/>
             <article className="authentication-container">
                 <form className="authentication-form" onSubmit={onRegisterSubmitHandler}>
                     <article className="form-input">
