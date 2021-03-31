@@ -19,6 +19,7 @@ function Login (){
             let message = testLoginUser(userInputToLogin);
             setErrMessage(message);
         }else{
+            setErrMessage('');
             console.log('logged in user!')
         }
     }
@@ -31,7 +32,7 @@ function Login (){
         <article className="authentication-container">
             <form className="authentication-form" onSubmit={onLoginSubmitHandler}>
                 <article className="form-input">
-                    <input type="email" name="email" placeholder="E-mail"/>
+                    <input type="text" name="email" placeholder="E-mail"/>
                 </article>
                 <article className="form-input">
                     <input type="password" name="password" placeholder="Password"/>

@@ -20,6 +20,7 @@ function Register(){
             let message = testRegisterUser(userInputToRegister);
             setErrMessage(message);
         }else{
+            setErrMessage('');
             console.log('Registered user!')
         }
     }
@@ -31,7 +32,7 @@ function Register(){
             <article className="authentication-container">
                 <form className="authentication-form" onSubmit={onRegisterSubmitHandler}>
                     <article className="form-input">
-                        <input type="text" name="email" placeholder="E-mail" />
+                        <input type="email" name="email" placeholder="E-mail" />
                     </article>
                     <article className="form-input">
                         <input type="text" name="username" placeholder="Username" />
