@@ -4,9 +4,9 @@ function testInput(input){
     }else if(input.name.length > 25){
         return 'Restaurant name is too long.'
     }else if(input.location.length < 3){
-        return 'Location is too short.'
+        return 'Location name is too short.'
     }else if(input.name.length > 25){
-        return 'Location is too long.'
+        return 'Location name is too long.'
     }else if(isNaN(input.rating) || input.rating < 0 || input.rating > 5){
         return 'Please enter a rate between 0 and 5.'
     }else if(input.description.length < 10){

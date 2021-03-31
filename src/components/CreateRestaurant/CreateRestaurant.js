@@ -32,23 +32,21 @@ function CreateRestaurant(){
         
     }
  
-    function onBlurHandler(e){
-        if(e.target.value.length < 10){
-            setErrMessage('Name is too short!')
-            return false;
-        }else{
-            setErrMessage('')
-        }
-    }
+    // function onBlurHandler(e){
+    //     if(e.target.value.length < 10){
+    //         setErrMessage('Name is too short!')
+    //         return false;
+    //     }else{
+    //         setErrMessage('')
+    //     }
+    // }
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
-            <ErrorMessage>{errMessage}</ErrorMessage>
-
             <article className="authentication-container">
                 <form className="create-restaurant-form" onSubmit={create}>
                     <article className="form-input">
-                        <input type="text" name="name" placeholder="Name" required onBlur={onBlurHandler} />
+                        <input type="text" name="name" placeholder="Name" required/>
                     </article>
                     <article className="form-input">
                         <input type="text" name="location" placeholder="City" required />
@@ -65,6 +63,7 @@ function CreateRestaurant(){
                         <input type="url" name="imageUrl" placeholder="Place image link here." required></input>
                     </article>
                     <button className="site-button">Create</button>
+                    <ErrorMessage>{errMessage}</ErrorMessage>
                 </form>
             </article>
         </>
