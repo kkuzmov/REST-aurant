@@ -28,7 +28,6 @@ function Register(){
             return (
             <>
             <h1 className="page-heading">Register</h1>
-            <ErrorMessage>{errMessage}</ErrorMessage>
             <article className="authentication-container">
                 <form className="authentication-form" onSubmit={onRegisterSubmitHandler}>
                     <article className="form-input">
@@ -45,6 +44,7 @@ function Register(){
                     </article>
                     <button className="site-button">Sign up</button>
                 </form>
+            <ErrorMessage>{errMessage}</ErrorMessage>
             </article>
             </>
         )

@@ -32,7 +32,7 @@ function Login (){
         <article className="authentication-container">
             <form className="authentication-form" onSubmit={onLoginSubmitHandler}>
                 <article className="form-input">
-                    <input type="text" name="email" placeholder="E-mail"/>
+                    <input type="email" name="email" placeholder="E-mail"/>
                 </article>
                 <article className="form-input">
                     <input type="password" name="password" placeholder="Password"/>
