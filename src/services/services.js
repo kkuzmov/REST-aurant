@@ -1,10 +1,10 @@
 import db from '../firebase/firebase.config';
+import firebase from 'firebase';
+
 
 export function getOneRestaurant(id){
    return db.collection('restaurants').doc(id).get()
 }
-// export function likeRestaurant(id, current){
-//     db.collection('restaurants')
-//         .doc(id)
-//         .update({ratedBy: current.state.ratedBy + 1})
-// }
+export function registerUser(email, password){
+   return firebase.auth().createUserWithEmailAndPassword(email, password) 
+}

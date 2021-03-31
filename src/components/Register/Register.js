@@ -1,11 +1,15 @@
 import { Component } from 'react';
 import { style } from './Register.css';
 import testRegisterUser from '../../services/Helpers/registerUser';
+import { registerUser } from '../../services/services';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 
 function Register(){
+    let history = useHistory();
     const [ errMessage, setErrMessage ] = useState('');
     
     function onRegisterSubmitHandler(event){
@@ -21,7 +25,11 @@ function Register(){
             setErrMessage(message);
         }else{
             setErrMessage('');
-            console.log('Registered user!')
+            registerUser(event.target.email.value, event.target.password.value)
+                .then(res => {
+                    history.push('/');
+                })
+                .catch(err => setErrMessage(err.message))
         }
     }
     
