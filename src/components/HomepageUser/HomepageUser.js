@@ -24,6 +24,8 @@ class HomepageUser extends Component{
             res.docs.forEach(restaurant => {
                 allFetched.push({...restaurant.data(), id: restaurant.id})
             })
+            allFetched = allFetched.sort((a, b) => b.ratedBy - a.ratedBy).slice(0, 3)
+            console.log(allFetched)
             this.setState({'restaurants': allFetched})
         })
     }
