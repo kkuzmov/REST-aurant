@@ -24,15 +24,13 @@ function Login (){
             loginUser(event.target.email.value, event.target.password.value)
                 .then(res => console.log(res))
                 .catch(err => setErrMessage(err.message));
-            
+            console.log('USER IS LOGGED IN!')
         }
     }
 
     return (
         <>
         <h1 className="page-heading">Login</h1>
-        <ErrorMessage>{errMessage}</ErrorMessage>
-
         <article className="authentication-container">
             <form className="authentication-form" onSubmit={onLoginSubmitHandler}>
                 <article className="form-input">
@@ -43,6 +41,7 @@ function Login (){
                 </article>
                 <button className="site-button">Login</button>
             </form>
+        <ErrorMessage>{errMessage}</ErrorMessage>
         </article>
         </>
     )
