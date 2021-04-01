@@ -4,10 +4,12 @@
 html{
     box-sizing: border-box;
     margin: 0;
+    background: url("https://pixabay.com/get/g5fe943370be69f5f8085504eb90a6980c98e608cff5a386350816bcca5223071820c2d134c170b1a8481543b4cd107a1_1920.jpg");
+    background-size: cover;
 }
 body{
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 50px auto;
     min-height: 100vh;
     font-family: 'Indie Flower', serif;
     color: rgb(167, 20, 20);
@@ -16,6 +18,9 @@ body{
     background: rgb(255,215,0);
     background: linear-gradient(312deg, rgba(255,215,0,0.7708217075892857) 0%, rgba(255,255,0,0.7624183462447479) 54%, rgba(9,133,0,0.7960317916228992) 100%); 
 }
+/* .container{
+
+} */
 body a{
     text-decoration: none;
 }

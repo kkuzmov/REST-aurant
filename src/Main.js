@@ -24,7 +24,7 @@ import { style } from './Main.css';
 class Main extends Component{
     render(){
         return(
-           <>
+           <div className="container">
             <Header />
             <Switch>
             <Route path="/" exact component={HomepageUser}/>
@@ -38,7 +38,7 @@ class Main extends Component{
             <Route component={ErrorPage}/>
             </Switch>
             <Footer />
-           </>
+            </div>
         )
     }
 }
