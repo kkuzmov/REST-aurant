@@ -15,9 +15,11 @@
     font-size: 33px;
     padding: 0px;
     margin: 20px 0px;
+    min-height: 96px;
 }
 .restaurant-card p{
     padding: 0px;
     font-size: 20px;
+    min-height: 86px;
     margin-bottom: 30px;
 }

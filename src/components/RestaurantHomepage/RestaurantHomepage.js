@@ -11,7 +11,7 @@ class RestaurantHomepage extends Component{
                 <img src={this.props.imageUrl} alt={this.props.name}/>
                 <h4>{this.props.name}</h4>
                 <p>{this.props.description}</p>
-                <Link to={url}><button className="site-button">Read more</button></Link>
+                <Link to={url}><button className="site-button homepage-button">Read more</button></Link>
                 
             </article>
         )

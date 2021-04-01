@@ -11,7 +11,7 @@ function testInput(input){
         return 'Please enter a rate between 0 and 5.'
     }else if(input.description.length < 10){
         return 'Description is too short, please provide more information on the restaurant.'
-    }else if(input.description.length > 20){
+    }else if(input.description.length > 200){
         return 'Description is too long, please be briefer.'
     }else if(!input.imageUrl.startsWith('http') || !input.imageUrl.startsWith('https')){
         return 'Please provide a correct link to photo.'
