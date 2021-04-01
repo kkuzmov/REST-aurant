@@ -55,7 +55,7 @@ function CreateRestaurant(){
                     </article>
 
                     <article className="form-input">
-                        <input type="number" min="1" max="5" name="rating" placeholder="Rating" required />
+                        <input type="number" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required />
                     </article>
                     <article className="form-input textarea-input">
                         <textarea name="description" id="description" cols="39" rows="10" placeholder="Write a review here..."></textarea>
