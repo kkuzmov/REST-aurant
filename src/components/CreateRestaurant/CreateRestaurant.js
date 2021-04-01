@@ -18,6 +18,8 @@ function CreateRestaurant(){
             'rating': Number(event.target.rating.value),
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
+            'ratedBy': 0,
+            'rating': 3
         }
         if(testInput(userInputNewRestaurant)){
             let message = testInput(userInputNewRestaurant);
