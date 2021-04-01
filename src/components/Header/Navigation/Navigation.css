@@ -1,6 +1,21 @@
 .navigation{
     display: flex;
 }
+@media all and (max-width: 600px){
+    .navigation{
+        display: flex;
+        flex-direction: column;
+    }
+    .navigation .nav-link{
+        color:rgb(56, 83, 1);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.26);
+        font-size: 25px;
+        margin-right: 25px;
+    }
+    .navigation .nav-link:hover{
+        color:rgb(118, 141, 73);
+    }
+}
 .nav-link{
     text-decoration: none;
     color:rgb(102, 151, 2);
