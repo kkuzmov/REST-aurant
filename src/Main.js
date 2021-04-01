@@ -10,6 +10,7 @@ import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
 import DetailsWithClass_old from './components/Details/DetailsWithClass_old';
+import EditRestaurant from './components/EditRestaurant/EditRestaurant';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
@@ -35,6 +36,7 @@ class Main extends Component{
             <Route path="/test/:id" component={DetailsWithClass_old}/>
             <Route path="/register" component={Register}/>
             <Route path="/details/:id" component={Details}/>
+            <Route path="/edit/:id" component={EditRestaurant}/>
             <Route component={ErrorPage}/>
             </Switch>
             <Footer />

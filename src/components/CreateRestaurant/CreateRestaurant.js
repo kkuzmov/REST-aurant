@@ -1,6 +1,5 @@
 import { style } from './CreateRestaurant.css';
 import db from '../../firebase/firebase.config';
-import { Redirect } from "react-router";
 import { useHistory } from 'react-router-dom';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';

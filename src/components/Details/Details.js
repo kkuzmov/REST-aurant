@@ -39,7 +39,6 @@ function DetailsWithFunction({match}){
             )
     }
     
-    
 
     return(
         <>
@@ -55,6 +54,7 @@ function DetailsWithFunction({match}){
                     <button className="site-button">Save</button>
                     <button className="site-button" onClick={likeRestaurant}>Like</button>
                     <button className="site-button"onClick={deleteRestaurant}>Delete</button>
+                    <Link to={`/edit/${match.params.id}`}><button className="site-button">Edit</button></Link>
                 </article>
             </article>
         </>
