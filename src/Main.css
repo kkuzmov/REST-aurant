@@ -5,7 +5,7 @@ html{
     box-sizing: border-box;
     margin: 0;
     background: url("https://pixabay.com/get/g5fe943370be69f5f8085504eb90a6980c98e608cff5a386350816bcca5223071820c2d134c170b1a8481543b4cd107a1_1920.jpg");
-    background-size: cover;
+    background-size: contain;
 }
 body{
     max-width: 1200px;
