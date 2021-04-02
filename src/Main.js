@@ -14,6 +14,7 @@ import EditRestaurant from './components/EditRestaurant/EditRestaurant';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import { AuthProvider } from './components/Auth/Auth';
 import test from './components/TEST/test';
 
 
@@ -25,7 +26,8 @@ import { style } from './Main.css';
 class Main extends Component{
     render(){
         return(
-           <div className="container">
+            <AuthProvider>
+            <div className="container">
             <Header />
             <Switch>
             <Route path="/" exact component={HomepageUser}/>
@@ -41,6 +43,7 @@ class Main extends Component{
             </Switch>
             <Footer />
             </div>
+            </AuthProvider>
         )
     }
 }
