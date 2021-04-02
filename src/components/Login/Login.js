@@ -1,17 +1,26 @@
-import { Component } from 'react';
+import { Component, useContext } from 'react';
 import { style } from './Login.css';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import testLoginUser from '../../services/Helpers/loginUser';
 import { loginUser } from '../../services/services';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { AuthContext } from '../Auth/Auth';
+
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 
 function Login (){
-    const [ errMessage, setErrMessage ] = useState('');
     let history = useHistory();
+    const { currentUser } = useContext(AuthContext);
 
+    const [ errMessage, setErrMessage ] = useState('');
+
+    if(currentUser){
+        console.log('user is already logged in!')
+        return <Redirect to="/" />
+    }
+    
     function onLoginSubmitHandler(event){
         event.preventDefault();
         let userInputToLogin = {
@@ -28,7 +37,6 @@ function Login (){
                     history.push('/');
                 })
                 .catch(err => setErrMessage(err.message));
-            console.log('USER IS LOGGED IN!')
         }
     }
 
