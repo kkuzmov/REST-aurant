@@ -12,8 +12,8 @@ function NavigationUser(){
             .then(res => console.log('user is logged out!'))
     }
     const { currentUser } = useContext(AuthContext);
-    let email = currentUser.email;   
-
+    let displayName = currentUser ? currentUser.email : 'Guest';
+    
     return (
         <>
         <ul className="navigation">
@@ -22,7 +22,7 @@ function NavigationUser(){
             <Link to="/profile" className="nav-link">Profile</Link>
             <Link to="" className="nav-link" onClick={logout}>Logout</Link>
         </ul>
-        <h3>Welcome, {email}!</h3>
+        <h3>Welcome, {displayName}!</h3>
         </>
     )
 }

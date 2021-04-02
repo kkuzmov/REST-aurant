@@ -5,10 +5,12 @@ import testLoginUser from '../../services/Helpers/loginUser';
 import { loginUser } from '../../services/services';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 function Login (){
     const [ errMessage, setErrMessage ] = useState('');
+    let history = useHistory();
 
     function onLoginSubmitHandler(event){
         event.preventDefault();
@@ -22,7 +24,9 @@ function Login (){
         }else{
             setErrMessage('');
             loginUser(event.target.email.value, event.target.password.value)
-                .then(res => console.log(res))
+                .then(res => {
+                    history.push('/');
+                })
                 .catch(err => setErrMessage(err.message));
             console.log('USER IS LOGGED IN!')
         }

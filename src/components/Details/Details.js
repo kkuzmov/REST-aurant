@@ -10,9 +10,7 @@ import { useContext, useEffect, useState } from 'react';
 function DetailsWithFunction({match}){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
-    // console.log(currentUser.email);
-    // let user = firebaseApp.auth().currentUser;
-    // console.log(user.email);
+
 
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
