@@ -15,7 +15,7 @@ function logout(){
             <Link to="/create" className="nav-link">Create-a-rate</Link>
             <Link to="/all-restaurants" className="nav-link">Restaurants</Link>
             <Link to="/profile" className="nav-link">Profile</Link>
-            <Link className="nav-link" onClick={logout}>Logout</Link>
+            <Link to="/logout" className="nav-link" onClick={logout}>Logout</Link>
         </ul>
     )
 }
