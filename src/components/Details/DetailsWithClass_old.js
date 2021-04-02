@@ -2,7 +2,7 @@ import { Component } from "react";
 import { style } from './Details.css';
 import database from '../Database/Database';
 import { Route, Link, NavLink, Switch, Redirect } from 'react-router-dom';
-import db from '../../firebase/firebase.config';
+import {db} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 
 import map from './map.jpeg'

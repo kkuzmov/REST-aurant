@@ -2,7 +2,7 @@ import { style } from './HomepageUser.css';
 
 import { Component } from 'react';
 import RestaurantHomepage from '../RestaurantHomepage/RestaurantHomepage';
-import db from '../../firebase/firebase.config';
+import {db} from '../../firebase/firebase.config';
 
 
 

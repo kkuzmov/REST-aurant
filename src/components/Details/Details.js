@@ -1,6 +1,6 @@
 import { style } from './Details.css';
 import { Route, Link, NavLink, Switch, Redirect, useHistory } from 'react-router-dom';
-import db from '../../firebase/firebase.config';
+import {db} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 
 import map from './map.jpeg'

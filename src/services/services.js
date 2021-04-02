@@ -1,5 +1,7 @@
-import db from '../firebase/firebase.config';
+import {db} from '../firebase/firebase.config';
 import firebase from 'firebase';
+// is it neccessary?
+import "firebase/auth"
 
 export function getOneRestaurant(id){
    return db.collection('restaurants').doc(id).get()
