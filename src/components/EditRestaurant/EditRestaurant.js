@@ -51,21 +51,21 @@ function EditRestaurant({ match }){
             <article className="authentication-container">
                 <form className="create-restaurant-form">
                     <article className="form-input">
-                        <input type="text" name="name" value={restaurant.name}/>
+                        <input type="text" name="name" defaultValue={restaurant.name}/>
                     </article>
                     <article className="form-input">
-                        <input type="text" name="location" required  value={restaurant.location}/>
+                        <input type="text" name="location" required  defaultValue={restaurant.location}/>
                     </article>
 
                     <article className="form-input">
-                        <input type="number" min="1" max="5" step="0.5" name="rating" required value={restaurant.rating}/>
+                        <input type="number" min="1" max="5" step="0.5" name="rating" required defaultValue={restaurant.rating}/>
                     </article>
                     <article className="form-input textarea-input">
-                        <textarea name="description" id="description" cols="39" rows="10" value={restaurant.description}></textarea>
+                        <textarea name="description" id="description" cols="39" rows="10" defaultValue={restaurant.description}></textarea>
                     </article>
                     <article className="form-input">
                         {/* <input type="file" id="photo" name="uploaded-picture" /> */}
-                        <input type="url" name="imageUrl" value={restaurant.imageUrl}></input>
+                        <input type="url" name="imageUrl" defaultValue={restaurant.imageUrl}></input>
                     </article>
                     <button className="site-button">Create</button>
                     <ErrorMessage>{errMessage}</ErrorMessage>
