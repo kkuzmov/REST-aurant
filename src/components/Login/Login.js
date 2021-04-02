@@ -1,4 +1,4 @@
-import { Component, useContext } from 'react';
+import { useContext } from 'react';
 import { style } from './Login.css';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import testLoginUser from '../../services/Helpers/loginUser';
@@ -20,7 +20,7 @@ function Login (){
         console.log('user is already logged in!')
         return <Redirect to="/" />
     }
-    
+
     function onLoginSubmitHandler(event){
         event.preventDefault();
         let userInputToLogin = {
