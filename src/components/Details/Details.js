@@ -1,6 +1,6 @@
 import { style } from './Details.css';
 import { Route, Link, NavLink, Switch, Redirect, useHistory } from 'react-router-dom';
-import {db} from '../../firebase/firebase.config';
+import {db, firebaseApp} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 import { AuthContext } from '../Auth/Auth';
 
@@ -10,7 +10,9 @@ import { useContext, useEffect, useState } from 'react';
 function DetailsWithFunction({match}){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
-    console.log(currentUser);
+    // console.log(currentUser.email);
+    // let user = firebaseApp.auth().currentUser;
+    // console.log(user.email);
 
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
