@@ -4,7 +4,8 @@
     align-items: center;
     box-shadow: 5px 5px 5px 0px #00000080, inset 4px 4px 15px 0px #00000079, 5px 5px 5px 5px rgba(0,0,0,0);
     border-radius: 10px;
-    background-color: rgba(133, 190, 42, 0.623);
+    background-color: #acf76b;
+    color: #513C2C;
     padding: 15px 20px;
     font-size: 24px;
     margin-bottom: 30px;    
