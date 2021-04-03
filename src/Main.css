@@ -20,7 +20,7 @@ html{
     background: linear-gradient(312deg, rgba(255,215,0,0.7708217075892857) 0%, rgba(255,255,0,0.7624183462447479) 54%, rgba(9,133,0,0.7960317916228992) 100%); 
 }
 body{
-    background: url('https://i.ibb.co/RCrXHwT/eggs-3216877-1920.jpg');
+    background-image: url('./pattern.svg');
     background-size: cover;
 }
 body a{
