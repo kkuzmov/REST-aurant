@@ -16,14 +16,14 @@
         color:rgb(118, 141, 73);
     }
 }
-.nav-link{
+.navigation .nav-link{
     text-decoration: none;
-    color:rgb(102, 151, 2);
+    color: #513C2C;
     font-size: 35px;
     margin-right: 25px;
 }
 .nav-link:hover{
-    color:rgb(40, 58, 4);
+    color:rgb(179, 178, 178);
 }
 /* .navigation li{
     list-style: none;

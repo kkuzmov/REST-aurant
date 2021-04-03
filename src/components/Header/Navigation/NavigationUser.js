@@ -16,13 +16,12 @@ function NavigationUser(){
     
     return (
         <>
-        <ul className="navigation">
+        <div className="navigation">
             <Link to="/create" className="nav-link">Create-a-rate</Link>
             <Link to="/all-restaurants" className="nav-link">Restaurants</Link>
             <Link to="/profile" className="nav-link">Profile</Link>
             <Link to="" className="nav-link" onClick={logout}>Logout</Link>
-        </ul>
-        <h3>Welcome, {displayName}!</h3>
+        </div>
         </>
     )
 }
