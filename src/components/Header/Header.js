@@ -14,7 +14,7 @@ function Header(){
         console.log('user is already logged in!')
         return (
             <header className="main-header">
-                <Link to="/" className="nav-link"><img src={logo} alt="restaurant logo" className="logo-left"/></Link>
+                <Link to="/" className="nav-link"><i class="fas fa-hamburger"></i></Link>
                 <nav>
                    <NavigationUser />
                 </nav>

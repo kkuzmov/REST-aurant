@@ -32,7 +32,7 @@ class HomepageUser extends Component{
         this.getRestaurants();
     }
     render(){
-        let allRestaurants = this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id}/>) || 'Loading...'
+        let allRestaurants = this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id} ratedBy={x.ratedBy}/>) || 'Loading...'
         return (
             <main>
                 <h1 className="top-rated">Welcome, user!</h1>

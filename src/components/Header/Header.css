@@ -5,7 +5,18 @@
     padding: 20px;
     border-bottom: 2px solid rgb(102, 151, 2);
 }
-.logo-left{
-    max-width: 130px;
+.main-header i{
+    font-size: 88px;
+    color: #513C2C;
+    margin-left: 30px;
+
+    /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
+}
+.main-header i:hover{
+    color: #acf76b;
+    /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
+}
+.main-header i:visited{
+    font-size: 88px;
     /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
 }
