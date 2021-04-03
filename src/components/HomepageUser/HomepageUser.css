@@ -25,10 +25,10 @@
 .site-button{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-shadow: inset -1px 2px 19px -4px rgba(0,0,0,0.75);
-    color: #494949 !important;
+    color:#513C2C;
     text-transform: uppercase;
     text-decoration: none;
-    background: #ffffff;
+    background: #c7d436a8 !important;
     padding: 10px;
     border: 1px solid #494949 !important;
     border-radius: 10px;
@@ -36,8 +36,9 @@
     transition: all 0.4s ease 0s;
 }
 .site-button:hover{
-    color: #ffffff !important;
-    background: rgba(255,215,0,0.7708217075892857);
     transition: all 0.4s ease 0s;
     cursor: pointer;
+    color:#C9FA9E;
+    background-color: #513C2C !important;
+    background: #ffffff;
 }
