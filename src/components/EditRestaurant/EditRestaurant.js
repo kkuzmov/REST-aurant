@@ -1,5 +1,5 @@
 import { style } from './EditRestaurant.css';
-import db from '../../firebase/firebase.config';
+import {db} from '../../firebase/firebase.config';
 import { useHistory } from 'react-router-dom';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -21,42 +21,42 @@ function EditRestaurant({ match }){
         })
     }, [])
 
-//    function create(event){
-//         event.preventDefault();
-//         let userInputNewRestaurant = {
-//             'name': event.target.name.value,
-//             'location': event.target.location.value,
-//             'rating': Number(event.target.rating.value),
-//             'description': event.target.description.value,
-//             'imageUrl': event.target.imageUrl.value,
-//             'ratedBy': 0,
-//             'rating': 3
-//         }
-//         if(testInput(userInputNewRestaurant)){
-//             let message = testInput(userInputNewRestaurant);
-//             setErrMessage(message);
-//         }else{
-//             db.collection('restaurants')
-//             .add({...userInputNewRestaurant})
-//             .then(res => {
-//                 history.push('/') 
-//             });
-//         }
+   function updateRestaurantInfo(event){
+        event.preventDefault();
+        let userInputNewRestaurant = {
+            'name': event.target.name.value,
+            'location': event.target.location.value,
+            'rating': Number(event.target.rating.value),
+            'description': event.target.description.value,
+            'imageUrl': event.target.imageUrl.value,
+        }
+        if(testInput(userInputNewRestaurant)){
+            let message = testInput(userInputNewRestaurant);
+            setErrMessage(message);
+        }else{
+            console.log(`${match.params.id} - updated with new info`)
+            db.collection('restaurants')
+            .doc(match.params.id)
+            .update({...userInputNewRestaurant})
+            .then(res => {
+                console.log(res)
+                history.push('/') 
+            });
+        }
         
-//     }
+    }
 
         return(
             <>
             <h1 className="page-heading">Edit restaurant</h1>
             <article className="authentication-container">
-                <form className="create-restaurant-form">
+                <form className="create-restaurant-form" onSubmit={updateRestaurantInfo}>
                     <article className="form-input">
                         <input type="text" name="name" defaultValue={restaurant.name}/>
                     </article>
                     <article className="form-input">
                         <input type="text" name="location" required  defaultValue={restaurant.location}/>
                     </article>
-
                     <article className="form-input">
                         <input type="number" min="1" max="5" step="0.5" name="rating" required defaultValue={restaurant.rating}/>
                     </article>
