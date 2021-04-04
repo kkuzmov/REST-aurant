@@ -2,6 +2,8 @@ import { style } from './Details.css';
 import { Route, Link, NavLink, Switch, Redirect, useHistory } from 'react-router-dom';
 import {db, firebaseApp} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
+import Notification from '../Notifications/Notifications';
+
 import { AuthContext } from '../Auth/Auth';
 
 import map from './map.jpeg'
@@ -10,6 +12,8 @@ import { useContext, useEffect, useState } from 'react';
 function DetailsWithFunction({match}){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
+    const [ notificationMessage, setNotificationMessage ] = useState('');
+
 
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
@@ -36,9 +40,10 @@ function DetailsWithFunction({match}){
         db.collection('restaurants')
             .doc(match.params.id)
             .delete()
-            .then(
-                setTimeout(()=> history.push('/'), 1500)
-            )
+            .then(res =>{
+                setNotificationMessage('Restaurant deleted!');
+                setTimeout(()=> history.push('/'), 2500)
+            })
     }
     
 
@@ -57,6 +62,8 @@ function DetailsWithFunction({match}){
                     <button className="site-button"onClick={deleteRestaurant}>Delete</button>
                     <Link to={`/edit/${match.params.id}`}><button className="site-button">Edit</button></Link>
                 </article>
+                <Notification>{notificationMessage}</Notification>
+
             </article>
         </>
     )

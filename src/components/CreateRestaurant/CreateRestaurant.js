@@ -33,7 +33,7 @@ function CreateRestaurant(){
                 setNotificationMessage('New rating created!')
                 setTimeout(() => {
                 history.push('/') 
-                }, 5000);
+                }, 2500);
             });
         }
         
