@@ -50,7 +50,6 @@ function DetailsWithFunction({match}){
                 <img src={restaurant.imageUrl} alt={restaurant.name} />
                 <h1 className="restaurant-details-name">{restaurant.location}</h1>
                 <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
-                <h3 className="rated-by">Average rating: {restaurant.rating} *</h3>
                 <p className="restaurant-details-description">{restaurant.description}</p>
                 <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                 <article className="details-buttons">
