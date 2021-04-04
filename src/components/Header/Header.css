@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
 .main-header{
     display: flex;
     justify-content: space-between;
@@ -20,8 +22,9 @@
     /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
 }
 .main-header h1{
-    font-size: 40px;
+    font-size: 30px;
     margin: 0px;
+    font-family: 'Rock Salt', cursive;
 }
 logo-in-header{
     display: flex;

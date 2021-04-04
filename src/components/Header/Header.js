@@ -26,6 +26,10 @@ function Header(){
 
         return (
             <header className="main-header">
+                <section className="logo-in-header">
+                <Link to="/" className="nav-link"><i class="fas fa-hamburger"></i></Link>
+                <h1>REST-aurant</h1>
+                </section>
                 <nav>
                    <NavigationGuest />
                 </nav>
