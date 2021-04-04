@@ -10,7 +10,6 @@ function Header(){
     const { currentUser } = useContext(AuthContext);
 
     if(currentUser){
-        console.log('user is already logged in!')
         return (
             <header className="main-header">
                 <section className="logo-in-header">

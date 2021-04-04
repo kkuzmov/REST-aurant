@@ -12,7 +12,6 @@ function NavigationUser(){
             .then(res => console.log('user is logged out!'))
     }
     const { currentUser } = useContext(AuthContext);
-    let displayName = currentUser ? currentUser.email : 'Guest';
     
     return (
         <>

@@ -4,14 +4,17 @@ import { useHistory } from 'react-router-dom';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import Notification from '../Notifications/Notifications';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+import { AuthContext } from '../Auth/Auth';
 
 function CreateRestaurant(){
     let history = useHistory();
     const [ errMessage, setErrMessage ] = useState('');
     const [ notificationMessage, setNotificationMessage ] = useState('');
+    const { currentUser } = useContext(AuthContext);
 
-   function create(event){
+    function create(event){
         event.preventDefault();
         let userInputNewRestaurant = {
             'name': event.target.name.value,
@@ -20,7 +23,8 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
             'ratedBy': 0,
-            'rating': 3
+            'rating': 3,
+            'creator': currentUser.email
         }
         if(testInput(userInputNewRestaurant)){
             let message = testInput(userInputNewRestaurant);
