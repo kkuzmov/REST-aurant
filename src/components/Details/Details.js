@@ -11,7 +11,6 @@ function DetailsWithFunction({match}){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
 
-
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
     useEffect(()=>{

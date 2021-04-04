@@ -3,8 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import HomepageGuest from './components/HomepageGuest/HomepageGuest';
-import HomepageUser from './components/HomepageUser/HomepageUser';
+import HomepageContainer from './components/HomepageContainer/HomepageContainer';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
@@ -30,7 +29,7 @@ class Main extends Component{
             <div className="container">
             <Header />
             <Switch>
-            <Route path="/" exact component={HomepageUser}/>
+            <Route path="/" exact component={HomepageContainer}/>
             <Route path="/create" component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
