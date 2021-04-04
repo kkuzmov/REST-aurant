@@ -1,12 +1,10 @@
 import { style } from './Notifications.css';
-import {Component} from 'react';
 
-class Notification extends Component{
-    render(){
-        return(
-            <div className="notification">!!!DO WE HAVE AN ERROR HERE!!!</div>
-        )
+function Notification({children}){
+    if(!children){
+        return null; 
+    }else{
+        return <div className="notification-message">{children}</div>
     }
 }
-
 export default Notification;

@@ -2,12 +2,14 @@ import { style } from './CreateRestaurant.css';
 import {db} from '../../firebase/firebase.config';
 import { useHistory } from 'react-router-dom';
 import testInput from '../../services/Helpers/createNewRestaurant';
+import Notification from '../Notifications/Notifications';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useState } from 'react';
 
 function CreateRestaurant(){
     let history = useHistory();
     const [ errMessage, setErrMessage ] = useState('');
+    const [ notificationMessage, setNotificationMessage ] = useState('');
 
    function create(event){
         event.preventDefault();
@@ -27,7 +29,11 @@ function CreateRestaurant(){
             db.collection('restaurants')
             .add({...userInputNewRestaurant})
             .then(res => {
+                setErrMessage('');
+                setNotificationMessage('New rating created!')
+                setTimeout(() => {
                 history.push('/') 
+                }, 5000);
             });
         }
         
@@ -66,6 +72,7 @@ function CreateRestaurant(){
                     <button className="site-button">Create</button>
                     <ErrorMessage>{errMessage}</ErrorMessage>
                 </form>
+                <Notification>{notificationMessage}</Notification>
             </article>
         </>
         )
