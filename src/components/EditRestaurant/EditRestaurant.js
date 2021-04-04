@@ -3,6 +3,7 @@ import {db} from '../../firebase/firebase.config';
 import { useHistory } from 'react-router-dom';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Notification from '../Notifications/Notifications';
 import { getOneRestaurant } from '../../services/services.js';
 
 import { useState, useEffect } from 'react';
@@ -10,6 +11,7 @@ import { useState, useEffect } from 'react';
 function EditRestaurant({ match }){
     let history = useHistory();
     const [ errMessage, setErrMessage ] = useState('');
+    const [ notificationMessage, setNotificationMessage ] = useState('');
 
     let [restaurant, setRestaurant] = useState({});
 
@@ -34,13 +36,12 @@ function EditRestaurant({ match }){
             let message = testInput(userInputNewRestaurant);
             setErrMessage(message);
         }else{
-            console.log(`${match.params.id} - updated with new info`)
             db.collection('restaurants')
             .doc(match.params.id)
             .update({...userInputNewRestaurant})
             .then(res => {
-                console.log(res)
-                history.push('/') 
+                setNotificationMessage('Successfully edited restaurant!');
+                setTimeout(()=> history.push('/'), 2500)
             });
         }
         
@@ -70,6 +71,7 @@ function EditRestaurant({ match }){
                     <button className="site-button">Create</button>
                     <ErrorMessage>{errMessage}</ErrorMessage>
                 </form>
+                <Notification>{notificationMessage}</Notification>
             </article>
         </>
         )
