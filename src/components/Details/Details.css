@@ -45,7 +45,8 @@
 }
 .details-buttons{
     display: flex;
-    width: 120px;
-    /* background-color: red; */
-    justify-content: space-between;
+    justify-content: space-around;
+}
+.details-buttons button{
+    margin: 5px;
 }
