@@ -1,4 +1,3 @@
-import logo from './clipart294515.png'
 import { Link } from 'react-router-dom';
 import { style } from './Header.css';
 import { useContext } from 'react';
@@ -14,7 +13,10 @@ function Header(){
         console.log('user is already logged in!')
         return (
             <header className="main-header">
+                <section className="logo-in-header">
                 <Link to="/" className="nav-link"><i class="fas fa-hamburger"></i></Link>
+                <h1>REST-aurant</h1>
+                </section>
                 <nav>
                    <NavigationUser />
                 </nav>
@@ -24,7 +26,6 @@ function Header(){
 
         return (
             <header className="main-header">
-                <Link to="/" className="nav-link"><img src={logo} alt="restaurant logo" className="logo-left"/></Link>
                 <nav>
                    <NavigationGuest />
                 </nav>

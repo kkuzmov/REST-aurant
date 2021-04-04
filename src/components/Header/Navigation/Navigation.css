@@ -19,13 +19,9 @@
 .navigation .nav-link{
     text-decoration: none;
     color: #513C2C;
-    font-size: 35px;
+    font-size: 30px;
     margin-right: 25px;
 }
 .nav-link:hover{
     color:#C9FA9E;
 }
-/* .navigation li{
-    list-style: none;
-    margin-right: 25px;
-} */

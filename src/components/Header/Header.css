@@ -8,8 +8,7 @@
 .main-header i{
     font-size: 88px;
     color: #513C2C;
-    margin-left: 30px;
-
+    margin: 0px;
     /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
 }
 .main-header i:hover{
@@ -19,4 +18,13 @@
 .main-header i:visited{
     font-size: 88px;
     /* filter: drop-shadow(0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.8)); */
+}
+.main-header h1{
+    font-size: 40px;
+    margin: 0px;
+}
+logo-in-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
