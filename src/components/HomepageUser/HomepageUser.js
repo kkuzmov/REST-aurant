@@ -35,7 +35,7 @@ class HomepageUser extends Component{
         let allRestaurants = this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id} ratedBy={x.ratedBy}/>) || 'Loading...'
         return (
             <main>
-                <h1 className="top-rated">Welcome, user!</h1>
+                <h1 className="top-rated">Welcome, {this.props.username}!</h1>
                 <h1 className="top-rated">Check out our current top rated restaurants: </h1>
                 <article className="all-restaurants-homepage">
                     {allRestaurants}

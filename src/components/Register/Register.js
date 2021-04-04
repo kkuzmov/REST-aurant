@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { AuthContext } from '../Auth/Auth';
 
 import { Redirect, useHistory } from 'react-router-dom';
+import { firebaseApp } from '../../firebase/firebase.config';
 
 
 
@@ -34,9 +35,12 @@ function Register(){
             setErrMessage(message);
         }else{
             setErrMessage('');
+            let username = event.target.username.value;
             registerUser(event.target.email.value, event.target.password.value)
                 .then(res => {
-                    history.push('/');
+                    firebaseApp.auth().currentUser.updateProfile({
+                        displayName: username
+                    })
                 })
                 .catch(err => setErrMessage(err.message))
         }
