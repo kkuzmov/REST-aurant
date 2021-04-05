@@ -1,6 +1,6 @@
 import { style } from './CreateRestaurant.css';
 import {db} from '../../firebase/firebase.config';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import Notification from '../Notifications/Notifications';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -13,6 +13,10 @@ function CreateRestaurant(){
     const [ errMessage, setErrMessage ] = useState('');
     const [ notificationMessage, setNotificationMessage ] = useState('');
     const { currentUser } = useContext(AuthContext);
+
+    if(!currentUser){
+        return <Redirect to="/login" />
+    }
 
     function create(event){
         event.preventDefault();

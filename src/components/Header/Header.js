@@ -13,7 +13,7 @@ function Header(){
         return (
             <header className="main-header">
                 <section className="logo-in-header">
-                <Link to="/" className="nav-link"><i class="fas fa-hamburger"></i></Link>
+                <Link to="/" className="nav-link"><i className="fas fa-hamburger"></i></Link>
                 <h1>REST-aurant</h1>
                 </section>
                 <nav>
@@ -26,7 +26,7 @@ function Header(){
         return (
             <header className="main-header">
                 <section className="logo-in-header">
-                <Link to="/" className="nav-link"><i class="fas fa-hamburger"></i></Link>
+                <Link to="/" className="nav-link"><i className="fas fa-hamburger"></i></Link>
                 <h1>REST-aurant</h1>
                 </section>
                 <nav>

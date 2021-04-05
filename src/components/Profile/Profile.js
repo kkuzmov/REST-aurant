@@ -1,9 +1,20 @@
 import { Component } from 'react';
 import { style } from './Profile.css';
 import photo from './photo.jpg'
+import { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
+import { AuthContext } from '../Auth/Auth';
+
+
+
  
-class Profile extends Component{
-    render(){
+function Profile(){
+    const { currentUser } = useContext(AuthContext);
+
+    if(!currentUser){
+        return <Redirect to="/login" />
+    }
+
         return (
             <>
             <h1 className="page-heading">My profile</h1>
@@ -26,7 +37,6 @@ class Profile extends Component{
             </article>
             </>
         )
-    }
 }
 
 export default Profile;
