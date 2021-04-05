@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { AuthContext } from '../Auth/Auth';
 
 import { Redirect, useHistory } from 'react-router-dom';
-import { firebaseApp } from '../../firebase/firebase.config';
+import { firebaseApp, storageRef } from '../../firebase/firebase.config';
 
 
 
@@ -29,7 +29,14 @@ function Register(){
             'username': event.target.username.value,
             'password': event.target.password.value,
             'repeatPassword': event.target.repeatPassword.value,
+            'imageUrl': event.target.imageUrl.value,
         }
+
+        let photoRef = storageRef.child(event.target.imageUrl.value);
+        let file = new File([], event.target.imageUrl.value)
+        photoRef.put(file).then((snapshot)=>{
+            console.log('uploaded a file')
+        })
 
         if(testRegisterUser(userInputToRegister)){
             let message = testRegisterUser(userInputToRegister);
@@ -39,11 +46,10 @@ function Register(){
             let username = event.target.username.value;
             registerUser(event.target.email.value, event.target.password.value)
                 .then(res => {
-                    setTimeout(firebaseApp.auth().currentUser.updateProfile({displayName: username})
+                    setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username, })
                     .then(res => {
                         history.push('/')
                     }), 2000)
-                    
                 })
                 .catch(err => setErrMessage(err.message))
         }
@@ -65,6 +71,9 @@ function Register(){
                     </article>
                     <article className="form-input">
                         <input type="password" name="repeatPassword" placeholder="Repeat password" />
+                    </article>
+                    <article className="form-input">
+                        <input type="file" name="imageUrl" placeholder="Upload your photo" />
                     </article>
                     <button className="site-button">Sign up</button>
                 </form>
