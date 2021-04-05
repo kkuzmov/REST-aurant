@@ -14,7 +14,6 @@ import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapp
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import { AuthProvider } from './components/Auth/Auth';
-import test from './components/TEST/test';
 
 
 
@@ -34,7 +33,6 @@ class Main extends Component{
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
-            <Route path="/test/:id" component={DetailsWithClass_old}/>
             <Route path="/register" component={Register}/>
             <Route path="/details/:id" component={Details}/>
             <Route path="/edit/:id" component={EditRestaurant}/>

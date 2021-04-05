@@ -5,8 +5,10 @@ import testInput from '../../services/Helpers/createNewRestaurant';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Notification from '../Notifications/Notifications';
 import { getOneRestaurant } from '../../services/services.js';
+import { AuthContext } from '../Auth/Auth';
 
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useContext } from 'react';
 
 function EditRestaurant({ match }){
     let history = useHistory();
@@ -22,6 +24,11 @@ function EditRestaurant({ match }){
             setRestaurant(currentRestaurant)
         })
     }, [])
+    const { currentUser } = useContext(AuthContext);
+
+    if(!currentUser){
+        history.push('/login');
+    }
 
    function updateRestaurantInfo(event){
         event.preventDefault();

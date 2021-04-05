@@ -17,7 +17,6 @@ function Login (){
     const [ errMessage, setErrMessage ] = useState('');
 
     if(currentUser){
-        console.log('user is already logged in!')
         return <Redirect to="/" />
     }
 

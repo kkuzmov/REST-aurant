@@ -11,9 +11,9 @@ import { useContext, useEffect, useState } from 'react';
 
 function DetailsWithFunction({match}){
     let history = useHistory();
-    const { currentUser } = useContext(AuthContext);
     const [ notificationMessage, setNotificationMessage ] = useState('');
 
+    
 
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
@@ -24,7 +24,11 @@ function DetailsWithFunction({match}){
             setRestaurant(currentRestaurant)
         })
     }, [])
+    const { currentUser } = useContext(AuthContext);
 
+    if(!currentUser){
+        history.push('/login');
+    }
     // add like to likes
 
     function likeRestaurant(){
@@ -46,7 +50,7 @@ function DetailsWithFunction({match}){
             })
     }
     let buttons = '';
-    if(restaurant.creator === currentUser.email){
+    if(restaurant.creator === currentUser?.email){
        return <>
             <h1 className="details-heading">{restaurant.name}</h1>
             <article className="restaurant-details-cointainer">
