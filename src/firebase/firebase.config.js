@@ -13,6 +13,7 @@ var firebaseConfig = {
   const db = firebase.firestore();
   const storage = firebase.storage();
   const storageRef = storage.ref();
+  
   export {
     db,
     firebaseApp,
