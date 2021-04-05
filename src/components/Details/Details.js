@@ -3,7 +3,7 @@ import { Route, Link, NavLink, Switch, Redirect, useHistory } from 'react-router
 import {db, firebaseApp} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 import Notification from '../Notifications/Notifications';
-
+import { CheckIfUserIsLoggedIn } from '../../services/Helpers/checkIfUserIsLoggedIn';
 import { AuthContext } from '../Auth/Auth';
 
 import map from './map.jpeg'
@@ -12,9 +12,8 @@ import { useContext, useEffect, useState } from 'react';
 function DetailsWithFunction({match}){
     let history = useHistory();
     const [ notificationMessage, setNotificationMessage ] = useState('');
-
+    const { currentUser } = useContext(AuthContext);
     
-
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
     useEffect(()=>{
@@ -24,11 +23,11 @@ function DetailsWithFunction({match}){
             setRestaurant(currentRestaurant)
         })
     }, [])
-    const { currentUser } = useContext(AuthContext);
 
     if(!currentUser){
-        history.push('/login');
+        history.push('/login')
     }
+  
     // add like to likes
 
     function likeRestaurant(){
