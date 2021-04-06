@@ -1,15 +1,17 @@
 import { Component } from 'react';
 import { style } from './Profile.css';
-import photo from './photo.jpg'
 import { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { AuthContext } from '../Auth/Auth';
+import { Link } from 'react-router-dom';
+
 
 
 
  
 function Profile(){
     const { currentUser } = useContext(AuthContext);
+    console.log(currentUser.email)
     if(currentUser === null){
         return <Redirect to="/login" />
     }
@@ -26,7 +28,7 @@ function Profile(){
                 <article className="user-ratings-and-created">
                     <article className="created-and-rated">
                     <h3 className="created-restaurants">11 places created by you</h3>
-                    <button className="site-button">View all created</button>
+                    <Link to="/rated-restaurants"><button className="site-button">View all created</button></Link>                
                     </article>
                     <article className="created-and-rated">
                     <h3 className="rated-restaurants">11 places rated by you</h3>

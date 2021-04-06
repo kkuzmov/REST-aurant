@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { style } from './Login.css';
 import testInput from '../../services/Helpers/createNewRestaurant';
 import testLoginUser from '../../services/Helpers/loginUser';
@@ -13,7 +13,7 @@ import { Redirect, useHistory } from 'react-router-dom';
 function Login (){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
-
+    console.log(currentUser);
     const [ errMessage, setErrMessage ] = useState('');
 
     if(currentUser){

@@ -8,9 +8,9 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
-import DetailsWithClass_old from './components/Details/DetailsWithClass_old';
 import EditRestaurant from './components/EditRestaurant/EditRestaurant';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
+import RatedRestaurants from './components/RatedRestaurants/RatedRestaurants';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import { AuthProvider } from './components/Auth/Auth';
@@ -29,8 +29,9 @@ class Main extends Component{
             <Header />
             <Switch>
             <Route path="/" exact component={HomepageContainer}/>
-            <Route path="/create" component={CreateRestaurant}/>
+            <Route path="/create" exact component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
+            <Route path="/rated-restaurants" component={RatedRestaurants}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
