@@ -13,6 +13,7 @@ class HomepageUser extends Component{
         this.state = {
             'restaurants': []
         }
+        this.isMountedVal = 0;
         this.getRestaurants = this.getRestaurants.bind(this);
     }
 
@@ -29,8 +30,17 @@ class HomepageUser extends Component{
         })
     }
     componentDidMount(){
+        this.isMountedVal = 1;
         this.getRestaurants();
     }
+    componentWillUnmount(){
+		this.isMountedVal = 0;
+	}
+    updateState = (stateObj) => {
+		if(this.isMountedVal){
+			this.setState(stateObj);
+		}
+	}
     render(){
         let allRestaurants = this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id} ratedBy={x.ratedBy}/>) || 'Loading...'
         return (
