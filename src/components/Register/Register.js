@@ -23,21 +23,23 @@ function Register(){
     
     function onRegisterSubmitHandler(event){
         event.preventDefault();
+        let photoRef = storageRef.child(event.target.imageUrl.value);
+        console.log(photoRef);
+        let file = new File([], event.target.imageUrl.value)
+        photoRef.put(file).then((snapshot)=>{
+            console.log(snapshot)
+        })
 
         let userInputToRegister = {
             'email': event.target.email.value,
             'username': event.target.username.value,
             'password': event.target.password.value,
             'repeatPassword': event.target.repeatPassword.value,
-            'imageUrl': event.target.imageUrl.value,
         }
 
-        let photoRef = storageRef.child(event.target.imageUrl.value);
-        let file = new File([], event.target.imageUrl.value)
-        photoRef.put(file).then((snapshot)=>{
-            console.log('uploaded a file')
-        })
 
+
+  
         if(testRegisterUser(userInputToRegister)){
             let message = testRegisterUser(userInputToRegister);
             setErrMessage(message);
@@ -46,7 +48,7 @@ function Register(){
             let username = event.target.username.value;
             registerUser(event.target.email.value, event.target.password.value)
                 .then(res => {
-                    setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username, })
+                    setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username})
                     .then(res => {
                         history.push('/')
                     }), 2000)

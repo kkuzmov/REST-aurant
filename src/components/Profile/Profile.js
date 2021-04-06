@@ -14,15 +14,15 @@ function Profile(){
     if(!currentUser){
         return <Redirect to="/login" />
     }
-
+    console.log(currentUser.photoURL)
         return (
             <>
             <h1 className="page-heading">My profile</h1>
             <article className="user-profile">
                 <article className="user-info">
-                    <img src={photo} alt="user-profile" />
-                    <h4 className="name">Krum Kuzmov</h4>
-                    <p className="email">kkuzmov@yahoo.zom</p>
+                    <img src={currentUser.photoURL} alt="user-profile" />
+                    <h4 className="name">{currentUser.displayName}</h4>
+                    <p className="email">{currentUser.email}</p>
                 </article>
                 <article className="user-ratings-and-created">
                     <article className="created-and-rated">

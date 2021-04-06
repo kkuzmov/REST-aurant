@@ -9,7 +9,6 @@ import { firebaseApp } from '../../firebase/firebase.config';
 function HomepageContainer(){
     const { currentUser } = useContext(AuthContext);
     let userInfo = firebaseApp.auth().currentUser;
-    console.log(userInfo)
     if(currentUser){
         return (
             <HomepageUser username={userInfo.displayName} />
