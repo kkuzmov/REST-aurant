@@ -38,9 +38,6 @@ function Register(){
             'password': event.target.password.value,
             'repeatPassword': event.target.repeatPassword.value,
         }
-
-
-
   
         if(testRegisterUser(userInputToRegister)){
             let message = testRegisterUser(userInputToRegister);
