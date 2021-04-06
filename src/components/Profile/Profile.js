@@ -10,11 +10,10 @@ import { AuthContext } from '../Auth/Auth';
  
 function Profile(){
     const { currentUser } = useContext(AuthContext);
-
-    if(!currentUser){
+    if(currentUser === null){
         return <Redirect to="/login" />
     }
-    console.log(currentUser.photoURL)
+    
         return (
             <>
             <h1 className="page-heading">My profile</h1>

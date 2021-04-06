@@ -23,12 +23,14 @@ function Register(){
     
     function onRegisterSubmitHandler(event){
         event.preventDefault();
-        let photoRef = storageRef.child(event.target.imageUrl.value);
-        console.log(photoRef);
-        let file = new File([], event.target.imageUrl.value)
-        photoRef.put(file).then((snapshot)=>{
-            console.log(snapshot)
-        })
+        // TESTING PHOTO UPLOAD
+
+        // let photoRef = storageRef.child(event.target.imageUrl.value);
+        // console.log(photoRef);
+        // let file = new File([], event.target.imageUrl.value)
+        // photoRef.put(file).then((snapshot)=>{
+        //     console.log(snapshot)
+        // })
 
         let userInputToRegister = {
             'email': event.target.email.value,
@@ -46,9 +48,10 @@ function Register(){
         }else{
             setErrMessage('');
             let username = event.target.username.value;
+            let photoURL = event.target.imageUrl.value;
             registerUser(event.target.email.value, event.target.password.value)
                 .then(res => {
-                    setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username})
+                    setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username, photoURL,})
                     .then(res => {
                         history.push('/')
                     }), 2000)
@@ -75,7 +78,7 @@ function Register(){
                         <input type="password" name="repeatPassword" placeholder="Repeat password" />
                     </article>
                     <article className="form-input">
-                        <input type="file" name="imageUrl" placeholder="Upload your photo" />
+                        <input type="url" name="imageUrl" placeholder="Place image link here" />
                     </article>
                     <button className="site-button">Sign up</button>
                 </form>
