@@ -1,4 +1,4 @@
-import {db} from '../firebase/firebase.config';
+import { db } from '../firebase/firebase.config';
 import firebase from 'firebase';
 // is it neccessary?
 import "firebase/auth"
@@ -14,4 +14,7 @@ export function loginUser(email, password){
 }
 export function logoutUser(){
    return firebase.auth().signOut() 
+}
+export function getAllRestaurants(){
+   return db.collection('restaurants').get()
 }
