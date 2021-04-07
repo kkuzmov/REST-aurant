@@ -30,12 +30,13 @@ function DetailsWithFunction({match}){
     // add like to likes
 
     function likeRestaurant(){
-        let incrementedLikes = restaurant.ratedBy + 1;
+        let likedByUsers = restaurant.likedBy;
+        likedByUsers.push(currentUser.uid);
         db.collection('restaurants')
             .doc(match.params.id)
-            .update({ratedBy: incrementedLikes})
+            .update({likedBy: likedByUsers})
             .then(rest => {
-                setRestaurant(state => ({...state, ratedBy: incrementedLikes}))
+                setRestaurant(state => ({...state, ratedBy: likedByUsers.length}))
             })
     }
     function deleteRestaurant(){
@@ -53,7 +54,7 @@ function DetailsWithFunction({match}){
             <article className="restaurant-details-cointainer">
                 <img src={restaurant.imageUrl} alt={restaurant.name} />
                 <h1 className="restaurant-details-name">{restaurant.location}</h1>
-                <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
+                <h3 className="rated-by">Liked by {restaurant.likedBy.length} people</h3>
                 <p className="restaurant-details-description">{restaurant.description}</p>
                 <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                 <article className="details-buttons">
@@ -71,7 +72,7 @@ function DetailsWithFunction({match}){
                 <article className="restaurant-details-cointainer">
                     <img src={restaurant.imageUrl} alt={restaurant.name} />
                     <h1 className="restaurant-details-name">{restaurant.location}</h1>
-                    <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
+                    <h3 className="rated-by">Liked by {restaurant.likedBy.length} people</h3>
                     <p className="restaurant-details-description">{restaurant.description}</p>
                     <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                     <article className="details-buttons">
