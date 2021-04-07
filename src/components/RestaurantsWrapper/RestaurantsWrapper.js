@@ -34,7 +34,7 @@ class RestaurantsWrapper extends Component{
             name={x.name}
             description={x.description}
             location={x.location}
-            rating={x.rating}
+            category={x.category}
             id={x.id}/>) || 'Loading...'
 
         return (

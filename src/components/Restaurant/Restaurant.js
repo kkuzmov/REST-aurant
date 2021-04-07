@@ -12,7 +12,7 @@ class Restaurant extends Component{
                 <img src={this.props.imageUrl} alt={this.props.name} />
                 <p className="restaurant-name"><i className="fas fa-utensils"></i> {this.props.name}</p>
                 <p className="restaurant-city"><i className="fas fa-map-marker-alt"></i> {this.props.location}</p>
-                <p className="restaurant-rating"><i className="fas fa-fish"></i> {this.props.rating}</p>
+                <p className="restaurant-category"><i className="fas fa-fish"></i> {this.props.category}</p>
                 <Link to={url}><button className="restaurant-more-info site-button">Read more</button></Link> 
             </article>
         )
