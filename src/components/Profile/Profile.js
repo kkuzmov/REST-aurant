@@ -26,12 +26,12 @@ function Profile(){
                 </article>
                 <article className="user-ratings-and-created">
                     <article className="created-and-rated">
-                    <h3 className="created-restaurants">11 places created by you</h3>
-                    <Link to={url}><button className="site-button">View all created</button></Link>                
+                    <h3 className="created-restaurants">Places rated by you</h3>
+                    <Link to={url}><button className="site-button">View all rated</button></Link>                
                     </article>
                     <article className="created-and-rated">
-                    <h3 className="rated-restaurants">11 places rated by you</h3>
-                    <button className="site-button">View all rated</button>
+                    <h3 className="rated-restaurants">Places you liked</h3>
+                    <button className="site-button">View all liked</button>
                     </article>
                 </article>
             </article>

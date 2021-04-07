@@ -39,9 +39,10 @@ function RatedRestaurants(){
 
     return(
         <>
-        <ul>
-        {allRatedRestaurants}
-        </ul>
+        <h1 className="page-heading">My rated restaurants</h1>
+        <article className="all-rated-restaurants">
+                {allRatedRestaurants}
+        </article>
         </>
     )
 }
