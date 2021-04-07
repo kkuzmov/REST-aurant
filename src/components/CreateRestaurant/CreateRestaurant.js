@@ -26,7 +26,7 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
             'ratedBy': 0,
-            'rating': 3,
+            'likedBy': [],
             'creator': currentUser.uid
         }
         if(testInput(userInputNewRestaurant)){
@@ -70,7 +70,7 @@ function CreateRestaurant(){
                         <input type="number" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required />
                     </article>
                     <article className="form-input textarea-input">
-                        <textarea name="description" id="description" cols="39" rows="10" placeholder="Write a review here..."></textarea>
+                        <textarea name="description" id="description" cols="34" rows="10" placeholder="Write a review here..."></textarea>
                     </article>
                     <article className="form-input">
                         {/* <input type="file" id="photo" name="uploaded-picture" /> */}
