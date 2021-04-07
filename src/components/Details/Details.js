@@ -1,9 +1,8 @@
 import { style } from './Details.css';
-import { Route, Link, NavLink, Switch, Redirect, useHistory } from 'react-router-dom';
-import {db, firebaseApp} from '../../firebase/firebase.config';
+import { Link,useHistory } from 'react-router-dom';
+import {db} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 import Notification from '../Notifications/Notifications';
-import { CheckIfUserIsLoggedIn } from '../../services/Helpers/checkIfUserIsLoggedIn';
 import { AuthContext } from '../Auth/Auth';
 
 import map from './map.jpeg'
@@ -48,8 +47,7 @@ function DetailsWithFunction({match}){
                 setTimeout(()=> history.push('/'), 2500)
             })
     }
-    let buttons = '';
-    if(restaurant.creator === currentUser?.email){
+    if(restaurant.creator === currentUser?.uid){
        return <>
             <h1 className="details-heading">{restaurant.name}</h1>
             <article className="restaurant-details-cointainer">

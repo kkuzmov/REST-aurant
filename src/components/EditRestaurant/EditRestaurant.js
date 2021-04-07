@@ -16,9 +16,9 @@ function EditRestaurant({ match }){
     const [ notificationMessage, setNotificationMessage ] = useState('');
 
     let [restaurant, setRestaurant] = useState({});
-
+    let id = match.params.id;
     useEffect(()=>{
-        getOneRestaurant(match.params.id)
+        getOneRestaurant(id)
         .then(res =>{
             let currentRestaurant = {...res.data()};
             setRestaurant(currentRestaurant)

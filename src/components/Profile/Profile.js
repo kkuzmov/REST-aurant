@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { style } from './Profile.css';
 import { useContext } from 'react';
 import { Redirect } from 'react-router-dom';

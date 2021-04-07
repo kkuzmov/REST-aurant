@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { db } from '../../firebase/firebase.config';
 import { AuthContext } from '../Auth/Auth';
-import { getAllRestaurants } from '../../services/services';
 import Restaurant from '../Restaurant/Restaurant';
-import { Redirect, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 
 
 
@@ -13,7 +12,7 @@ function RatedRestaurants(){
     let [restaurants, setAllRestaurants] = useState([]);
     
     useEffect(()=>{
-        if(currentUser === null){
+        if(currentUser == null){
             history.push('/login')
         }else{
         db.collection('restaurants')
@@ -22,10 +21,7 @@ function RatedRestaurants(){
             .then(res => {
             // console.log(res.docs[0].data()) - това е обект
             let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
-            console.log(allRestaurants)
-
             setAllRestaurants(allRestaurants)
-
         })
     }
     }, [])
