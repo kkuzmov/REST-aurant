@@ -27,7 +27,7 @@ function CreateRestaurant(){
             'imageUrl': event.target.imageUrl.value,
             'ratedBy': 0,
             'rating': 3,
-            'creator': currentUser.email
+            'creator': currentUser.uid
         }
         if(testInput(userInputNewRestaurant)){
             let message = testInput(userInputNewRestaurant);
