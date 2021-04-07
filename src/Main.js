@@ -11,6 +11,7 @@ import Details from './components/Details/Details';
 import EditRestaurant from './components/EditRestaurant/EditRestaurant';
 import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
 import RatedRestaurants from './components/RatedRestaurants/RatedRestaurants';
+import LikedRestaurants from './components/LikedRestaurants/LikedRestaurants';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import { AuthProvider } from './components/Auth/Auth';
@@ -32,6 +33,7 @@ class Main extends Component{
             <Route path="/create" exact component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
             <Route path="/:id/rated-restaurants" component={RatedRestaurants}/>
+            <Route path="/:id/liked-restaurants" component={LikedRestaurants}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>

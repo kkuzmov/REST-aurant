@@ -13,8 +13,7 @@ function Profile(){
     if(currentUser === null){
         return <Redirect to="/login" />
     }
-    console.log(currentUser.uid)
-    let url = `${currentUser.uid}/rated-restaurants`
+    // let url = `${currentUser.uid}/rated-restaurants`
         return (
             <>
             <h1 className="page-heading">My profile</h1>
@@ -27,11 +26,11 @@ function Profile(){
                 <article className="user-ratings-and-created">
                     <article className="created-and-rated">
                     <h3 className="created-restaurants">Places rated by you</h3>
-                    <Link to={url}><button className="site-button">View all rated</button></Link>                
+                    <Link to={`${currentUser.uid}/rated-restaurants`}><button className="site-button">View all rated</button></Link>                
                     </article>
                     <article className="created-and-rated">
                     <h3 className="rated-restaurants">Places you liked</h3>
-                    <button className="site-button">View all liked</button>
+                    <Link to={`${currentUser.uid}/liked-restaurants`}><button className="site-button">View all liked</button></Link>                
                     </article>
                 </article>
             </article>

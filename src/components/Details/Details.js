@@ -32,7 +32,6 @@ function DetailsWithFunction({match}){
     function likeRestaurant(){
         let incrementedLikes = restaurant.ratedBy + 1;
         restaurant.likedBy.push(currentUser.uid)
-        console.log(restaurant.likedBy)
         db.collection('restaurants')
             .doc(match.params.id)
             .update({ratedBy: incrementedLikes, likedBy: restaurant.likedBy})

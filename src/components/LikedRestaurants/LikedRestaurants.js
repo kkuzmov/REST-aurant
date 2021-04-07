@@ -6,7 +6,7 @@ import {  useHistory } from 'react-router-dom';
 
 
 
-function RatedRestaurants(){
+function LikedRestaurants(){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
     let [restaurants, setAllRestaurants] = useState([]);
@@ -16,7 +16,7 @@ function RatedRestaurants(){
             history.push('/login')
         }else{
         db.collection('restaurants')
-            .where('creator', '==', currentUser.uid)
+            .where('likedBy', 'array-contains', currentUser.uid)
             .get()
             .then(res => {
             let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
@@ -25,7 +25,7 @@ function RatedRestaurants(){
     }
     }, [])
     
-    let allRatedRestaurants = restaurants.map(x => <Restaurant 
+    let allLikedRestaurants = restaurants.map(x => <Restaurant 
         key={x.id}
         imageUrl={x.imageUrl}
         name={x.name}
@@ -37,11 +37,11 @@ function RatedRestaurants(){
 
     return(
         <>
-        <h1 className="page-heading">My rated restaurants</h1>
+        <h1 className="page-heading">Restaurants liked</h1>
         <article className="all-rated-restaurants">
-                {allRatedRestaurants}
+                {allLikedRestaurants}
         </article>
         </>
     )
 }
-export default RatedRestaurants;
+export default LikedRestaurants;
