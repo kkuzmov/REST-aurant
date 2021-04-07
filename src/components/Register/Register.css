@@ -24,7 +24,7 @@
     border-radius: 3px;
     text-align: center;
     color: white;
-    background-color: rgba(133, 190, 42, 0.623);
+    background-color: #513C2C;
     font-size: 18px;
 }
 .authentication-form input:hover{

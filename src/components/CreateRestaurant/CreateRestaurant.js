@@ -74,7 +74,7 @@ function CreateRestaurant(){
                     </article>
                     <article className="form-input">
                         {/* <input type="file" id="photo" name="uploaded-picture" /> */}
-                        <input type="url" name="imageUrl" placeholder="Place image link here." required></input>
+                        <input type="url" name="imageUrl" placeholder="Place image link here" required></input>
                     </article>
                     <button className="site-button">Create</button>
                     <ErrorMessage>{errMessage}</ErrorMessage>

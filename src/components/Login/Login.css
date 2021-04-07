@@ -14,7 +14,7 @@
     font-size: 30px;
     align-items: center;
 }
-.authentication-form input{
+/* .authentication-form input{
     border: none;
     margin-bottom: 8px;
     min-height: 30px;
@@ -24,7 +24,7 @@
     color: white;
     background-color: rgba(133, 190, 42, 0.623);
     font-size: 18px;
-}
+} */
 .authentication-form input:hover{
     font-size: 19px;
 }
