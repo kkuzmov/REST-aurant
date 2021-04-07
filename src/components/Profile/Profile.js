@@ -11,11 +11,11 @@ import { Link } from 'react-router-dom';
  
 function Profile(){
     const { currentUser } = useContext(AuthContext);
-    console.log(currentUser.email)
     if(currentUser === null){
         return <Redirect to="/login" />
     }
-    
+    console.log(currentUser.uid)
+    let url = `${currentUser.uid}/rated-restaurants`
         return (
             <>
             <h1 className="page-heading">My profile</h1>
@@ -28,7 +28,7 @@ function Profile(){
                 <article className="user-ratings-and-created">
                     <article className="created-and-rated">
                     <h3 className="created-restaurants">11 places created by you</h3>
-                    <Link to="/rated-restaurants"><button className="site-button">View all created</button></Link>                
+                    <Link to={url}><button className="site-button">View all created</button></Link>                
                     </article>
                     <article className="created-and-rated">
                     <h3 className="rated-restaurants">11 places rated by you</h3>

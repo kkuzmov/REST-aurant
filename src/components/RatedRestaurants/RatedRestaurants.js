@@ -5,17 +5,26 @@ import { getAllRestaurants } from '../../services/services';
 import Restaurant from '../Restaurant/Restaurant';
 
 
-function RatedRestaurants(){
-
+function RatedRestaurants({match}){
+    console.log(match.params.id)
     let [restaurants, setAllRestaurants] = useState([]);
-        getAllRestaurants()
-        .then(res => {
-            let allRestaurants = []
-            res.docs.forEach(restaurant => allRestaurants.push(restaurant.data()))
-            setAllRestaurants(allRestaurants)
-        })
+    useEffect(()=>{
 
-    let allRatedRestaurants = restaurants.map(x => x = <Restaurant 
+        db.collection('restaurants')
+            // .where('creator' === creator)
+            .get()
+            .then(res => {
+            // console.log(res.docs[0].data()) - това е обект
+            let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
+            console.log(allRestaurants)
+
+            setAllRestaurants(allRestaurants)
+
+        })
+    }, [])
+        
+
+    let allRatedRestaurants = restaurants.map(x => <Restaurant 
         key={x.id}
         imageUrl={x.imageUrl}
         name={x.name}
@@ -23,6 +32,7 @@ function RatedRestaurants(){
         location={x.location}
         rating={x.rating}
         id={x.id}/>)
+
     return(
         <>
         <ul>

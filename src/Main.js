@@ -31,7 +31,7 @@ class Main extends Component{
             <Route path="/" exact component={HomepageContainer}/>
             <Route path="/create" exact component={CreateRestaurant}/>
             <Route path="/all-restaurants" component={RestaurantsWrapper}/>
-            <Route path="/rated-restaurants" component={RatedRestaurants}/>
+            <Route path="/:id/rated-restaurants" component={RatedRestaurants}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
