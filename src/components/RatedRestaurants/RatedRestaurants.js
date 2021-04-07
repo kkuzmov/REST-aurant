@@ -9,17 +9,10 @@ function RatedRestaurants({match}){
     console.log(match.params.id)
     let [restaurants, setAllRestaurants] = useState([]);
     useEffect(()=>{
-
-        db.collection('restaurants')
-            // .where('creator' === creator)
-            .get()
+        getAllRestaurants()
             .then(res => {
-            // console.log(res.docs[0].data()) - това е обект
-            let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
-            console.log(allRestaurants)
-
+            let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id}).filter(x => x.creator === match.params.id)
             setAllRestaurants(allRestaurants)
-
         })
     }, [])
         
