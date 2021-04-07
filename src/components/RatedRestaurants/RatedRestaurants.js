@@ -3,18 +3,33 @@ import { db } from '../../firebase/firebase.config';
 import { AuthContext } from '../Auth/Auth';
 import { getAllRestaurants } from '../../services/services';
 import Restaurant from '../Restaurant/Restaurant';
+import { Redirect, useHistory } from 'react-router-dom';
 
 
-function RatedRestaurants({match}){
-    console.log(match.params.id)
+
+function RatedRestaurants(){
+    let history = useHistory();
+    const { currentUser } = useContext(AuthContext);
     let [restaurants, setAllRestaurants] = useState([]);
+    
     useEffect(()=>{
-        getAllRestaurants()
+        if(currentUser === null){
+            history.push('/login')
+        }else{
+        db.collection('restaurants')
+            .where('creator', '==', currentUser.uid)
+            .get()
             .then(res => {
-            let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id}).filter(x => x.creator === match.params.id)
+            // console.log(res.docs[0].data()) - това е обект
+            let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
+            console.log(allRestaurants)
+
             setAllRestaurants(allRestaurants)
+
         })
+    }
     }, [])
+    
         
 
     let allRatedRestaurants = restaurants.map(x => <Restaurant 
