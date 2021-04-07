@@ -30,13 +30,14 @@ function DetailsWithFunction({match}){
     // add like to likes
 
     function likeRestaurant(){
-        let likedByUsers = restaurant.likedBy;
-        likedByUsers.push(currentUser.uid);
+        let incrementedLikes = restaurant.ratedBy + 1;
+        restaurant.likedBy.push(currentUser.uid)
+        console.log(restaurant.likedBy)
         db.collection('restaurants')
             .doc(match.params.id)
-            .update({likedBy: likedByUsers})
+            .update({ratedBy: incrementedLikes, likedBy: restaurant.likedBy})
             .then(rest => {
-                setRestaurant(state => ({...state, ratedBy: likedByUsers.length}))
+                setRestaurant(state => ({...state, ratedBy: incrementedLikes}))
             })
     }
     function deleteRestaurant(){
@@ -54,7 +55,7 @@ function DetailsWithFunction({match}){
             <article className="restaurant-details-cointainer">
                 <img src={restaurant.imageUrl} alt={restaurant.name} />
                 <h1 className="restaurant-details-name">{restaurant.location}</h1>
-                <h3 className="rated-by">Liked by {restaurant.likedBy.length} people</h3>
+                <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
                 <p className="restaurant-details-description">{restaurant.description}</p>
                 <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                 <article className="details-buttons">
@@ -72,7 +73,7 @@ function DetailsWithFunction({match}){
                 <article className="restaurant-details-cointainer">
                     <img src={restaurant.imageUrl} alt={restaurant.name} />
                     <h1 className="restaurant-details-name">{restaurant.location}</h1>
-                    <h3 className="rated-by">Liked by {restaurant.likedBy.length} people</h3>
+                    <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
                     <p className="restaurant-details-description">{restaurant.description}</p>
                     <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                     <article className="details-buttons">
