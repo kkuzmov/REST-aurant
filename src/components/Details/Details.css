@@ -28,6 +28,9 @@
     text-shadow: 0px 3px 3px rgba(104, 6, 6, 0.5);
 
 }
+.restaurant-details-description{
+    font-size: 25px;
+}
 .restaurant-details-cointainer p{
     font-size: 20px;
 }
@@ -49,4 +52,22 @@
 }
 .details-buttons button{
     margin: 5px;
+}
+.pros-and-cons-details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.pros-and-cons-details p{
+    margin: 3px;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 3px;
+    background-color: rgba(133, 190, 42, 0.411);
+}
+.heading-and-text-pros-cons h3{
+    border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
+    padding-bottom: 5px;
+    margin: 15px;
+    font-size: 25px;
 }
