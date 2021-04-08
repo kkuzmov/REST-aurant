@@ -51,7 +51,7 @@ function Register(){
                     setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username, photoURL,})
                     .then(res => {
                         history.push('/')
-                    }), 2000)
+                    }), 3000)
                 })
                 .catch(err => setErrMessage(err.message))
         }
