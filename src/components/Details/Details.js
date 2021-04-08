@@ -50,19 +50,20 @@ function DetailsWithFunction({match}){
     if(restaurant.creator === currentUser?.uid){
        return <>
             <h1 className="details-heading">{restaurant.name}</h1>
+            <h1 className="restaurant-details-name">{restaurant.location}</h1>
             <article className="restaurant-details-cointainer">
                 <img src={restaurant.imageUrl} alt={restaurant.name} />
-                <h1 className="restaurant-details-name">{restaurant.location}</h1>
                 <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
+                <h2 className="restaurant-details-description-heading">Description</h2>
                 <p className="restaurant-details-description">{restaurant.description}</p>
                 <section className="pros-and-cons-details">
                     <section className="heading-and-text-pros-cons">
                         <h3>Pros</h3>
-                        <p className="pros">{restaurant.pros}</p>
+                        <p className="pros">{restaurant.pros || 'No pros around here. Mistakes have been made.'}</p>
                     </section>
                     <section className="heading-and-text-pros-cons">
                         <h3>Cons</h3>
-                        <p className="cons">{restaurant.cons}</p>
+                        <p className="cons">{restaurant.cons|| 'No cons around here. Take my money pleeease!'}</p>
                     </section>
                 </section>
                 {/* <p><img src={map} alt="map" className="google-api-sample-pic" /></p> */}

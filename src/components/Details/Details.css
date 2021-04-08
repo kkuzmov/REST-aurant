@@ -23,19 +23,16 @@
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
     border-radius: 15px;
 }
-.restaurant-details-cointainer h1{
+.restaurant-details-name{
     font-size: 40px;
     text-shadow: 0px 3px 3px rgba(104, 6, 6, 0.5);
-
-}
-.restaurant-details-description{
-    font-size: 25px;
+    border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
 }
 .restaurant-details-cointainer p{
     font-size: 20px;
-}
-.restaurant-details-name{
-    border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
 }
 .rated-by{
     border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
@@ -59,15 +56,24 @@
     margin-bottom: 50px;
 }
 .pros-and-cons-details p{
-    margin: 3px;
+    margin: 5px;
     min-width: 250px;
     max-width: 250px;
     padding: 3px;
     background-color: rgba(133, 190, 42, 0.411);
 }
-.heading-and-text-pros-cons h3{
+.restaurant-details-description{
+    max-width: 450px;
+    padding: 3px;
+    background-color: rgba(133, 190, 42, 0.411);
+}
+.heading-and-text-pros-cons{
+    margin: 30px;
+}
+.heading-and-text-pros-cons h3,
+.restaurant-details-description-heading{
     border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
     padding-bottom: 5px;
     margin: 15px;
-    font-size: 25px;
+    font-size: 29px;
 }
