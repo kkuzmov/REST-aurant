@@ -5,7 +5,6 @@ import { getOneRestaurant } from '../../services/services.js';
 import Notification from '../Notifications/Notifications';
 import { AuthContext } from '../Auth/Auth';
 
-import map from './map.jpeg'
 import { useContext, useEffect, useState } from 'react';
 
 function DetailsWithFunction({match}){
@@ -56,7 +55,7 @@ function DetailsWithFunction({match}){
                 <h1 className="restaurant-details-name">{restaurant.location}</h1>
                 <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
                 <p className="restaurant-details-description">{restaurant.description}</p>
-                <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
+                {/* <p><img src={map} alt="map" className="google-api-sample-pic" /></p> */}
                 <article className="details-buttons">
                     <button className="site-button"onClick={deleteRestaurant}>Delete</button>
                     <Link to={`/edit/${match.params.id}`}><button className="site-button">Edit</button></Link>
@@ -74,7 +73,6 @@ function DetailsWithFunction({match}){
                     <h1 className="restaurant-details-name">{restaurant.location}</h1>
                     <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
                     <p className="restaurant-details-description">{restaurant.description}</p>
-                    <p><img src={map} alt="map" className="google-api-sample-pic" /></p>
                     <article className="details-buttons">
                         <button className="site-button">Save</button>
                         <button className="site-button" onClick={likeRestaurant}>Like</button>
