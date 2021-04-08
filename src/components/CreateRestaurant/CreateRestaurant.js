@@ -26,6 +26,8 @@ function CreateRestaurant(){
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
             'category': event.target.category.value,
+            'pros': event.target.pros.value,
+            'cons': event.target.cons.value,
             'ratedBy': 0,
             'likedBy': [],
             'creator': currentUser.uid
