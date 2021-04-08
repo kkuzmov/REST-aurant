@@ -10,7 +10,7 @@ function RatedRestaurants(){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
     let [restaurants, setAllRestaurants] = useState([]);
-    
+    let allRatedRestaurants;
     useEffect(()=>{
         if(currentUser == null){
             history.push('/login')
@@ -24,16 +24,20 @@ function RatedRestaurants(){
         })
     }
     }, [])
-    
-    let allRatedRestaurants = restaurants.map(x => <Restaurant 
-        key={x.id}
-        imageUrl={x.imageUrl}
-        name={x.name}
-        description={x.description}
-        location={x.location}
-        rating={x.rating}
-        id={x.id}/>
-    )
+    if(restaurants.length > 0){
+        allRatedRestaurants = restaurants.map(x => <Restaurant 
+            key={x.id}
+            imageUrl={x.imageUrl}
+            name={x.name}
+            description={x.description}
+            location={x.location}
+            rating={x.rating}
+            id={x.id}/>
+        )
+    }else{
+        allRatedRestaurants = <h1>You have made no reviews yet...</h1>
+    }
+
 
     return(
         <>

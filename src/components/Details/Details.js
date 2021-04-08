@@ -84,6 +84,16 @@ function DetailsWithFunction({match}){
                     <h1 className="restaurant-details-name">{restaurant.location}</h1>
                     <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
                     <p className="restaurant-details-description">{restaurant.description}</p>
+                    <section className="pros-and-cons-details">
+                    <section className="heading-and-text-pros-cons">
+                        <h3>Pros</h3>
+                        <p className="pros">{restaurant.pros || 'No pros around here. Mistakes have been made.'}</p>
+                    </section>
+                    <section className="heading-and-text-pros-cons">
+                        <h3>Cons</h3>
+                        <p className="cons">{restaurant.cons|| 'No cons around here. Take my money pleeease!'}</p>
+                    </section>
+                </section>
                     <article className="details-buttons">
                         <button className="site-button">Save</button>
                         <button className="site-button" onClick={likeRestaurant}>Like</button>
