@@ -10,6 +10,7 @@ function LikedRestaurants(){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
     let [restaurants, setAllRestaurants] = useState([]);
+    let allLikedRestaurants;
     
     useEffect(()=>{
         if(currentUser == null){
@@ -24,16 +25,19 @@ function LikedRestaurants(){
         })
     }
     }, [])
-    
-    let allLikedRestaurants = restaurants.map(x => <Restaurant 
-        key={x.id}
-        imageUrl={x.imageUrl}
-        name={x.name}
-        description={x.description}
-        location={x.location}
-        rating={x.rating}
-        id={x.id}/>
-    )
+    if(restaurants.length > 0){
+        allLikedRestaurants = restaurants.map(x => <Restaurant 
+            key={x.id}
+            imageUrl={x.imageUrl}
+            name={x.name}
+            description={x.description}
+            location={x.location}
+            rating={x.rating}
+            id={x.id}/>
+        )
+    }else{
+        allLikedRestaurants = <h1>You didn't like a single review yet...</h1>
+    }
 
     return(
         <>
