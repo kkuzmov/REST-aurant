@@ -1,4 +1,24 @@
-.about-page h3, .about-page p{
-    font-size: 25px;
+.about-page p{
+    font-size: 27px;
     font-weight: 200;
+    margin: 50px auto;
+}
+.about-info{
+    max-width: 692px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+.about-page{
+    margin: 60px auto;
+}
+.about-page h2{
+    font-size: 30px;
+}
+.join-us{
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px #513C2C;
 }
