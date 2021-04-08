@@ -10,6 +10,7 @@ class NavigationGuest extends Component{
             <ul className="navigation">
                 <Link to="/login" className="nav-link">Login</Link>
                 <Link to="/register" className="nav-link">Register</Link>
+                <Link to="/about" className="nav-link">About</Link>
             </ul>
         )
     }
