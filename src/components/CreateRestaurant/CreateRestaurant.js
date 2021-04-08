@@ -83,8 +83,8 @@ function CreateRestaurant(){
                         <textarea name="description" id="description" cols="34" rows="10" placeholder="Write a review here..."></textarea>
                     </article>
                     <article className="pros-and-cons">
-                        <textarea type="text" name="pros" placeholder="Pros"></textarea>
-                        <textarea type="text" name="cons" placeholder="Cons"></textarea>
+                        <textarea type="text" name="pros" cols="14" rows="3" placeholder="Pros"></textarea>
+                        <textarea type="text" name="cons" cols="14" rows="3" placeholder="Cons"></textarea>
                     </article>
                     <article className="form-input">
                         <input type="number" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required />
