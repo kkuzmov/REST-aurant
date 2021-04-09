@@ -89,13 +89,18 @@ function DetailsWithFunction({match}){
     }else{
         return(
             <>
-                <h1 className="details-heading">{restaurant.name}</h1>
-                <article className="restaurant-details-cointainer">
-                    <img src={restaurant.imageUrl} alt={restaurant.name} />
-                    <h1 className="restaurant-details-name">{restaurant.location}</h1>
-                    <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
-                    <p className="restaurant-details-description">{restaurant.description}</p>
-                    <section className="pros-and-cons-details">
+            <h1 className="details-heading">{restaurant.name}</h1>
+            <h1 className="restaurant-details-name">{restaurant.location}</h1>
+            <article className="restaurant-details-cointainer">
+                <section className="restaurant-rating">
+                    <h2 className="restaurant-details-rating-heading"><i className="far fa-star"></i></h2>
+                    <p className="restaurant-details-rating">{restaurant.rating}/5</p>
+                </section>
+                <img src={restaurant.imageUrl} alt={restaurant.name} />
+                <h3 className="rated-by">Liked by {restaurant.ratedBy} people</h3>
+                <h2 className="restaurant-details-description-heading">Description</h2>
+                <p className="restaurant-details-description">{restaurant.description}</p>
+                <section className="pros-and-cons-details">
                     <section className="heading-and-text-pros-cons">
                         <h3>Pros</h3>
                         <p className="pros">{restaurant.pros || 'No pros around here. Mistakes have been made.'}</p>
