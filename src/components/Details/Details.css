@@ -77,3 +77,20 @@
     margin: 15px;
     font-size: 29px;
 }
+.restaurant-rating{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin-top: -50px;
+}
+.restaurant-rating h2{
+    margin-bottom: -20px;
+    padding-bottom: 6px;
+    font-size: 29px;
+    border-bottom: 0.5px solid rgba(133, 190, 42, 0.623);
+    width: 150px;
+}
+.restaurant-rating p{
+    font-size: 30px;
+}
