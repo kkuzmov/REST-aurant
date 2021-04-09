@@ -23,6 +23,11 @@
     box-shadow: 5px 5px 15px 13px #c7d436a8;
     border-radius: 15px;
 }
+@media all and (max-width: 600px){
+    .restaurant-details-cointainer > img{
+        max-width: 300px;
+    }
+}
 .restaurant-details-name{
     font-size: 40px;
     text-shadow: 0px 3px 3px rgba(104, 6, 6, 0.5);
