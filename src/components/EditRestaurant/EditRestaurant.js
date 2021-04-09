@@ -23,6 +23,7 @@ function EditRestaurant({ match }){
             let currentRestaurant = {...res.data()};
             setRestaurant(currentRestaurant)
         })
+        .catch(err => setErrMessage(err.message))
     }, [])
     const { currentUser } = useContext(AuthContext);
 
@@ -52,7 +53,8 @@ function EditRestaurant({ match }){
             .then(res => {
                 setNotificationMessage('Successfully edited restaurant!');
                 setTimeout(()=> history.push('/'), 2500)
-            });
+            })
+            .catch(err => setErrMessage(err.message))
         }
         
     }

@@ -27,6 +27,7 @@ class HomepageUser extends Component{
             allFetched = allFetched.sort((a, b) => b.ratedBy - a.ratedBy).slice(0, 3)
             this.setState({'restaurants': allFetched})
         })
+        .catch(err => console.log(err.message))
     }
     componentDidMount(){
         this.getRestaurants();

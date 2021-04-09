@@ -23,6 +23,7 @@ class RestaurantsWrapper extends Component{
             })
             this.setState({'restaurants': allFetched})
         })
+        .catch(err => console.log(err))
     }
     componentDidMount(){
         this.getRestaurants();

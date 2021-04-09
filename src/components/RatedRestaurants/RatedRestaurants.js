@@ -3,6 +3,7 @@ import { db } from '../../firebase/firebase.config';
 import { AuthContext } from '../Auth/Auth';
 import Restaurant from '../Restaurant/Restaurant';
 import {  useHistory } from 'react-router-dom';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 
 
@@ -10,6 +11,8 @@ function RatedRestaurants(){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
     let [restaurants, setAllRestaurants] = useState([]);
+    const [ errMessage, setErrMessage ] = useState('');
+
     let allRatedRestaurants;
     useEffect(()=>{
         if(currentUser == null){
@@ -22,6 +25,7 @@ function RatedRestaurants(){
             let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
             setAllRestaurants(allRestaurants)
         })
+        .catch(err => setErrMessage(err.message))
     }
     }, [])
     if(restaurants.length > 0){
@@ -46,6 +50,7 @@ function RatedRestaurants(){
         <article className="all-rated-restaurants">
                 {allRatedRestaurants}
         </article>
+        <ErrorMessage>{errMessage}</ErrorMessage>
         </>
     )
 }

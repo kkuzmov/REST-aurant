@@ -4,6 +4,7 @@ import {db} from '../../firebase/firebase.config';
 import { getOneRestaurant } from '../../services/services.js';
 import Notification from '../Notifications/Notifications';
 import { AuthContext } from '../Auth/Auth';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import { useContext, useEffect, useState } from 'react';
 
@@ -11,6 +12,7 @@ function DetailsWithFunction({match}){
     let history = useHistory();
     const [ notificationMessage, setNotificationMessage ] = useState('');
     const { currentUser } = useContext(AuthContext);
+    const [ errMessage, setErrMessage ] = useState('');
     
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
@@ -20,6 +22,8 @@ function DetailsWithFunction({match}){
             let currentRestaurant = {...res.data()};
             setRestaurant(currentRestaurant)
         })
+        .catch(err => setErrMessage(err.message))
+
     }, [])
 
     if(!currentUser){
@@ -37,6 +41,8 @@ function DetailsWithFunction({match}){
             .then(rest => {
                 setRestaurant(state => ({...state, ratedBy: incrementedLikes}))
             })
+            .catch(err => setErrMessage(err.message))
+
     }
     function deleteRestaurant(){
         db.collection('restaurants')
@@ -46,6 +52,8 @@ function DetailsWithFunction({match}){
                 setNotificationMessage('Restaurant deleted!');
                 setTimeout(()=> history.push('/'), 2500)
             })
+            .catch(err => setErrMessage(err.message))
+
     }
     if(restaurant.creator === currentUser?.uid){
        return <>

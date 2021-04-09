@@ -44,7 +44,8 @@ function CreateRestaurant(){
                 setTimeout(() => {
                 history.push('/') 
                 }, 2500);
-            });
+            })
+            .catch(err => setErrMessage(err.message))
         }
         
     }
