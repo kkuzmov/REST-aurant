@@ -31,6 +31,7 @@ function RatedRestaurants(){
             name={x.name}
             description={x.description}
             location={x.location}
+            category={x.category}
             rating={x.rating}
             id={x.id}/>
         )

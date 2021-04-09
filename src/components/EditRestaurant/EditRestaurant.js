@@ -38,6 +38,9 @@ function EditRestaurant({ match }){
             'rating': Number(event.target.rating.value),
             'description': event.target.description.value,
             'imageUrl': event.target.imageUrl.value,
+            'category': event.target.category.value,
+            'pros': event.target.pros.value,
+            'cons': event.target.cons.value,
         }
         if(testInput(userInputNewRestaurant)){
             let message = testInput(userInputNewRestaurant);
@@ -68,8 +71,25 @@ function EditRestaurant({ match }){
                     <article className="form-input">
                         <input type="number" min="1" max="5" step="0.5" name="rating" required defaultValue={restaurant.rating}/>
                     </article>
+                    <article className="form-input">
+                        {/* <input type="select" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required /> */}
+                        <select name="category">
+                            <option value="" selected disabled>Select your option</option>
+                            <option value="Ethnic">Ethnic</option>
+                            <option value="Fast food">Fast food</option>
+                            <option value="Fast casual">Fast casual</option>
+                            <option value="Casual dining">Casual dining</option>
+                            <option value="Premium casual">Premium casual</option>
+                            <option value="Family style">Family style</option>
+                            <option value="Fine Dining">Fine Dining</option>
+                        </select>
+                    </article>
                     <article className="form-input textarea-input">
                         <textarea name="description" id="description" cols="39" rows="10" defaultValue={restaurant.description}></textarea>
+                    </article>
+                    <article className="pros-and-cons">
+                        <textarea type="text" name="pros" cols="14" rows="3" defaultValue={restaurant.pros}></textarea>
+                        <textarea type="text" name="cons" cols="14" rows="3" defaultValue={restaurant.cons}></textarea>
                     </article>
                     <article className="form-input">
                         {/* <input type="file" id="photo" name="uploaded-picture" /> */}
