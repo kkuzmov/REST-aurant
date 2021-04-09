@@ -13,7 +13,6 @@ function Profile(){
     if(currentUser === null){
         return <Redirect to="/login" />
     }
-    // let url = `${currentUser.uid}/rated-restaurants`
         return (
             <>
             <h1 className="page-heading">My profile</h1>

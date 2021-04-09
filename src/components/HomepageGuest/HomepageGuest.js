@@ -9,7 +9,8 @@ class HomepageGuest extends Component{
         return (
     <main>
         <h1 className="welcome">Welcome to REST-aurant!</h1>
-        <p className="lorem-ipsum">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis alias ullam repudiandae quos voluptatum debitis vero dicta error soluta perferendis et eveniet quidem, aliquid quas assumenda non? Eligendi, sit voluptatum.</p>
+        <p className="lorem-ipsum">Here you can find real client reviews for a whole bunch of restaurants and other food places around the globe. Read reviews and decide on which place you are willing to devote your sublime taste buds and delicate palate. Find new ideas and create your own content, starting today!</p>
+        <p className="lorem-ipsum">Check out <Link to="/all-restaurants">all restaurants</Link> we currently have in our database.</p>
         <article className="all-restaurants-homepage">
             <article className="restaurant-card card-left-guest">
                 <img src="https://www.mychoice.bg/wp-content/uploads/2020/05/959x578-restorant-1-1.jpg" alt="simeonovo-restaurant"/>
