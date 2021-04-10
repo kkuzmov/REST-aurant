@@ -16,6 +16,7 @@ function DetailsWithFunction({match}){
     
     //set current restaurant
     let [restaurant, setRestaurant] = useState({});
+    
     useEffect(()=>{
         getOneRestaurant(match.params.id)
         .then(res =>{
@@ -111,8 +112,7 @@ function DetailsWithFunction({match}){
                     </section>
                 </section>
                     <article className="details-buttons">
-                        <button className="site-button">Save</button>
-                        <button className="site-button" onClick={likeRestaurant}>Like</button>
+                        <button className="site-button" onClick={likeRestaurant}>Like and save</button>
                     </article>
                     <Notification>{notificationMessage}</Notification>
     
