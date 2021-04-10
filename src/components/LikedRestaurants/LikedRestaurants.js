@@ -43,7 +43,7 @@ function LikedRestaurants(){
 
    // used only after restaurants have been set
 
-    if(restaurants.length > 0){
+    if(currentRestaurantsToRender.length > 0){
         allLikedRestaurants = currentRestaurantsToRender.map(x => <Restaurant 
             key={x.id}
             imageUrl={x.imageUrl}

@@ -12,6 +12,7 @@ function RatedRestaurants(){
     const { currentUser } = useContext(AuthContext);
     let [restaurants, setAllRestaurants] = useState([]);
     const [ errMessage, setErrMessage ] = useState('');
+    let [currentRestaurantsToRender, setCurrentRestaurantsToRender] = useState([]);
 
     let allRatedRestaurants;
     useEffect(()=>{
@@ -23,13 +24,27 @@ function RatedRestaurants(){
             .get()
             .then(res => {
             let allRestaurants = res.docs.map(restaurant => restaurant = {...restaurant.data(), id: restaurant.id})
-            setAllRestaurants(allRestaurants)
+            setAllRestaurants(allRestaurants);
+            setCurrentRestaurantsToRender(allRestaurants);
         })
         .catch(err => setErrMessage(err.message))
     }
     }, [])
-    if(restaurants.length > 0){
-        allRatedRestaurants = restaurants.map(x => <Restaurant 
+
+    function performSearch(event){
+        event.preventDefault()
+        let filteredResults = restaurants.filter(rest => 
+            rest.name.toLowerCase().includes(event.target.search.value.toLowerCase())||
+            rest.location.toLowerCase().includes(event.target.search.value.toLowerCase())||
+            rest.description.toLowerCase().includes(event.target.search.value.toLowerCase())
+        )
+        setCurrentRestaurantsToRender(filteredResults)
+    }
+
+   // used only after restaurants have been set
+
+    if(currentRestaurantsToRender.length > 0){
+        allRatedRestaurants = currentRestaurantsToRender.map(x => <Restaurant 
             key={x.id}
             imageUrl={x.imageUrl}
             name={x.name}
@@ -47,6 +62,11 @@ function RatedRestaurants(){
     return(
         <>
         <h1 className="page-heading">My rated restaurants</h1>
+        <form onSubmit={performSearch}>
+        <label htmlFor="search">Search here</label>
+        <input type="search" name="search"></input>
+        <input type="submit" value="Search"></input>
+        </form>
         <article className="all-rated-restaurants">
                 {allRatedRestaurants}
         </article>
