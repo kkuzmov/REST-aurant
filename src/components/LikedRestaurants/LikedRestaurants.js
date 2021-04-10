@@ -35,7 +35,8 @@ function LikedRestaurants(){
         event.preventDefault()
         let filteredResults = restaurants.filter(rest => 
             rest.name.toLowerCase().includes(event.target.search.value.toLowerCase())||
-            rest.location.toLowerCase().includes(event.target.search.value.toLowerCase())
+            rest.location.toLowerCase().includes(event.target.search.value.toLowerCase())||
+            rest.description.toLowerCase().includes(event.target.search.value.toLowerCase())
         )
         setCurrentRestaurantsToRender(filteredResults)
     }
