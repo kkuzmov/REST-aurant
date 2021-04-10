@@ -48,7 +48,11 @@ class RestaurantsWrapper extends Component{
             description={x.description}
             location={x.location}
             category={x.category}
-            id={x.id}/>) || 'Loading...'
+            id={x.id}/>);
+        
+        if(allRestaurants.length === 0){
+            allRestaurants = <h1>No restaurants found...</h1>
+        }
 
         return (
             <>
