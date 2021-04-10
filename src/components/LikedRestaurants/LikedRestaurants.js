@@ -65,7 +65,7 @@ function LikedRestaurants(){
         <form onSubmit={performSearch}>
         <label htmlFor="search">Search here</label>
         <input type="search" name="search"></input>
-        <input type="submit" value="Search"></input>
+        <input type="submit" value="Search" className='site-button'></input>
         </form>
         <article className="all-rated-restaurants">
                 {allLikedRestaurants}
