@@ -57,10 +57,10 @@ class RestaurantsWrapper extends Component{
         return (
             <>
             <h1 className="page-heading">All restaurants</h1>
-            <form onSubmit={this.performSearch}>
-            <label htmlFor="search">Search here</label>
-            <input type="search" name="search"></input>
-            <input type="submit" value="Search" className='site-button'></input>
+            <form onSubmit={this.performSearch} className="search-form">
+                <label htmlFor="search" className="search-label">Search in restaurants</label>
+                <input type="search" name="search" className="search-input"></input>
+                <input type="submit" value="Find" className='site-button'></input>
             </form>
             <article className="all-rated-restaurants">
                 {allRestaurants}

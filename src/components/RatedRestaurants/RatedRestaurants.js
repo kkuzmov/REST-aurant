@@ -4,6 +4,7 @@ import { AuthContext } from '../Auth/Auth';
 import Restaurant from '../Restaurant/Restaurant';
 import {  useHistory } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { style } from './RatedRestaurants.css'
 
 
 
@@ -55,17 +56,17 @@ function RatedRestaurants(){
             id={x.id}/>
         )
     }else{
-        allRatedRestaurants = <h1>You have made no reviews yet...</h1>
+        allRatedRestaurants = <h1 className="no-restaurants">You have made no reviews yet...</h1>
     }
 
 
     return(
         <>
         <h1 className="page-heading">My rated restaurants</h1>
-        <form onSubmit={performSearch}>
-        <label htmlFor="search">Search here</label>
-        <input type="search" name="search"></input>
-        <input type="submit" value="Search" className='site-button'></input>
+        <form onSubmit={performSearch} className="search-form">
+            <label htmlFor="search" className="search-label">Search in restaurants</label>
+            <input type="search" name="search" className="search-input"></input>
+            <input type="submit" value="Find" className='site-button'></input>
         </form>
         <article className="all-rated-restaurants">
                 {allRatedRestaurants}

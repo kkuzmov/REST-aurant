@@ -67,10 +67,15 @@
     padding: 3px;
     background-color: rgba(133, 190, 42, 0.411);
 }
+.pros, .cons{
+    box-shadow: 5px 5px 15px 13px #c7d436a8;
+}
 .restaurant-details-description{
     max-width: 450px;
     padding: 3px;
     background-color: rgba(133, 190, 42, 0.411);
+    box-shadow: 5px 5px 15px 13px #c7d436a8;
+
 }
 .heading-and-text-pros-cons{
     margin: 30px;
