@@ -62,7 +62,7 @@ function RatedRestaurants(){
 
     return(
         <>
-        <h1 className="page-heading">My rated restaurants</h1>
+        <h1 className="page-heading">My reviews</h1>
         <form onSubmit={performSearch} className="search-form">
             <label htmlFor="search" className="search-label">Search in restaurants</label>
             <input type="search" name="search" className="search-input"></input>
