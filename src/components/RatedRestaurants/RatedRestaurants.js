@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { db } from '../../firebase/firebase.config';
 import { AuthContext } from '../Auth/Auth';
-import Restaurant from '../Restaurant/Restaurant';
+import RestaurantInList from '../RestaurantInList/RestaurantInList';
 import {  useHistory } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { style } from './RatedRestaurants.css'
@@ -45,7 +45,7 @@ function RatedRestaurants(){
    // used only after restaurants have been set
 
     if(currentRestaurantsToRender.length > 0){
-        allRatedRestaurants = currentRestaurantsToRender.map(x => <Restaurant 
+        allRatedRestaurants = currentRestaurantsToRender.map(x => <RestaurantInList 
             key={x.id}
             imageUrl={x.imageUrl}
             name={x.name}

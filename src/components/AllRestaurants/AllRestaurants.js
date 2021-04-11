@@ -3,7 +3,7 @@ import { style } from './AllRestaurants.css';
 import { db } from '../../firebase/firebase.config';
 
 
-import Restaurant from '../Restaurant/Restaurant';
+import RestaurantInList from '../RestaurantInList/RestaurantInList';
  
 class AllRestaurants extends Component{
     constructor(props){
@@ -41,7 +41,7 @@ class AllRestaurants extends Component{
         this.setState({'currentRestaurants': filteredResults})
     }
     render(){
-        let allRestaurants = this.state.currentRestaurants.map(x => x = <Restaurant 
+        let allRestaurants = this.state.currentRestaurants.map(x => x = <RestaurantInList 
             key={x.id}
             imageUrl={x.imageUrl}
             name={x.name}
