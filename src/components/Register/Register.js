@@ -14,9 +14,7 @@ import { firebaseApp, storageRef } from '../../firebase/firebase.config';
 function Register(){
     let history = useHistory();
     const { currentUser } = useContext(AuthContext);
-
     const [ errMessage, setErrMessage ] = useState('');
-
     if(currentUser){
         return <Redirect to="/" />
     }

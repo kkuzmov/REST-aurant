@@ -9,7 +9,7 @@ import Register from './components/Register/Register';
 import CreateRestaurant from './components/CreateRestaurant/CreateRestaurant';
 import Details from './components/Details/Details';
 import EditRestaurant from './components/EditRestaurant/EditRestaurant';
-import RestaurantsWrapper from './components/RestaurantsWrapper/RestaurantsWrapper';
+import AllRestaurants from './components/AllRestaurants/AllRestaurants';
 import RatedRestaurants from './components/RatedRestaurants/RatedRestaurants';
 import LikedRestaurants from './components/LikedRestaurants/LikedRestaurants';
 import Profile from './components/Profile/Profile';
@@ -32,7 +32,7 @@ class Main extends Component{
             <Switch>
             <Route path="/" exact component={HomepageContainer}/>
             <Route path="/create" exact component={CreateRestaurant}/>
-            <Route path="/all-restaurants" component={RestaurantsWrapper}/>
+            <Route path="/all-restaurants" component={AllRestaurants}/>
             <Route path="/:id/rated-restaurants" component={RatedRestaurants}/>
             <Route path="/:id/liked-restaurants" component={LikedRestaurants}/>
             <Route path="/profile" component={Profile}/>

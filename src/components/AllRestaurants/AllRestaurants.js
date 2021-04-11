@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { style } from './RestaurantsWrapper.css';
+import { style } from './AllRestaurants.css';
 import { db } from '../../firebase/firebase.config';
 
 
