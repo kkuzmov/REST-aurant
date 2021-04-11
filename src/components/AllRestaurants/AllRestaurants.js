@@ -5,7 +5,7 @@ import { db } from '../../firebase/firebase.config';
 
 import Restaurant from '../Restaurant/Restaurant';
  
-class RestaurantsWrapper extends Component{
+class AllRestaurants extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -70,4 +70,4 @@ class RestaurantsWrapper extends Component{
     }
 }
 
-export default RestaurantsWrapper;
+export default AllRestaurants;
