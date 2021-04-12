@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { style } from './Restaurant.css';
+import { style } from './RestaurantInAllRestaurants.css';
 import { Link } from 'react-router-dom';
 
  
-class RestaurantInList extends Component{
+class RestaurantInAllRestaurants extends Component{
     render(){
         let url = `/details/${this.props.id}`
 
@@ -19,4 +19,4 @@ class RestaurantInList extends Component{
     }
 }
 
-export default RestaurantInList;
+export default RestaurantInAllRestaurants;

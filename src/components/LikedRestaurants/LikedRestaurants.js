@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { db } from '../../firebase/firebase.config';
 import { AuthContext } from '../Auth/Auth';
-import RestaurantInList from '../RestaurantInList/RestaurantInList';
+import RestaurantInAllRestaurants from '../RestaurantInAllRestaurants/RestaurantInAllRestaurants';
 import {  useHistory } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
@@ -44,7 +44,7 @@ function LikedRestaurants(){
    // used only after restaurants have been set
 
     if(currentRestaurantsToRender.length > 0){
-        allLikedRestaurants = currentRestaurantsToRender.map(x => <RestaurantInList 
+        allLikedRestaurants = currentRestaurantsToRender.map(x => <RestaurantInAllRestaurants 
             key={x.id}
             imageUrl={x.imageUrl}
             name={x.name}

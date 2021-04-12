@@ -1,6 +1,5 @@
 import { db } from '../firebase/firebase.config';
 import firebase from 'firebase';
-// is it neccessary?
 import "firebase/auth"
 
 export function getOneRestaurant(id){
