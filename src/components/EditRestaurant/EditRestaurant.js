@@ -76,7 +76,7 @@ function EditRestaurant({ match }){
                     <article className="form-input">
                         {/* <input type="select" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required /> */}
                         <select name="category">
-                            <option value="" selected disabled>Select your option</option>
+                            <option value="" defaultValue selected>Select your option</option>
                             <option value="Ethnic">Ethnic</option>
                             <option value="Fast food">Fast food</option>
                             <option value="Fast casual">Fast casual</option>
