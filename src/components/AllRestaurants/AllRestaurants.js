@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { style } from './AllRestaurants.css';
 import { db } from '../../firebase/firebase.config';
+import { Circle, Heart, Ellipsis } from 'react-spinners-css';
 
 
 import RestaurantInAllRestaurants from '../RestaurantInAllRestaurants/RestaurantInAllRestaurants';
@@ -51,7 +52,7 @@ class AllRestaurants extends Component{
             id={x.id}/>);
         
         if(allRestaurants.length === 0){
-            allRestaurants = <h1>No restaurants found...</h1>
+            allRestaurants = <Ellipsis color="#513C2C" size={100}/>
         }
 
         return (

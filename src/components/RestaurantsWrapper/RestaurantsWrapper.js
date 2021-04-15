@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { style } from './RestaurantsWrapper.css';
 import { db } from '../../firebase/firebase.config';
+import { Circle, Heart, Ellipsis } from 'react-spinners-css';
 
 
 import Restaurant from '../Restaurant/Restaurant';
@@ -36,7 +37,7 @@ class RestaurantsWrapper extends Component{
             description={x.description}
             location={x.location}
             category={x.category}
-            id={x.id}/>) || 'Loading...'
+            id={x.id}/>) || <Ellipsis />
 
         return (
             <>
