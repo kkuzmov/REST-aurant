@@ -15,6 +15,7 @@ import LikedRestaurants from './components/LikedRestaurants/LikedRestaurants';
 import Profile from './components/Profile/Profile';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import About from './components/About/About';
+import TEST from './components/TEST/TEST';
 import { AuthProvider } from './components/Auth/Auth';
 
 
@@ -39,6 +40,7 @@ class Main extends Component{
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/about" component={About}/>
+            <Route path="/test" component={TEST}/>
             <Route path="/details/:id" component={Details}/>
             <Route path="/edit/:id" component={EditRestaurant}/>
             <Route component={ErrorPage}/>
