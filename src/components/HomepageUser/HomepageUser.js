@@ -3,6 +3,7 @@ import { style } from './HomepageUser.css';
 import { Component } from 'react';
 import RestaurantHomepage from '../RestaurantHomepage/RestaurantHomepage';
 import {db} from '../../firebase/firebase.config';
+import { Circle, Heart, Ellipsis } from 'react-spinners-css';
 
 
 
@@ -34,6 +35,9 @@ class HomepageUser extends Component{
     }
     render(){
         let allRestaurants = this.state.restaurants.map(x => x = <RestaurantHomepage key={x.id} imageUrl={x.imageUrl} name={x.name} description={x.description} id={x.id} ratedBy={x.ratedBy}/>) || 'Loading...'
+        if(allRestaurants.length === 0){
+            allRestaurants = <Ellipsis color="#513C2C" size={100}/>
+        }
         return (
             <main>
                 <h1 className="top-rated">Welcome, {this.props.username}!</h1>
