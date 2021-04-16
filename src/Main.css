@@ -19,7 +19,7 @@ html{
     /* background: linear-gradient(312deg,  #FB8B24 0%, #E36414 24%, #89FF5B 100%);  */
 }
 body{
-    background: blue;
+    background-image: url('./pattern.svg');
     background-size: cover;
 }
 body a{
