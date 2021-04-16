@@ -20,6 +20,7 @@ html{
 }
 body{
     background-image: url('./pattern.svg');
+    /* background-color: #513C2C; */
     background-size: cover;
 }
 body a{
