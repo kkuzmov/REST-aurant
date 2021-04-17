@@ -1,5 +1,16 @@
-
-@media all and (max-width: 400px){
+.navigation{
+display: flex;
+}
+.navigation .nav-link{
+text-decoration: none;
+color: #513C2C;
+font-size: 35px;
+margin-right: 25px;
+}
+.nav-link:hover{
+color:#C9FA9E;
+}
+@media screen and (max-width: 600px){
     .navigation{
         display: flex;
         flex-direction: column;
@@ -25,19 +36,4 @@
     .navigation .nav-link:active{
         color:rgb(182, 233, 79);
     }
-}
-@media all and (min-width: 401px){
-    .navigation{
-        display: flex;
-    }
-    .navigation .nav-link{
-        text-decoration: none;
-        color: #513C2C;
-        font-size: 35px;
-        margin-right: 25px;
-    }
-    .nav-link:hover{
-        color:#C9FA9E;
-    }
-    
 }

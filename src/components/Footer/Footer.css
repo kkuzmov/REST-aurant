@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@media all and (max-width: 400px){
+.main-footer{
+    border-top: 2px solid rgb(102, 151, 2);
+    padding: 20px 0px 20px 0px;
+    font-size: 25px;
+    font-family: 'Rock Salt', cursive;
+}
+@media screen and (max-width: 600px){
     .main-footer{
         border-top: 2px solid rgb(102, 151, 2);
         padding: 15px 0px 10px 0px;
@@ -8,11 +14,4 @@
         margin: 0px 10px;
     }
 }
-@media all and (min-width: 401px){
-    .main-footer{
-        border-top: 2px solid rgb(102, 151, 2);
-        padding: 20px 0px 20px 0px;
-        font-size: 25px;
-        font-family: 'Rock Salt', cursive;
-    }
-}
+

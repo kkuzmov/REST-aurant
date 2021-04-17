@@ -1,35 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@media only screen and (max-width: 400px){
-    .main-header{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        border-bottom: 2px solid rgb(102, 151, 2);
-    }
-    .main-header i{
-        font-size: 88px;
-        color: #513C2C;
-        margin: 0px;
-    }
-    .main-header nav{
-        margin: 0px auto;
-    }
-    .main-header i:active{
-        color: #acf76b;
-    }
-    .main-header h1{
-        font-size: 30px;
-        margin: 0px;
-        font-family: 'Rock Salt', cursive;
-    }
-    .logo-in-header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
-@media all and (min-width: 401px){
 .main-header{
     display: flex;
     justify-content: space-between;
@@ -62,4 +31,33 @@
     flex-direction: column;
     justify-content: center;
 }
+@media screen and (max-width: 600px){
+    .main-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 2px solid rgb(102, 151, 2);
+    }
+    .main-header i{
+        font-size: 88px;
+        color: #513C2C;
+        margin: 0px;
+    }
+    .main-header nav{
+        margin: 0px auto;
+    }
+    .main-header i:active{
+        color: #acf76b;
+    }
+    .main-header h1{
+        font-size: 30px;
+        margin: 0px;
+        font-family: 'Rock Salt', cursive;
+    }
+    .logo-in-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

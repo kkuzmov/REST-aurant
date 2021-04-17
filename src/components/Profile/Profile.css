@@ -1,4 +1,23 @@
-@media all and (max-width: 400px){
+.user-profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 100px;
+    font-size: 20px;
+}
+.user-info img{
+    max-width: 200px;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: 5px;
+}
+.created-and-rated{
+    margin-bottom: 30px;
+}
+.created-restaurants, .rated-restaurants{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+@media screen and (max-width: 600px){
     .user-profile{
         display: flex;
         flex-direction: column;
@@ -21,26 +40,5 @@
     .created-restaurants, .rated-restaurants{
         margin: 20px auto;
         min-width: 180px;
-    }
-}
-@media all and (min-width: 401px){
-    .user-profile{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 30px 100px;
-        font-size: 20px;
-    }
-    .user-info img{
-        max-width: 200px;
-        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-        border-radius: 5px;
-    }
-    .created-and-rated{
-        margin-bottom: 30px;
-    }
-    .created-restaurants, .rated-restaurants{
-        margin-bottom: 0px;
-        margin-top: 0px;
     }
 }
