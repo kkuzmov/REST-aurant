@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@media all and (max-width: 400px){
+@media only screen and (max-width: 400px){
     .main-header{
         display: flex;
         flex-direction: column;
