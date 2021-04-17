@@ -1,28 +1,58 @@
-.card-user{
-    box-shadow: -9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0)
+@media all and (max-width: 400px){
+    .card-user{
+        box-shadow: -9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0)
+    }
+    .restaurant-card{
+        max-width: 250px;
+        background-color: #acf76b;
+        box-shadow: -2px 10px 60px -2px #513C2C;
+        margin-left: 20px;
+        padding: 20px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 0px;
+    }
+    .restaurant-card h4{
+        font-size: 33px;
+        padding: 0px;
+        margin: 20px 0px;
+        min-height: 96px;
+    }
+    .restaurant-card p{
+        padding: 0px;
+        font-size: 20px;
+        min-height: 56px;
+        /* margin-bottom: 30px; */
+    }
 }
-.restaurant-card{
-    margin-right: 20px;
-    max-width: 250px;
-    background-color: #acf76b;
-    /* box-shadow: 5px 5px 5px 0px #00000080, inset 4px 4px 15px 0px #00000079, 5px 5px 5px 5px rgba(0,0,0,0); */
-    box-shadow: -2px 10px 60px -2px #513C2C;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 40px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 0px;
-}
-.restaurant-card h4{
-    font-size: 33px;
-    padding: 0px;
-    margin: 20px 0px;
-    min-height: 96px;
-}
-.restaurant-card p{
-    padding: 0px;
-    font-size: 20px;
-    min-height: 86px;
-    margin-bottom: 30px;
+@media all and (min-width: 401px){
+    .card-user{
+        box-shadow: -9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0)
+    }
+    .restaurant-card{
+        margin-right: 20px;
+        max-width: 250px;
+        background-color: #acf76b;
+        /* box-shadow: 5px 5px 5px 0px #00000080, inset 4px 4px 15px 0px #00000079, 5px 5px 5px 5px rgba(0,0,0,0); */
+        box-shadow: -2px 10px 60px -2px #513C2C;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 0px;
+    }
+    .restaurant-card h4{
+        font-size: 33px;
+        padding: 0px;
+        margin: 20px 0px;
+        min-height: 96px;
+    }
+    .restaurant-card p{
+        padding: 0px;
+        font-size: 20px;
+        min-height: 86px;
+        margin-bottom: 30px;
+    }
 }

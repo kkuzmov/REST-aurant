@@ -10,7 +10,7 @@ class RestaurantHomepage extends Component{
             <article className="restaurant-card card-user">
                 <img src={this.props.imageUrl} alt={this.props.name}/>
                 <h4>{this.props.name}</h4>
-                <p>"{this.props.description.slice(0, 50)}..."</p>
+                <p className="restaurant-homepage-description">"{this.props.description.slice(0, 50)}..."</p>
                 <Link to={url}><button className="site-button homepage-button">Read more</button></Link>
                 
             </article>
