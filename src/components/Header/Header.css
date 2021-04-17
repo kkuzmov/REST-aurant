@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-
+@media all and (max-width: 400px){
+    .main-header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 2px solid rgb(102, 151, 2);
+    }
+    .main-header i{
+        font-size: 88px;
+        color: #513C2C;
+        margin: 0px;
+    }
+    .main-header i:active{
+        color: #acf76b;
+    }
+    .main-header h1{
+        font-size: 30px;
+        margin: 0px;
+        font-family: 'Rock Salt', cursive;
+    }
+    .logo-in-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media all and (min-width: 401px){
 .main-header{
     display: flex;
     justify-content: space-between;
@@ -31,4 +58,5 @@
     margin-left: 30px;
     flex-direction: column;
     justify-content: center;
+}
 }
