@@ -103,4 +103,9 @@
     .restaurant-details-cointainer > img{
         max-width: 300px;
     }
+    .pros-and-cons-details{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }

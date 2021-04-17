@@ -1,7 +1,7 @@
-.navigation{
+.navigation, .navigation-guest{
 display: flex;
 }
-.navigation .nav-link{
+.navigation .nav-link, .navigation, .navigation-guest .nav-link{
 text-decoration: none;
 color: #513C2C;
 font-size: 35px;
@@ -17,7 +17,6 @@ color:#C9FA9E;
     }
     .navigation-guest{
         display: flex;
-        margin-left: -40px;
         flex-direction: column;
     }
     .navigation-guest .nav-link{
