@@ -1,6 +1,3 @@
-@media all and (max-width: 400px){
-
-}
 .all-rated-restaurants{
     display: flex;
     flex-direction: column;

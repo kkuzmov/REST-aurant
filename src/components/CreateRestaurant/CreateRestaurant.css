@@ -1,45 +1,103 @@
-.create-restaurant-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media all and (max-width: 400px){
+    .create-rate-container{
+        margin: 0px 20px;
+    }
+    .create-restaurant-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .create-restaurant-form input, .form-input select{
+        border: none;
+        margin: 4px auto;
+        font-family: 'Patrick Hand SC', cursive;
+        max-width: 250px;
+        min-width: 250px;
+        border-radius: 3px;
+        text-align: center;
+        color: white;
+        background-color: #513C2C;
+        font-size: 22px;
+    }
+    .create-restaurant-form .site-button{
+        margin: 20px auto;
+    }
+    option{
+        font-family: 'Patrick Hand SC', Georgia, 'Times New Roman', Times, serif;
+        font-size: 19px;
+    }
+    .pros-and-cons{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+    }
+    .pros-and-cons textarea, 
+    .form-input textarea{
+        color: white;
+        margin: 3px 7px;
+        max-width: 250px;
+        min-width: 250px;
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 19px;
+        border: 2px solid #513C2C;
+        background-color: transparent;
+        background-color: #513C2C;
+        border: none;
+    }
+    .pros-and-cons textarea:focus,
+    .form-input textarea:focus{
+        margin: 3px 7px;
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 19px;
+        border: none;
+        background-color: white;
+        color: #513C2C;
+    }
 }
-.create-restaurant-form input, .form-input select{
-    border: none;
-    margin: 4px auto;
-    font-family: 'Patrick Hand SC', cursive;
-    min-height: 30px;
-    min-width: 320px;
-    border-radius: 3px;
-    text-align: center;
-    color: white;
-    background-color: #513C2C;
-    font-size: 22px;
-}
-option{
-    font-family: 'Patrick Hand SC', Georgia, 'Times New Roman', Times, serif;
-    font-size: 19px;
-}
-.pros-and-cons{
-    display: flex;
-    justify-content:space-between;
-}
-.pros-and-cons textarea, 
-.form-input textarea{
-    color: white;
-    margin: 3px 7px;
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 19px;
-    border: 2px solid #513C2C;
-    background-color: transparent;
-    background-color: #513C2C;
-    border: none;
-}
-.pros-and-cons textarea:focus,
-.form-input textarea:focus{
-    margin: 3px 7px;
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 19px;
-    border: none;
-    background-color: white;
-    color: #513C2C;
+@media all and (min-width: 401px){
+    .create-restaurant-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .create-restaurant-form input, .form-input select{
+        border: none;
+        margin: 4px auto;
+        font-family: 'Patrick Hand SC', cursive;
+        min-height: 30px;
+        min-width: 320px;
+        border-radius: 3px;
+        text-align: center;
+        color: white;
+        background-color: #513C2C;
+        font-size: 22px;
+    }
+    option{
+        font-family: 'Patrick Hand SC', Georgia, 'Times New Roman', Times, serif;
+        font-size: 19px;
+    }
+    .pros-and-cons{
+        display: flex;
+        justify-content:space-between;
+    }
+    .pros-and-cons textarea, 
+    .form-input textarea{
+        color: white;
+        margin: 3px 7px;
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 19px;
+        border: 2px solid #513C2C;
+        background-color: transparent;
+        background-color: #513C2C;
+        border: none;
+    }
+    .pros-and-cons textarea:focus,
+    .form-input textarea:focus{
+        margin: 3px 7px;
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 19px;
+        border: none;
+        background-color: white;
+        color: #513C2C;
+    }
 }

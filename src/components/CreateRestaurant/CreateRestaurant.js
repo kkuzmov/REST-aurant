@@ -61,7 +61,7 @@ function CreateRestaurant(){
         return(
             <>
             <h1 className="page-heading">Create new restaurant</h1>
-            <article className="authentication-container">
+            <article className="create-rate-container">
                 <form className="create-restaurant-form" onSubmit={create}>
                     <article className="form-input">
                         <input type="text" name="name" placeholder="Name" required/>
