@@ -1,9 +1,9 @@
+@media all and (min-width: 400px){
 .welcome{
     font-size: 80px;
 }
 .lorem-ipsum{
     font-size: 26px;
-    margin: 0px 100px;
     margin-bottom: 30px;
     margin-top: 50px;
     padding: 8px;
@@ -20,7 +20,6 @@
     margin-top: 0px;
 }
 .restaurant-card{
-    margin-right: 20px;
     max-width: 250px;
     margin-bottom: 20px;
     padding: 20px;
@@ -73,4 +72,54 @@
 .card-right-guest:hover{
     z-index: 2;
     box-shadow: 5px 5px 15px 6px rgba(0, 0, 0, 0.267);
+}
+}
+@media all and (max-width: 400px){
+    .welcome{
+        font-size: 60px;
+    }
+    .lorem-ipsum{
+        font-size: 20px;
+        padding: 8px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        border-radius: 30px;
+        background-color: rgba(133, 190, 42, 0.226);
+    }
+    .all-restaurants-homepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    .restaurant-card{
+        margin: 20px auto;
+        max-width: 200px;
+        padding: 20px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 0px;
+    }
+    .all-restaurants-homepage img{
+        max-width: 190px;
+        max-height: 150px;
+        padding: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 0px;
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+    .restaurant-card h4{
+        font-size: 33px;
+        padding: 0px;
+        margin: 20px 0px;
+    }
+    .restaurant-card p{
+        padding: 0px;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
 }
