@@ -19,8 +19,10 @@ function Profile(){
             <article className="user-profile">
                 <article className="user-info">
                     <img src={currentUser.photoURL} alt="user-profile" />
+                    <p className="name-tag">Name:</p>
                     <h4 className="name">{currentUser.displayName}</h4>
-                    <p className="email">{currentUser.email}</p>
+                    <p className="email-tag">Email:</p>
+                    <h4 className="email">{currentUser.email}</h4>
                 </article>
                 <article className="user-ratings-and-created">
                     <article className="created-and-rated">
