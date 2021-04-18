@@ -15,6 +15,9 @@ color:#C9FA9E;
         display: flex;
         flex-direction: column;
     }
+    .navigation .nav-link, .navigation, .navigation-guest .nav-link{
+        margin-right: 0px;
+    }
     .navigation-guest{
         display: flex;
         flex-direction: column;
@@ -25,6 +28,14 @@ color:#C9FA9E;
         font-size: 26px;
     }
     .navigation-guest .nav-link:active{
+        color:rgb(182, 233, 79);
+    }
+    .navigation .nav-link{
+        color:#513C2C;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.26);
+        font-size: 26px;
+    }
+    .navigation .nav-link:active{
         color:rgb(182, 233, 79);
     }
     .navigation .nav-link{

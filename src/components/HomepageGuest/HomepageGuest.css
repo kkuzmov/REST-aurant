@@ -1,10 +1,8 @@
 .welcome{
-    font-size: 80px;
+    font-size: 60px;
 }
 .lorem-ipsum{
-    font-size: 26px;
-    margin-bottom: 30px;
-    margin-top: 50px;
+    font-size: 20px;
     padding: 8px;
     line-height: 1.5;
     letter-spacing: 1px;
@@ -13,14 +11,14 @@
 }
 .all-restaurants-homepage{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 80px;
-    margin-top: 0px;
+    margin-top: 10px;
 }
 .restaurant-card{
-    max-width: 250px;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    max-width: 200px;
     padding: 20px;
     border-top-left-radius: 0px;
     border-top-right-radius: 40px;
@@ -28,7 +26,7 @@
     border-bottom-right-radius: 0px;
 }
 .all-restaurants-homepage img{
-    max-width: 240px;
+    max-width: 190px;
     max-height: 150px;
     padding: 0px;
     border-top-left-radius: 0px;
@@ -47,37 +45,16 @@
     font-size: 20px;
     margin-bottom: 30px;
 }
-.card-left-guest{
-    z-index: 0;
-    position: relative;
-    left: 180px;
-    box-shadow: -9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0)
-}
-.card-left-guest:hover{
-    z-index: 2;
-    box-shadow: 5px 5px 15px 6px rgba(0, 0, 0, 0.267);
-}
-.card-middle-guest{
-    z-index: 1;
-    background-color: rgb(101, 151, 2);
-    box-shadow: 5px 5px 15px 6px rgba(0,0,0,0.77);
-}
-.card-right-guest{
-    z-index: 0;
-    position: relative;
-    right: 180px;
-    box-shadow: 9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0);
-}
-.card-right-guest:hover{
-    z-index: 2;
-    box-shadow: 5px 5px 15px 6px rgba(0, 0, 0, 0.267);
-}
-@media screen and (max-width: 600px){
+
+
+@media screen and (min-width: 600px){
     .welcome{
-        font-size: 60px;
+        font-size: 80px;
     }
     .lorem-ipsum{
-        font-size: 20px;
+        font-size: 26px;
+        margin-bottom: 30px;
+        margin-top: 50px;
         padding: 8px;
         line-height: 1.5;
         letter-spacing: 1px;
@@ -86,14 +63,15 @@
     }
     .all-restaurants-homepage{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin-top: 10px;
+        margin-bottom: 80px;
+        margin-top: 0px;
     }
     .restaurant-card{
-        margin: 20px auto;
-        max-width: 200px;
+        max-width: 250px;
+        margin-bottom: 20px;
         padding: 20px;
         border-top-left-radius: 0px;
         border-top-right-radius: 40px;
@@ -101,7 +79,7 @@
         border-bottom-right-radius: 0px;
     }
     .all-restaurants-homepage img{
-        max-width: 190px;
+        max-width: 240px;
         max-height: 150px;
         padding: 0px;
         border-top-left-radius: 0px;
@@ -120,4 +98,29 @@
         font-size: 20px;
         margin-bottom: 30px;
     }
+    /* .card-left-guest{
+        z-index: 0;
+        position: relative;
+        left: 180px;
+        box-shadow: -9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0)
+    }
+    .card-left-guest:hover{
+        z-index: 2;
+        box-shadow: 5px 5px 15px 6px rgba(0, 0, 0, 0.267);
+    }
+    .card-middle-guest{
+        z-index: 1;
+        background-color: rgb(101, 151, 2);
+        box-shadow: 5px 5px 15px 6px rgba(0,0,0,0.77);
+    }
+    .card-right-guest{
+        z-index: 0;
+        position: relative;
+        right: 180px;
+        box-shadow: 9px -5px 23px -7px #525050, 5px 5px 18px 5px rgba(237,255,48,0);
+    }
+    .card-right-guest:hover{
+        z-index: 2;
+        box-shadow: 5px 5px 15px 6px rgba(0, 0, 0, 0.267);
+    } */
 }
