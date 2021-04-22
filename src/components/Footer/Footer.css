@@ -5,6 +5,9 @@
     font-size: 25px;
     font-family: 'Rock Salt', cursive;
 }
+.main-footer a:visited{
+    text-decoration: underline;
+}
 @media screen and (max-width: 600px){
     .main-footer{
         border-top: 2px solid rgb(102, 151, 2);
