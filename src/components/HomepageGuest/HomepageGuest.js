@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-import { style } from './HomepageGuest.css';
+import './HomepageGuest.css';
 
 
 class HomepageGuest extends Component{

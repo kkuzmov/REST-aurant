@@ -17,8 +17,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import About from "./components/About/About";
 import TEST from "./components/TEST/TEST";
 import { AuthProvider } from "./components/Auth/Auth";
-
-import { style } from "./Main.css";
+import "./Main.css";
 
 class Main extends Component {
   render() {
