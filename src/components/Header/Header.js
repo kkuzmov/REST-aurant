@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { style } from "./Header.css";
 import { useContext } from "react";
 import { AuthContext } from "../Auth/Auth";
-
-import NavigationUser from "./Navigation/NavigationUser";
 import NavigationGuest from "./Navigation/NavigationGuest";
+import NavigationUser from "./Navigation/NavigationUser";
+
+import "./Header.css";
 
 function Header() {
   const { currentUser } = useContext(AuthContext);
