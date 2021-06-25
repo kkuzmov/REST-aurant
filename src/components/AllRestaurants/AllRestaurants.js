@@ -1,9 +1,9 @@
 import { Component } from "react";
-import { style } from "./AllRestaurants.css";
+import { Ellipsis } from "react-spinners-css";
 import { db } from "../../firebase/firebase.config";
-import { Circle, Heart, Ellipsis } from "react-spinners-css";
-
 import RestaurantInAllRestaurants from "../RestaurantInAllRestaurants/RestaurantInAllRestaurants";
+
+import "./AllRestaurants.css";
 
 class AllRestaurants extends Component {
   constructor(props) {

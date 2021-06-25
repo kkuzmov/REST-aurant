@@ -1,12 +1,12 @@
-import { style } from "./CreateRestaurant.css";
-import { db } from "../../firebase/firebase.config";
+import { useState, useContext } from "react";
 import { Redirect, useHistory } from "react-router-dom";
+import { db } from "../../firebase/firebase.config";
 import testInput from "../../services/Helpers/createNewRestaurant";
 import Notification from "../Notifications/Notifications";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import { useState, useContext } from "react";
-
 import { AuthContext } from "../Auth/Auth";
+
+import "./CreateRestaurant.css";
 
 function CreateRestaurant() {
   let history = useHistory();
