@@ -1,10 +1,10 @@
-import { Component, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import testRegisterUser from '../../services/Helpers/registerUser';
 import { registerUser } from '../../services/services';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { AuthContext } from '../Auth/Auth';
-import { firebaseApp, storageRef } from '../../firebase/firebase.config';
+import { firebaseApp } from '../../firebase/firebase.config';
 
 import './Register.css';
 

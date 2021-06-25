@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { style } from './RestaurantsWrapper.css';
+import { Ellipsis } from 'react-spinners-css';
 import { db } from '../../firebase/firebase.config';
-import { Circle, Heart, Ellipsis } from 'react-spinners-css';
+import './RestaurantsWrapper.css';
 
 
 import Restaurant from '../Restaurant/Restaurant';

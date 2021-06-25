@@ -1,4 +1,4 @@
-import { style } from './Notifications.css';
+import './Notifications.css';
 
 function Notification({children}){
     if(!children){

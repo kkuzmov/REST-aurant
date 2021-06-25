@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import { db } from '../../firebase/firebase.config';
-import { AuthContext } from '../Auth/Auth';
-import RestaurantInAllRestaurants from '../RestaurantInAllRestaurants/RestaurantInAllRestaurants';
 import {  useHistory } from 'react-router-dom';
+import { AuthContext } from '../Auth/Auth';
+import { db } from '../../firebase/firebase.config';
+import RestaurantInAllRestaurants from '../RestaurantInAllRestaurants/RestaurantInAllRestaurants';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 
