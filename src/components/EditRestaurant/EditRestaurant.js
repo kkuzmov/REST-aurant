@@ -1,13 +1,13 @@
-import { style } from "./EditRestaurant.css";
-import { db } from "../../firebase/firebase.config";
+import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../Auth/Auth";
+import { db } from "../../firebase/firebase.config";
 import testInput from "../../services/Helpers/createNewRestaurant";
+import { getOneRestaurant } from "../../services/services.js";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Notification from "../Notifications/Notifications";
-import { getOneRestaurant } from "../../services/services.js";
-import { AuthContext } from "../Auth/Auth";
 
-import { useState, useEffect, useContext } from "react";
+import "./EditRestaurant.css";
 
 function EditRestaurant({ match }) {
   let history = useHistory();

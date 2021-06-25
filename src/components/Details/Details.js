@@ -1,12 +1,11 @@
-import { style } from "./Details.css";
+import { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { AuthContext } from "../Auth/Auth";
 import { db } from "../../firebase/firebase.config";
 import { getOneRestaurant } from "../../services/services.js";
 import Notification from "../Notifications/Notifications";
-import { AuthContext } from "../Auth/Auth";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
-import { useContext, useEffect, useState } from "react";
+import "./Details.css";
 
 function DetailsWithFunction({ match }) {
   let history = useHistory();

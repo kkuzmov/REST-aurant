@@ -1,4 +1,4 @@
-import { style } from './ErrorMessage.css';
+import './ErrorMessage.css';
 
 function ErrorMessage({children}){
     if(!children){
