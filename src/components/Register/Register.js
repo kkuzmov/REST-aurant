@@ -1,13 +1,12 @@
-import { Component, useContext } from 'react';
-import { style } from './Register.css';
+import { Component, useContext, useState } from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
 import testRegisterUser from '../../services/Helpers/registerUser';
 import { registerUser } from '../../services/services';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { useState } from 'react';
 import { AuthContext } from '../Auth/Auth';
-
-import { Redirect, useHistory } from 'react-router-dom';
 import { firebaseApp, storageRef } from '../../firebase/firebase.config';
+
+import './Register.css';
 
 
 
@@ -21,15 +20,6 @@ function Register(){
     
     function onRegisterSubmitHandler(event){
         event.preventDefault();
-        // TESTING PHOTO UPLOAD
-
-        // let photoRef = storageRef.child(event.target.imageUrl.value);
-        // console.log(photoRef);
-        // let file = new File([], event.target.imageUrl.value)
-        // photoRef.put(file).then((snapshot)=>{
-        //     console.log(snapshot)
-        // })
-
         let userInputToRegister = {
             'email': event.target.email.value,
             'username': event.target.username.value,

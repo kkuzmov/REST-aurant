@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import { style } from './Login.css';
-import testLoginUser from '../../services/Helpers/loginUser';
-import { loginUser } from '../../services/services';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { AuthContext } from '../Auth/Auth';
-
-import { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
+import { loginUser } from '../../services/services';
+import { AuthContext } from '../Auth/Auth';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import testLoginUser from '../../services/Helpers/loginUser';
+import './Login.css';
+
 
 
 function Login (){
