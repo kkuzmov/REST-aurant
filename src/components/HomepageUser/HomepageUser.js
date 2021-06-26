@@ -8,7 +8,6 @@ import "./HomepageUser.css";
 class HomepageUser extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       restaurants: [],
     };
@@ -34,30 +33,19 @@ class HomepageUser extends Component {
     this.getRestaurants();
   }
   render() {
-    let allRestaurants =
-      this.state.restaurants.map(
-        (x) =>
-          (x = (
-            <RestaurantHomepage
-              key={x.id}
-              imageUrl={x.imageUrl}
-              name={x.name}
-              description={x.description}
-              id={x.id}
-              ratedBy={x.ratedBy}
-            />
-          ))
-      ) 
-    if (allRestaurants.length === 0) {
-      allRestaurants = <Ellipsis color="#513C2C" size={100} />;
-    }
     return (
       <main>
         <h1 className="top-rated">Welcome, {this.props.username}!</h1>
         <h1 className="top-rated">
           Check out our current top rated restaurants:{" "}
         </h1>
-        <article className="all-restaurants-homepage">{allRestaurants}</article>
+        <article className="all-restaurants-homepage">
+          {this.state.restaurants.length === 0 ? (
+            <Ellipsis color="#513C2C" size={100} />
+          ) : this.state.restaurants.map((x) => (
+            <RestaurantHomepage restaurant={x} key={x.id} />
+          ))}
+        </article>
       </main>
     );
   }
