@@ -7,7 +7,7 @@ import Notification from "../Notifications/Notifications";
 
 import "./Details.css";
 
-function DetailsWithFunction({ match }) {
+function Details({ match }) {
   let history = useHistory();
   const [notificationMessage, setNotificationMessage] = useState("");
   const { currentUser } = useContext(AuthContext);
@@ -145,4 +145,4 @@ function DetailsWithFunction({ match }) {
   }
 }
 
-export default DetailsWithFunction;
+export default Details;

@@ -89,8 +89,8 @@ function EditRestaurant({ match }) {
             />
           </article>
           <article className="form-input">
-            <select name="category">
-              <option value="" defaultValue selected>
+          <select name="category" defaultValue="select">
+              <option value="select">
                 Select your option
               </option>
               <option value="Ethnic">Ethnic</option>
