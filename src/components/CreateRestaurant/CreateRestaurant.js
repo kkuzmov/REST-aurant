@@ -61,8 +61,8 @@ function CreateRestaurant() {
             <input type="text" name="location" placeholder="City" required />
           </article>
           <article className="form-input">
-            <select name="category">
-              <option value="" disabled selected>
+            <select name="category" defaultValue="select">
+              <option value="select">
                 Select your option
               </option>
               <option value="Ethnic">Ethnic</option>

@@ -20,16 +20,17 @@ function Login (){
 
     function onLoginSubmitHandler(event){
         event.preventDefault();
+        let userInput = event.target;
         let userInputToLogin = {
-            'email': event.target.email.value,
-            'password': event.target.password.value,
+            'email': userInput.email.value,
+            'password': userInput.password.value,
         }
         if(testLoginUser(userInputToLogin)){
             let message = testLoginUser(userInputToLogin);
             setErrMessage(message);
         }else{
             setErrMessage('');
-            loginUser(event.target.email.value, event.target.password.value)
+            loginUser(userInput.email.value, userInput.password.value)
                 .then(res => {
                     history.push('/');
                 })

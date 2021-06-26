@@ -20,11 +20,12 @@ function Register(){
     
     function onRegisterSubmitHandler(event){
         event.preventDefault();
+        let userInput = event.target;
         let userInputToRegister = {
-            'email': event.target.email.value,
-            'username': event.target.username.value,
-            'password': event.target.password.value,
-            'repeatPassword': event.target.repeatPassword.value,
+            'email': userInput.email.value,
+            'username': userInput.username.value,
+            'password': userInput.password.value,
+            'repeatPassword': userInput.repeatPassword.value,
         }
   
         if(testRegisterUser(userInputToRegister)){
@@ -32,9 +33,9 @@ function Register(){
             setErrMessage(message);
         }else{
             setErrMessage('');
-            let username = event.target.username.value;
-            let photoURL = event.target.imageUrl.value;
-            registerUser(event.target.email.value, event.target.password.value)
+            let username = userInput.username.value;
+            let photoURL = userInput.imageUrl.value;
+            registerUser(userInput.email.value, userInput.password.value)
                 .then(res => {
                     setTimeout(firebaseApp.auth().currentUser.updateProfile({ displayName: username, photoURL,})
                     .then(res => {

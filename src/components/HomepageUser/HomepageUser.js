@@ -47,7 +47,7 @@ class HomepageUser extends Component {
               ratedBy={x.ratedBy}
             />
           ))
-      ) || "Loading...";
+      ) 
     if (allRestaurants.length === 0) {
       allRestaurants = <Ellipsis color="#513C2C" size={100} />;
     }
