@@ -14,7 +14,6 @@ function RatedRestaurants() {
   const { currentUser } = useContext(AuthContext);
   let [currentRestaurants, setCurrentRestaurants] = useState([]);
 
-  let allRatedRestaurants;
 
   useEffect(() => {
     if (currentUser == null) {
@@ -24,6 +23,9 @@ function RatedRestaurants() {
         .where("creator", "==", currentUser.uid)
         .get()
         .then((res) => {
+          if(res.docs.length == 0){
+            return setErrMessage('no restaurants found :(')
+          }
           let allRestaurants = res.docs.map(
             (restaurant) =>
               (restaurant = { ...restaurant.data(), id: restaurant.id })
@@ -46,6 +48,11 @@ function RatedRestaurants() {
         rest.description.toLowerCase().includes(query) ||
         rest.category.toLowerCase().includes(query)
     );
+    if(filteredResults.length === 0){
+      setCurrentRestaurants(filteredResults);
+      return setErrMessage('no restaurants found :(')
+    }
+    setErrMessage('')
     setCurrentRestaurants(filteredResults);
   }
 
@@ -58,9 +65,10 @@ function RatedRestaurants() {
           Search by restaurant name, location or description
         </label>
         <input type="search" name="search" className="search-input" onChange={performSearch}></input>
+        <ErrorMessage>{errMessage}</ErrorMessage>
       </form>
       <article className="all-rated-restaurants">
-        {currentRestaurants.length == 0 ? (
+        {currentRestaurants.length === 0 ? (
           <Ellipsis color="#513C2C" size={100} />
         ) : (
           currentRestaurants.map((x) => (
@@ -68,7 +76,6 @@ function RatedRestaurants() {
           ))
         )}
       </article>
-      <ErrorMessage>{errMessage}</ErrorMessage>
     </>
   );
 }
