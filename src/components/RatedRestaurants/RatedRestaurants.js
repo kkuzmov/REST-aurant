@@ -23,7 +23,7 @@ function RatedRestaurants() {
         .where("creator", "==", currentUser.uid)
         .get()
         .then((res) => {
-          if(res.docs.length == 0){
+          if(res.docs.length === 0){
             return setErrMessage('no restaurants found :(')
           }
           let allRestaurants = res.docs.map(

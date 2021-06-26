@@ -10,7 +10,7 @@ class AllRestaurants extends Component {
     super(props);
     this.state = {
       currentRestaurants: [],
-      restaurantsToFilter: [],
+      allRestaurants: [],
     };
     this.getRestaurants = this.getRestaurants.bind(this);
     this.performSearch = this.performSearch.bind(this);
@@ -24,25 +24,24 @@ class AllRestaurants extends Component {
           allFetched.push({ ...restaurant.data(), id: restaurant.id });
         });
         this.setState({ currentRestaurants: allFetched });
-        this.setState({ restaurantsToFilter: allFetched });
+        this.setState({ allRestaurants: allFetched });
       })
       .catch((err) => console.log(err));
   }
   componentDidMount() {
     this.getRestaurants();
   }
-
   performSearch(event) {
     event.preventDefault();
     let query = event.target.value.toLowerCase();
-    let filteredResults = this.state.restaurantsToFilter.filter(
+    let searchResult = this.state.allRestaurants.filter(
       (rest) =>
         rest.name.toLowerCase().includes(query) ||
         rest.location.toLowerCase().includes(query) ||
         rest.description.toLowerCase().includes(query) ||
         rest.category.toLowerCase().includes(query)
     );
-    this.setState({ currentRestaurants: filteredResults });
+    this.setState({ currentRestaurants: searchResult });
   }
   render() {
     return (
