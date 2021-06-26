@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Ellipsis } from "react-spinners-css";
-
 import { AuthContext } from "../Auth/Auth";
 import { db } from "../../firebase/firebase.config";
 import RestaurantInAllRestaurants from "../RestaurantInAllRestaurants/RestaurantInAllRestaurants";
@@ -9,11 +8,10 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 function LikedRestaurants() {
   let history = useHistory();
-  const [errMessage, setErrMessage] = useState("");
   let [restaurants, setAllRestaurants] = useState([]);
-  let [currentRestaurants, setCurrentRestaurants] = useState([]);
+  const [errMessage, setErrMessage] = useState("");
   const { currentUser } = useContext(AuthContext);
-  let allLikedRestaurants;
+  let [currentRestaurants, setCurrentRestaurants] = useState([]);
 
   useEffect(() => {
     if (currentUser == null) {
@@ -40,9 +38,9 @@ function LikedRestaurants() {
 
     let filteredResults = restaurants.filter(
       (rest) =>
-        rest.name.toLowerCase().includes(query.toLowerCase()) ||
-        rest.location.toLowerCase().includes(query.toLowerCase()) ||
-        rest.description.toLowerCase().includes(query.toLowerCase()) ||
+        rest.name.toLowerCase().includes(query) ||
+        rest.location.toLowerCase().includes(query) ||
+        rest.description.toLowerCase().includes(query) ||
         rest.category.toLowerCase().includes(query)
     );
     setCurrentRestaurants(filteredResults);
@@ -61,7 +59,6 @@ function LikedRestaurants() {
           className="search-input"
           onChange={performSearch}
         ></input>
-        <input type="submit" value="Find" className="site-button"></input>
       </form>
       <article className="all-rated-restaurants">
         {currentRestaurants.length == 0 ? (
