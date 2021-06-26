@@ -9,8 +9,8 @@ class AllRestaurants extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: [],
       currentRestaurants: [],
+      restaurantsToFilter: [],
     };
     this.getRestaurants = this.getRestaurants.bind(this);
     this.performSearch = this.performSearch.bind(this);
@@ -23,68 +23,52 @@ class AllRestaurants extends Component {
         res.docs.forEach((restaurant) => {
           allFetched.push({ ...restaurant.data(), id: restaurant.id });
         });
-        this.setState({ restaurants: allFetched });
         this.setState({ currentRestaurants: allFetched });
+        this.setState({ restaurantsToFilter: allFetched });
       })
       .catch((err) => console.log(err));
   }
   componentDidMount() {
     this.getRestaurants();
   }
+
   performSearch(event) {
     event.preventDefault();
-    let filteredResults = this.state.restaurants.filter(
+    let query = event.target.value.toLowerCase();
+    let filteredResults = this.state.restaurantsToFilter.filter(
       (rest) =>
-        rest.name
-          .toLowerCase()
-          .includes(event.target.search.value.toLowerCase()) ||
-        rest.location
-          .toLowerCase()
-          .includes(event.target.search.value.toLowerCase()) ||
-        rest.description
-          .toLowerCase()
-          .includes(event.target.search.value.toLowerCase())
+        rest.name.toLowerCase().includes(query) ||
+        rest.location.toLowerCase().includes(query) ||
+        rest.description.toLowerCase().includes(query) ||
+        rest.category.toLowerCase().includes(query)
     );
+    console.log(filteredResults);
     this.setState({ currentRestaurants: filteredResults });
   }
   render() {
-    // let allRestaurants = this.state.currentRestaurants.map(
-    //   (x) =>
-    //     (x = (
-    //       <RestaurantInAllRestaurants
-    //         key={x.id}
-    //         imageUrl={x.imageUrl}
-    //         name={x.name}
-    //         description={x.description}
-    //         location={x.location}
-    //         category={x.category}
-    //         id={x.id}
-    //       />
-    //     ))
-    // );
-
-    // if (allRestaurants.length === 0) {
-    //   allRestaurants = <Ellipsis color="#513C2C" size={100} />;
-    // }
-
     return (
       <>
         <h1 className="page-heading">All restaurants</h1>
-        <form onSubmit={this.performSearch} className="search-form">
+        <form className="search-form">
           <label htmlFor="search" className="search-label">
             Search in restaurants
           </label>
-          <input type="search" name="search" className="search-input"></input>
-          <input type="submit" value="Find" className="site-button"></input>
+          <input
+            type="search"
+            name="search"
+            className="search-input"
+            onChange={this.performSearch}
+          ></input>
         </form>
-        <article className="all-rated-restaurants">{this.state.currentRestaurants.map(x =>
-        (
-          <RestaurantInAllRestaurants
-            restaurant={x}
-            key={x.id}
-          />
-        )
-    )}</article>
+        <article className="all-rated-restaurants">
+          {this.state.currentRestaurants.length === 0 ? (
+            <Ellipsis color="#513C2C" size={100} />
+          ) : (
+            this.state.currentRestaurants.map((x) => (
+              <RestaurantInAllRestaurants restaurant={x} key={x.id} />
+            ))
+          )}
+        </article>
       </>
     );
   }
