@@ -60,7 +60,6 @@ function CreateRestaurant() {
             <input type="text" name="location" placeholder="City" required />
           </article>
           <article className="form-input">
-            {/* <input type="select" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required /> */}
             <select name="category">
               <option value="" disabled selected>
                 Select your option
@@ -111,7 +110,6 @@ function CreateRestaurant() {
             />
           </article>
           <article className="form-input">
-            {/* <input type="file" id="photo" name="uploaded-picture" /> */}
             <input
               type="url"
               name="imageUrl"

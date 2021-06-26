@@ -48,24 +48,24 @@ class AllRestaurants extends Component {
     this.setState({ currentRestaurants: filteredResults });
   }
   render() {
-    let allRestaurants = this.state.currentRestaurants.map(
-      (x) =>
-        (x = (
-          <RestaurantInAllRestaurants
-            key={x.id}
-            imageUrl={x.imageUrl}
-            name={x.name}
-            description={x.description}
-            location={x.location}
-            category={x.category}
-            id={x.id}
-          />
-        ))
-    );
+    // let allRestaurants = this.state.currentRestaurants.map(
+    //   (x) =>
+    //     (x = (
+    //       <RestaurantInAllRestaurants
+    //         key={x.id}
+    //         imageUrl={x.imageUrl}
+    //         name={x.name}
+    //         description={x.description}
+    //         location={x.location}
+    //         category={x.category}
+    //         id={x.id}
+    //       />
+    //     ))
+    // );
 
-    if (allRestaurants.length === 0) {
-      allRestaurants = <Ellipsis color="#513C2C" size={100} />;
-    }
+    // if (allRestaurants.length === 0) {
+    //   allRestaurants = <Ellipsis color="#513C2C" size={100} />;
+    // }
 
     return (
       <>
@@ -77,7 +77,14 @@ class AllRestaurants extends Component {
           <input type="search" name="search" className="search-input"></input>
           <input type="submit" value="Find" className="site-button"></input>
         </form>
-        <article className="all-rated-restaurants">{allRestaurants}</article>
+        <article className="all-rated-restaurants">{this.state.currentRestaurants.map(x =>
+        (
+          <RestaurantInAllRestaurants
+            restaurant={x}
+            key={x.id}
+          />
+        )
+    )}</article>
       </>
     );
   }
