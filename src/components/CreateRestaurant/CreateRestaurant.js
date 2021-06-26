@@ -19,15 +19,16 @@ function CreateRestaurant() {
 
   function create(event) {
     event.preventDefault();
+    let inputFromUser = event.target;
     let userInputNewRestaurant = {
-      name: event.target.name.value,
-      location: event.target.location.value,
-      rating: Number(event.target.rating.value),
-      description: event.target.description.value,
-      imageUrl: event.target.imageUrl.value,
-      category: event.target.category.value,
-      pros: event.target.pros.value,
-      cons: event.target.cons.value,
+      name: inputFromUser.name.value,
+      location: inputFromUser.location.value,
+      rating: Number(inputFromUser.rating.value),
+      description: inputFromUser.description.value,
+      imageUrl: inputFromUser.imageUrl.value,
+      category: inputFromUser.category.value,
+      pros: inputFromUser.pros.value,
+      cons: inputFromUser.cons.value,
       ratedBy: 0,
       likedBy: [],
       creator: currentUser.uid,
@@ -40,7 +41,7 @@ function CreateRestaurant() {
         .add({ ...userInputNewRestaurant })
         .then((res) => {
           setErrMessage("");
-          setNotificationMessage("New rating created!");
+          setNotificationMessage("New restaurant rated!");
           setTimeout(() => {
             history.push("/");
           }, 2500);

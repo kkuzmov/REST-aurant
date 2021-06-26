@@ -13,7 +13,6 @@ function DetailsWithFunction({ match }) {
   const { currentUser } = useContext(AuthContext);
   const [errMessage, setErrMessage] = useState("");
 
-  //set current restaurant
   let [restaurant, setRestaurant] = useState({});
 
   useEffect(() => {
@@ -28,8 +27,6 @@ function DetailsWithFunction({ match }) {
   if (!currentUser) {
     history.push("/login");
   }
-
-  // add like to likes
 
   function likeRestaurant() {
     let incrementedLikes = restaurant.ratedBy + 1;

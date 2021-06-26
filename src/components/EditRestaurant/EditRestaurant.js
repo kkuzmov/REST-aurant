@@ -32,15 +32,16 @@ function EditRestaurant({ match }) {
 
   function updateRestaurantInfo(event) {
     event.preventDefault();
+    let userInput = event.target;
     let userInputNewRestaurant = {
-      name: event.target.name.value,
-      location: event.target.location.value,
-      rating: Number(event.target.rating.value),
-      description: event.target.description.value,
-      imageUrl: event.target.imageUrl.value,
-      category: event.target.category.value,
-      pros: event.target.pros.value,
-      cons: event.target.cons.value,
+      name: userInput.name.value,
+      location: userInput.location.value,
+      rating: Number(userInput.rating.value),
+      description: userInput.description.value,
+      imageUrl: userInput.imageUrl.value,
+      category: userInput.category.value,
+      pros: userInput.pros.value,
+      cons: userInput.cons.value,
     };
     if (testInput(userInputNewRestaurant)) {
       let message = testInput(userInputNewRestaurant);
@@ -88,7 +89,6 @@ function EditRestaurant({ match }) {
             />
           </article>
           <article className="form-input">
-            {/* <input type="select" min="1" max="5" step="0.5" name="rating" placeholder="Rating" required /> */}
             <select name="category">
               <option value="" defaultValue selected>
                 Select your option
@@ -128,7 +128,6 @@ function EditRestaurant({ match }) {
             ></textarea>
           </article>
           <article className="form-input">
-            {/* <input type="file" id="photo" name="uploaded-picture" /> */}
             <input
               type="url"
               name="imageUrl"
