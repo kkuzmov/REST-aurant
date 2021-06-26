@@ -9,22 +9,6 @@ import "./Header.css";
 function Header() {
   const { currentUser } = useContext(AuthContext);
 
-  if (currentUser) {
-    return (
-      <header className="main-header">
-        <section className="logo-in-header">
-          <Link to="/" className="nav-link">
-            <i className="fas fa-hamburger"></i>
-          </Link>
-          <h1>REST-aurant</h1>
-        </section>
-        <nav>
-          <NavigationUser />
-        </nav>
-      </header>
-    );
-  }
-
   return (
     <header className="main-header">
       <section className="logo-in-header">
@@ -34,7 +18,7 @@ function Header() {
         <h1>REST-aurant</h1>
       </section>
       <nav>
-        <NavigationGuest />
+        {currentUser ? <NavigationUser /> : <NavigationGuest /> }
       </nav>
     </header>
   );
