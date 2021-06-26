@@ -42,7 +42,6 @@ class AllRestaurants extends Component {
         rest.description.toLowerCase().includes(query) ||
         rest.category.toLowerCase().includes(query)
     );
-    console.log(filteredResults);
     this.setState({ currentRestaurants: filteredResults });
   }
   render() {
@@ -51,7 +50,7 @@ class AllRestaurants extends Component {
         <h1 className="page-heading">All restaurants</h1>
         <form className="search-form">
           <label htmlFor="search" className="search-label">
-            Search in restaurants
+            Search by restaurant name, location or description
           </label>
           <input
             type="search"
