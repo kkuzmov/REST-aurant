@@ -8,8 +8,7 @@ import { Ellipsis } from "react-spinners-css";
 
 import "./Details.css";
 
-import React from 'react'
-
+import React from "react";
 
 function Details({ match }) {
   let history = useHistory();
@@ -33,14 +32,19 @@ function Details({ match }) {
 
   function likeRestaurant() {
     let incrementedLikes = restaurant.ratedBy + 1;
-    restaurant.likedBy.push(currentUser.uid);
-    db.collection("restaurants")
-      .doc(match.params.id)
-      .update({ ratedBy: incrementedLikes, likedBy: restaurant.likedBy })
-      .then((rest) => {
-        setRestaurant((state) => ({ ...state, ratedBy: incrementedLikes }));
-      })
-      .catch((err) => setErrMessage(err.message));
+    if (restaurant.likedBy.includes(currentUser.uid)) {
+      setNotificationMessage("You already like this restaurant!");
+    } else {
+      restaurant.likedBy.push(currentUser.uid);
+      db.collection("restaurants")
+        .doc(match.params.id)
+        .update({ ratedBy: incrementedLikes, likedBy: restaurant.likedBy })
+        .then((rest) => {
+          setNotificationMessage("Restaurant added to your list!");
+          setRestaurant((state) => ({ ...state, ratedBy: incrementedLikes }));
+        })
+        .catch((err) => setErrMessage(err.message));
+    }
   }
   function deleteRestaurant() {
     db.collection("restaurants")
@@ -117,4 +121,3 @@ function Details({ match }) {
 }
 
 export default Details;
-
