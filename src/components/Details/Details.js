@@ -33,6 +33,7 @@ function Details({ match }) {
   function likeRestaurant() {
     let incrementedLikes = restaurant.ratedBy + 1;
     if (restaurant.likedBy.includes(currentUser.uid)) {
+      console.log('in liked.')
       setNotificationMessage("You already like this restaurant!");
     } else {
       restaurant.likedBy.push(currentUser.uid);
